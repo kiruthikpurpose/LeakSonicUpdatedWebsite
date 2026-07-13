@@ -1,0 +1,60 @@
+---
+title: 'Pipeline data blind spots: the gaps most integrity programs do not know they have'
+date: '2026-07-09'
+lastUpdated: '2026-07-09'
+author: 'LeakSonic Research'
+category: 'technical'
+summary: 'Most pipeline integrity programs carry real, structural data blind spots - non-piggable segments with no inline inspection history, corridors between scheduled patrols where days or weeks pass with zero observation, and disconnected data systems where inspection findings, repair records, and risk models do not talk to each other. These gaps are rarely visible until a failure retroactively reveals them.'
+tags:
+  [
+    'pipeline data',
+    'inspection blind spots',
+    'data governance',
+    'integrity management',
+    'risk assessment',
+  ]
+faqs:
+  - question: 'What is a pipeline data blind spot?'
+    answer: 'A pipeline data blind spot is a segment, time window, or threat category where an operator has no current, reliable data - either because the pipeline cannot be inspected by the primary method available (a non-piggable segment with no inline inspection option), because the observation interval leaves a long gap between checks (weeks or months between right-of-way patrols), or because relevant data exists but is siloed in disconnected systems that are never actually cross-referenced when a risk decision is made.'
+  - question: 'Why are non-piggable pipeline segments a particular blind spot risk?'
+    answer: 'Non-piggable segments cannot be assessed with inline inspection, the method that provides the most precise internal wall condition data available. These segments instead rely on direct assessment (periodic excavation and examination) or external monitoring methods, both of which provide less complete internal coverage than ILI - meaning non-piggable segments structurally carry a higher degree of internal-condition uncertainty than piggable segments, independent of their actual underlying risk.'
+  - question: 'How do disconnected data systems create risk even when the underlying data exists?'
+    answer: 'Many operators maintain inspection findings, repair history, cathodic protection survey data, and right-of-way observation records in separate systems that were never designed to be cross-referenced automatically. A risk assessment made using only one of these sources, without visibility into what the others show for the same segment, can miss a pattern that would be obvious if the data were unified - for example, a segment with a recent CP anomaly and a recent unrelated repair might individually look unremarkable but together indicate elevated risk that neither record alone would surface.'
+  - question: 'What is the most effective way to close data blind spots without a full technology overhaul?'
+    answer: 'Most operators get the largest immediate improvement not from acquiring an entirely new sensor or inspection method, but from unifying and cross-referencing the data they already collect, and explicitly mapping which segments and time windows currently have no recent observation from any method - making blind spots visible and prioritisable rather than invisible until a failure reveals them retroactively.'
+---
+
+Pipeline integrity programs are built on an implicit assumption: that the data feeding risk assessments and inspection decisions is reasonably complete. In practice, most programs carry structural data blind spots that are rarely visible until a failure retroactively reveals exactly where the gap was.
+
+## The three categories of blind spot
+
+Data blind spots in pipeline integrity programs tend to fall into three recurring categories. The first is segment-level: pipeline sections that cannot be assessed by an operator's primary inspection method, most commonly non-piggable segments with no inline inspection history, relying instead on direct assessment or external monitoring that structurally provides less complete internal condition data. The second is temporal: the interval between scheduled observations - CP surveys taken annually, right-of-way patrols conducted on a fixed cycle - during which a developing condition can progress entirely unobserved. The third is systemic: relevant data that exists somewhere in the organisation but lives in disconnected systems that are never actually cross-referenced when a specific risk decision is made.
+
+<Definition term="Non-piggable segment">
+  A non-piggable segment is a section of pipeline that cannot accommodate an inline inspection
+  tool, due to internal diameter changes, bend radii the tool cannot navigate, or the absence of
+  launcher and receiver infrastructure. These segments rely on direct assessment or external
+  monitoring for integrity data instead of the more precise internal measurement inline inspection
+  provides, which structurally means less complete internal-condition information is available for
+  them relative to piggable segments of comparable age and risk profile.
+</Definition>
+
+## Why non-piggable segments carry disproportionate uncertainty
+
+Because inline inspection provides the most direct and precise wall-condition data available, segments that cannot use it are, almost by definition, working with a less complete picture - independent of what their actual underlying corrosion or defect risk happens to be. This creates a subtle but important distinction between a segment that has been assessed as low risk through direct data, and a segment that appears low risk simply because less data exists about it. Treating those two situations identically in a risk model can systematically under-prioritise segments that are genuinely uncertain rather than genuinely low-risk.
+
+## The temporal gap problem
+
+Even well-instrumented pipelines carry gaps between observations - the interval between one CP survey and the next, one right-of-way patrol and the next, one inline inspection run and the next. Nothing is being measured during that interval; the pipeline's actual condition is inferred, implicitly, to be unchanged from the last observation until the next one occurs. For slow-developing threats this assumption usually holds reasonably well; for faster-developing threats - stray current interference, active excavation encroachment, a developing leak - the interval can be long enough for a serious condition to progress well past its earliest detectable point before it is next observed at all.
+
+## When the data exists but isn't connected
+
+A frequently underappreciated blind spot is not an absence of data but a failure to connect data that already exists. Inspection findings, repair and maintenance records, cathodic protection survey history, and right-of-way observation logs are commonly maintained in separate systems - sometimes separate departments - that were never built to be queried together automatically. A risk assessment drawing on only one of these sources can miss a pattern that would be obvious with a unified view: a segment with a recent minor CP anomaly and an unrelated recent repair nearby might each look unremarkable in isolation, while together they indicate a location worth closer attention that neither record alone would surface.
+
+## Making blind spots visible is the first, highest-leverage step
+
+For most operators, the largest near-term improvement to their actual risk picture does not come from acquiring an entirely new sensor type, but from explicitly mapping which segments, time windows, and data categories currently have the least reliable or least current information behind them - making blind spots a known, prioritisable quantity rather than something that stays invisible until a failure retroactively identifies exactly where the gap was. This is a data governance and integration problem as much as a sensing one; see our related piece on [data governance for inspection technology vendors](/blog/data-governance-inspection-technology-vendors) for what this looks like from the vendor evaluation side.
+
+## Related reading
+
+Data blind spots are the structural reason [why pipeline failures still happen](/blog/pipeline-failure-root-causes-global-data) despite existing detection methods, and closing them is a central design goal behind multi-signal [risk-based inspection](/blog/risk-based-inspection-pipelines) prioritisation.

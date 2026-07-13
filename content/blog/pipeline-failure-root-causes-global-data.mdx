@@ -1,0 +1,59 @@
+---
+title: 'Why pipeline failures still happen: the root causes behind incidents worldwide'
+date: '2026-07-09'
+lastUpdated: '2026-07-09'
+author: 'LeakSonic Research'
+category: 'fundamentals'
+summary: 'Published incident data from regulators and industry bodies worldwide consistently attributes pipeline failures to a small number of recurring root causes: external corrosion, excavation and third-party damage, material or weld defects, and equipment or operational error. Most of these causes are not the result of unknown technology gaps - they recur because the detection and inspection methods available are periodic, partial, or too slow to catch a developing problem before it becomes a failure.'
+tags:
+  [
+    'pipeline failure causes',
+    'incident data',
+    'root cause analysis',
+    'pipeline safety',
+    'corrosion',
+  ]
+faqs:
+  - question: 'What are the most common root causes of pipeline failures?'
+    answer: 'Across regulator incident databases in multiple countries, the recurring leading categories are external corrosion, third-party or excavation damage (mechanical damage from digging or construction near a pipeline), material and weld defects originating from manufacturing or construction, and equipment or operational error. The exact ranking varies by network age, product type, and region, but these four categories consistently account for the large majority of reported incidents.'
+  - question: 'Is pipeline failure mostly a technology gap or a monitoring gap?'
+    answer: 'Most root cause categories are not caused by an absence of relevant detection technology - cathodic protection, inline inspection, and encroachment monitoring all exist and are deployed. The recurring pattern is that these methods are applied periodically or partially rather than continuously, leaving windows where a developing problem is not being actively observed. Failures often trace back to a condition that existing methods could have detected, but did not, because the relevant location was not being monitored closely enough at the time it mattered.'
+  - question: 'Why does third-party excavation damage remain a leading failure cause despite existing prevention programs?'
+    answer: 'Call-before-you-dig and one-call notification programs exist in most developed pipeline markets, but compliance is incomplete, notification does not guarantee accurate on-site pipeline location markup, and unauthorised or unreported excavation still occurs, particularly in areas with rapid urban development near existing corridors. Continuous or frequent right-of-way observation is one of the few methods that can catch unauthorised activity before contact occurs rather than only after, but coverage has historically been limited by inspection frequency and cost.'
+  - question: 'How does inspection frequency relate to failure prevention?'
+    answer: 'Many failure root causes - corrosion, encroachment, ground movement - develop progressively over time rather than occurring instantaneously, which means there is typically a window during which the developing condition is detectable before it becomes a failure. The length of that window relative to inspection frequency determines whether a given method catches the problem in time; the structural argument for increasing inspection frequency and closing observation gaps is that many documented failures occurred in the interval between two inspections where the earlier one might reasonably have caught the developing condition.'
+---
+
+Published incident data from pipeline safety regulators in multiple countries paints a consistent picture: the same small set of root causes recur across networks, decades, and product types. Understanding why they recur - despite well-established prevention and detection methods existing for all of them - says more about inspection frequency and coverage gaps than it does about any fundamental technology shortfall.
+
+## The recurring categories
+
+Regulator incident databases, when aggregated, consistently attribute pipeline failures to a small number of categories: external corrosion (metal loss from the electrochemical processes covered in [our external corrosion explainer](/blog/external-corrosion-buried-pipelines)), third-party or excavation damage from digging, construction, or other mechanical contact near a pipeline, material and weld defects that originate during manufacturing or construction, and equipment or operational error including valve, control system, and procedural failures. The relative ranking shifts somewhat by network age, product carried, and region, but these four categories account for the substantial majority of reported incidents almost everywhere incident data is published in enough detail to analyse.
+
+## This is a monitoring gap, not a knowledge gap
+
+A striking feature of this pattern is that none of these root causes represents an unknown or undetectable failure mode. Cathodic protection, coating inspection, inline inspection, and right-of-way patrol all exist specifically to catch these threats, and have existed in some form for decades. The recurring failure pattern is not "we didn't know this could happen" - it is that the detection methods available were applied periodically, partially, or with a coverage gap, and the specific failure developed and progressed during a window when it was not being actively observed.
+
+<Definition term="Detection window">
+  The detection window for a given pipeline threat is the length of time between when a condition
+  becomes physically detectable by a given method and when it would cause a failure if left
+  unaddressed. A threat is only reliably caught if the inspection interval for the relevant method
+  is shorter than its own detection window - which is why inspection frequency and threat
+  progression rate have to be considered together, not independently.
+</Definition>
+
+## Why third-party damage remains persistent
+
+Excavation and construction damage might seem like the most preventable category - most pipeline markets operate some form of call-before-you-dig or one-call notification system requiring excavators to request pipeline location markup before digging near known infrastructure. In practice, compliance with notification requirements is incomplete, markup accuracy depends on records that are not always current, and unauthorised or unreported excavation activity still occurs, particularly in areas experiencing rapid development near existing rights-of-way. The specific gap here is observational: notification-based prevention only works if the excavator complies and requests markup; observation-based prevention - noticing unauthorised activity on or near the corridor before contact occurs - is one of the few approaches that does not depend on third-party compliance at all, but its effectiveness depends entirely on how frequently the corridor is actually being watched.
+
+## Corrosion and the periodic-monitoring problem
+
+External corrosion incidents frequently trace back to a location where cathodic protection was, at some point, inadequate - a rectifier fault, a coating defect combined with insufficient CP current, or stray current interference - that persisted undetected between two scheduled CP surveys. The corrosion process itself is gradual, meaning there is usually a real window during which the condition was developing and, in principle, detectable, before it became severe enough to cause failure. Whether a given monitoring program catches it comes down almost entirely to whether the survey interval is short enough relative to how fast the specific corrosion mechanism at that location is progressing - which is not the same for every location on a network, and is rarely known with precision in advance.
+
+## What this pattern implies for inspection strategy
+
+If most root causes are detection-window problems rather than technology-availability problems, the highest-leverage improvement available to most operators is not a new detection method but tighter, better-prioritised application of the methods that already exist - closing the gap between how often a given segment is actually observed and how fast the threats most relevant to that segment can plausibly progress. That is the specific problem that risk-based, continuously informed inspection prioritisation is built to address.
+
+## Related reading
+
+This pattern connects directly to why [risk-based inspection](/blog/risk-based-inspection-pipelines) prioritisation exists, and why closing detection windows - not just adding new sensor types - is the throughline behind [reducing false positives](/blog/false-positive-rate-inspection-software) in inspection software.

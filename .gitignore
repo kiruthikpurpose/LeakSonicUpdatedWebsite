@@ -1,0 +1,14 @@
+/node_modules
+/.next
+/out
+/build
+.DS_Store
+*.pem
+npm-debug.log*
+.env*.local
+.vercel
+next-env.d.ts
+/public/sitemap*.xml
+/public/robots.txt
+.eslintcache
+tsconfig.tsbuildinfo

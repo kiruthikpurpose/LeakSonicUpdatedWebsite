@@ -1,0 +1,43 @@
+---
+title: 'Data governance and IP: what to ask any pipeline inspection technology vendor'
+date: '2026-07-08'
+lastUpdated: '2026-07-08'
+author: 'LeakSonic Research'
+category: 'fundamentals'
+summary: 'Before adopting any inspection technology, operators should get clear, written answers on four data-governance questions: who owns the raw inspection data and derived findings, where the data is stored and processed, how long it is retained, and what happens to it if the vendor relationship ends. These are commercial and security questions, not just legal boilerplate, because pipeline network data is sensitive infrastructure information regardless of which vendor is handling it.'
+tags:
+  ['data governance', 'vendor evaluation', 'pipeline data ownership', 'IP policy', 'procurement']
+faqs:
+  - question: 'Who typically owns the data collected during a pipeline inspection?'
+    answer: 'This should always be defined explicitly in the commercial agreement rather than assumed. A common and operator-favourable structure is that the operator owns the raw inspection data and the specific findings about their own network, while the vendor retains rights to the underlying models, methodologies, and any anonymised or aggregated insights that do not reveal operator-specific network details.'
+  - question: 'Why does data residency matter for pipeline inspection data?'
+    answer: 'Pipeline network data - including exact geolocation of infrastructure, integrity vulnerabilities, and inspection history - is commercially sensitive and, in many jurisdictions, treated as critical infrastructure information subject to specific regulatory handling requirements. Where that data is stored and processed can matter for regulatory compliance, national security considerations, and simple contractual risk, which is why data residency should be a specific, answered question rather than an assumption.'
+  - question: 'What should happen to inspection data if a vendor relationship ends?'
+    answer: 'A well-structured agreement specifies data portability and deletion terms in advance: the operator should be able to export their own data in a usable format, and the vendor should commit to a defined data-deletion timeline and process once the relationship ends, subject to any legal retention obligations. Vendors that cannot answer this question clearly before a contract is signed are unlikely to handle it well after.'
+---
+
+Before adopting any pipeline inspection technology, operators should get clear, written answers on four data-governance questions: who owns the raw inspection data and derived findings, where the data is stored and processed, how long it is retained, and what happens to it if the vendor relationship ends. These are not legal boilerplate to skim past during procurement - pipeline network data is sensitive infrastructure information regardless of which vendor is handling it, and the answers to these questions determine real operational and security risk.
+
+## Why pipeline inspection data deserves specific scrutiny
+
+A pipeline integrity dataset is not generic business data. It typically includes exact geolocation of infrastructure and known vulnerabilities, historical patterns of where a network has been weak, and - depending on the technology - imagery and sensor readings covering physical assets that are, in many jurisdictions, formally classified as critical infrastructure. That combination of specificity and sensitivity is why data governance deserves the same rigour in a technology evaluation as the technical capability itself, not an afterthought handled at the contract-signing stage.
+
+## Question one: who owns the data?
+
+Ownership should be defined explicitly, in writing, before a pilot begins - not assumed based on who is doing the collecting. A common and operator-favourable structure separates the operator's own network data (which the operator owns outright) from the vendor's underlying models and methodology (which the vendor retains rights to), with clear rules for anything in between, such as aggregated or anonymised insights the vendor might want to use across customers. Vague or unaddressed ownership terms are a red flag, not a neutral gap - they usually resolve in the vendor's favour by default under general contract law once a dispute arises.
+
+## Question two: where is the data stored and processed?
+
+Data residency is both a regulatory and a security question. Some jurisdictions have specific requirements or strong preferences around where critical-infrastructure-adjacent data is stored and processed; separately, an operator may have their own security posture that dictates acceptable hosting locations regardless of what regulation strictly requires. A vendor should be able to state plainly and specifically where data is stored and processed, not offer a vague "cloud-based, industry-standard" answer that avoids the actual question.
+
+## Question three: how long is data retained, and why?
+
+Retention should be tied to a stated purpose, not left open-ended. Data kept to support ongoing service delivery, historical trend analysis, or the operator's own audit trail has a clear justification; data retained indefinitely with no stated reason is unnecessary risk sitting on a vendor's systems. A mature vendor will have a specific retention policy they can describe, ideally with different retention periods for different data types depending on their purpose.
+
+## Question four: what happens when the relationship ends?
+
+This is the question most often skipped during procurement and most painful to discover the answer to after the fact. A well-structured agreement specifies, in advance, that the operator can export their own data in a usable format at the end of an engagement, and that the vendor commits to a defined data-deletion timeline once the relationship ends, subject to any legal retention obligations that override it. If a vendor cannot answer this clearly during evaluation, that is itself useful information about how they are likely to handle it later.
+
+## How we approach this at LeakSonic
+
+We treat these four questions as things to work through directly and specifically with every operator we engage with, rather than as generic terms published once and left unchanged - because the right answer genuinely depends on an operator's own regulatory context, security requirements, and internal policy. Our [privacy policy](/privacy) and [terms of use](/terms) describe our current, general approach to information handling on this website; the data-governance terms for an actual pipeline network engagement are scoped and agreed as part of that specific relationship, not assumed from boilerplate. If you are evaluating inspection technology - ours or anyone else's - asking these four questions early is one of the most useful procurement habits an integrity team can build.

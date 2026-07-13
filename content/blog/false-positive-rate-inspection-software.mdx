@@ -1,0 +1,47 @@
+---
+title: 'What is a false positive rate, and why it decides whether inspection software gets used'
+date: '2026-07-06'
+lastUpdated: '2026-07-08'
+author: 'LeakSonic Research'
+category: 'technical'
+summary: 'A false positive rate is the proportion of an inspection or detection system’s alerts that turn out, on investigation, not to reflect a real issue - and in practice it is a more decisive factor in whether engineers actually adopt a system than raw detection sensitivity is. A highly sensitive detector that also floods engineers with false alarms gets ignored within a few cycles, which is why a workable inspection system has to be judged on the balance between catching real issues and not wasting an engineer’s limited time and trust.'
+tags:
+  [
+    'false positive rate',
+    'detection accuracy',
+    'anomaly detection',
+    'inspection software adoption',
+    'precision recall',
+  ]
+faqs:
+  - question: 'What counts as a false positive in pipeline inspection?'
+    answer: 'A false positive is an alert or flagged anomaly that, once an engineer investigates it on the ground or through further data review, turns out not to reflect a genuine integrity issue - for example, a thermal anomaly caused by a shadow or a wet patch rather than a leak, or a vegetation-stress flag caused by drought rather than gas migration. False positives are distinct from false negatives, where a real issue exists but the system fails to flag it at all - the two error types trade off against each other and both matter, but for very different reasons.'
+  - question: 'Why do engineers stop trusting systems with high false positive rates?'
+    answer: 'Every false positive an engineer investigates and finds to be nothing costs real time and, cumulatively, erodes confidence in the system’s judgement. After enough false alarms, the rational response is to start deprioritising or ignoring the system’s flags altogether - which defeats the purpose of the system even if its underlying sensitivity to real issues remains high. Adoption, not raw sensitivity, is usually the practical bottleneck for inspection technology in the field.'
+  - question: 'Can you reduce false positives without missing real issues?'
+    answer: 'The most reliable way is requiring agreement across independent, uncorrelated signals rather than trusting any single sensor. A single thermal hotspot or a single stressed patch of vegetation each have many possible causes unrelated to a genuine leak; when two or more independent signal types agree on the same location, the probability that both are wrong for unrelated reasons is much lower than either being wrong alone. This is the core logic behind multi-signal fusion as a false-positive-reduction strategy, distinct from simply raising a single sensor’s detection threshold, which reduces false positives only by also missing more real ones.'
+  - question: 'What is the relationship between false positive rate and detection sensitivity?'
+    answer: 'They are in direct tension, often described in terms of precision (how many flagged items are real) and recall (how many real items get flagged). Turning up a detector’s sensitivity to catch more real issues (higher recall) will, almost always, also increase the number of false alarms (lower precision), and turning sensitivity down to reduce false alarms will cause the system to miss more real issues. There is no setting that maximises both simultaneously with a single signal; the practical solution is to increase the information available - through multiple corroborating signals - rather than to keep adjusting the threshold of one.'
+---
+
+A false positive rate is the proportion of an inspection or detection system's alerts that turn out, on investigation, not to reflect a real issue - and in practice it is a more decisive factor in whether engineers actually adopt a system than raw detection sensitivity is. This is a less intuitive point than it sounds: a highly sensitive system that also floods engineers with false alarms typically gets ignored within a few inspection cycles, no matter how technically impressive its underlying detection capability is. Understanding false positive rate, and what actually reduces it, matters more to whether an inspection technology succeeds in the field than almost any other single metric.
+
+## What exactly is a false positive, concretely?
+
+In pipeline inspection, a false positive is any alert - a thermal anomaly, a gas reading, a vegetation-stress flag, a change-detection alert - that an engineer investigates, whether in the field or through further review, and finds does not correspond to a genuine integrity issue. A thermal hotspot caused by a shadow, a patch of vegetation stress caused by drought rather than gas migration, or a change-detection alert triggered by positioning drift rather than real ground change are all false positives. Each one costs an engineer real time to check, and that cost compounds across a network with hundreds of flagged locations per inspection cycle.
+
+## Why does false positive rate matter more than raw sensitivity?
+
+Consider two hypothetical systems. System A catches ninety-five percent of real leaks but also generates a false alarm for one in every twenty locations it examines. System B catches eighty percent of real leaks but only false-alarms on one in every five hundred locations. On a network of several thousand segments, System A will bury engineers in false alarms - enough that, after a few cycles of investigating dead ends, engineers begin deprioritising or outright ignoring its flags, at which point its higher raw sensitivity is irrelevant because nobody is acting on its output. System B, despite catching fewer real leaks per cycle in principle, is far more likely to actually get used consistently, because every flag an engineer investigates is more likely to be worth their time. Adoption, not theoretical sensitivity, is usually the practical bottleneck for inspection technology - a system nobody trusts enough to act on has an effective real-world detection rate of zero, regardless of what it detects on paper.
+
+## The precision-recall trade-off
+
+This tension has a formal name in detection theory: precision (what fraction of flagged items are real) versus recall (what fraction of real items get flagged). Turning up a single detector's sensitivity threshold to catch more real issues almost always increases false alarms and lowers precision; turning sensitivity down to reduce false alarms causes the system to miss more real issues and lowers recall. Adjusting a single sensor's threshold cannot escape this trade-off - there is no setting that maximises both simultaneously, because the single sensor simply does not carry enough information to distinguish every real case from every false one.
+
+## How does multi-signal fusion actually reduce false positives without sacrificing recall?
+
+The way past the single-sensor precision-recall trade-off is not to keep tuning one signal's threshold, but to add independent, uncorrelated signals and require agreement between them before raising confidence. A single thermal hotspot has many possible innocent explanations - shadow, moisture, material difference. A single vegetation-stress reading has many possible innocent explanations - drought, disease, soil variation. But if a thermal anomaly and a vegetation-stress anomaly and a gas reading all coincide at the same location, the probability that all three are independently wrong for unrelated reasons is much lower than the probability that any one of them is wrong alone. This is the practical, mathematical justification for multi-signal fusion as a design principle, distinct from simply averaging or stacking signals into one model naively - agreement between genuinely independent signals is what actually buys down the false positive rate without also burying real detections.
+
+## Why any inspection technology vendor should be asked about this directly
+
+A vendor that cannot discuss their system's false positive rate, or that presents only a sensitivity or detection-rate figure without the corresponding false-alarm cost, is giving an incomplete picture - deliberately or not. A credible answer acknowledges that false positives happen, explains what specifically is done to reduce them (independent signal corroboration, change-detection relative to a positionally-aligned baseline, evidence attached to every flag so an engineer can quickly judge it), and treats the false positive rate as a metric worth measuring and reporting on, not a weakness to be hidden. Asking directly about false positive rate, and how a system reduces it, is one of the sharpest questions a skeptical integrity engineer can put to any inspection technology claim.

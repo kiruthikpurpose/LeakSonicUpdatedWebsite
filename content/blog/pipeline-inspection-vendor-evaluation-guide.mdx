@@ -1,0 +1,59 @@
+---
+title: 'Evaluating a pipeline inspection technology vendor: the questions that actually separate real capability from a demo'
+date: '2026-07-13'
+lastUpdated: '2026-07-13'
+author: 'LeakSonic Research'
+category: 'technical'
+summary: 'A polished demo tells an operator very little about whether a pipeline inspection technology vendor will actually perform on a real network under real conditions. A more useful evaluation focuses on validation methodology, false positive and false negative rates, data governance posture, integration with existing systems, and how honestly the vendor represents its own current limitations.'
+tags:
+  [
+    'pipeline inspection vendor evaluation',
+    'inspection technology procurement',
+    'pipeline integrity software selection',
+    'vendor due diligence',
+  ]
+faqs:
+  - question: 'Why is a product demo a poor basis for evaluating pipeline inspection technology?'
+    answer: 'A demo is, by construction, usually built around a curated dataset and favourable conditions - it demonstrates that a system can work well in the best case, which tells an evaluator very little about how it performs on their own network''s actual data quality, terrain diversity, and edge cases. A more informative evaluation asks for performance data (particularly false positive and false negative rates) on a validation dataset the vendor did not hand-pick, or ideally on a limited pilot using the operator''s own data.'
+  - question: 'What questions should an operator ask about a vendor''s validation methodology?'
+    answer: 'Useful questions include: what specific claims has the vendor tested, and against what independent ground truth; what is the measured false positive and false negative rate, and how was it measured; is the validation methodology and its results published or otherwise available for scrutiny; and does a human remain in the decision loop, or does the vendor claim autonomous decision-making. Vendors who cannot answer these concretely, or who answer only with an aggregate accuracy percentage, warrant closer scrutiny.'
+  - question: 'How important is integration with existing systems in vendor evaluation?'
+    answer: 'Very important, and frequently underweighted. A technically excellent inspection system that cannot feed its findings into an operator''s existing risk-management, reporting, and compliance workflows creates a new data silo rather than reducing manual work - the operator ends up doing extra work to reconcile the new system''s output with everything else, which can offset or exceed the time the tool was meant to save. Evaluating integration compatibility should happen early, not as an afterthought after a technical proof-of-concept.'
+  - question: 'What data governance questions should be part of vendor evaluation?'
+    answer: 'Pipeline network coordinates, inspection findings, and integrity data are commercially and often security-sensitive. Operators should clarify data residency, access control, retention policy, and exactly what the vendor is and is not permitted to do with the operator''s data - including whether findings or aggregated data might be used in the vendor''s own marketing, research, or product development - before a pilot begins, not after.'
+---
+
+Evaluating a pipeline inspection technology vendor is a genuinely difficult procurement problem, precisely because the thing that matters most - whether the system actually works reliably on your network, under your conditions - is exactly what a sales demo is least equipped to show honestly.
+
+## Why demos are structurally misleading
+
+A vendor demo is, almost by definition, built to showcase the system performing well - typically on a curated dataset, chosen because it demonstrates the capability clearly, under conditions favourable to a clean result. This isn't necessarily dishonest, but it is structurally uninformative about how the same system performs on an unfamiliar network with its own terrain, coating history, data quality, and edge cases. An operator evaluating technology based primarily on demo performance is evaluating the vendor's best case, not their own expected case.
+
+<Definition term="Validation dataset">
+  A validation dataset is a set of data used to test a system's performance that was not used to
+  develop or tune the system itself, ideally with independently verified ground truth about what
+  the correct answer should have been for each case. Performance measured on a genuine, independent
+  validation dataset is far more informative than performance measured on data the vendor selected
+  or had access to while building the system - the latter is prone to look better than real-world
+  performance will actually be.
+</Definition>
+
+## The questions that actually matter
+
+A more rigorous evaluation focuses on a specific set of questions. What exact claims has the vendor tested, and against what independent ground truth - not a general accuracy percentage, but the actual false positive rate (how often flagged findings turn out not to be real issues) and false negative rate (how much real risk goes undetected)? Is that validation work published or otherwise available for independent scrutiny, or does the operator have to simply trust an assertion? Does a human remain firmly in the decision loop, with the system supporting rather than replacing engineering judgement? And critically: is the vendor honest and specific about what the system does not do, or does every capability question get answered with an enthusiastic yes?
+
+## Integration is not an afterthought
+
+A technically strong inspection system that cannot feed its output into an operator's existing risk-management, compliance reporting, and integrity data systems creates a new silo rather than removing manual work - someone still has to manually reconcile the new tool's findings with everything else the operator already tracks. This risk is frequently underweighted in technical evaluations that focus heavily on detection capability and pay less attention to workflow fit. Integration compatibility - what systems and data formats the vendor's output can actually feed - should be assessed early in the evaluation, not discovered as a problem after a technical proof-of-concept has already concluded.
+
+## Data governance questions to ask before piloting
+
+Pipeline network coordinates, inspection findings, and integrity data are commercially sensitive and, in many cases, security-sensitive information. Before any pilot begins, an operator should have clear answers on data residency (where the data is stored and processed), access control (who at the vendor can see the operator's specific data), retention policy (how long data is kept and what happens to it after the engagement ends), and explicitly what the vendor is and is not permitted to do with the data - including whether aggregated or anonymised findings might be used in the vendor's own marketing or product development without specific permission.
+
+## A useful evaluation checklist
+
+Concretely, a rigorous vendor evaluation for pipeline inspection technology should cover: measured false positive and false negative rates against an independent dataset, not a vendor-curated demo; a clear, honest statement of what the technology does not do; a defined integration path into existing risk and compliance systems; explicit data governance terms agreed before any data changes hands; and a pilot structured to generate real, operator-verifiable evidence rather than simply showcase the product. Vendors willing to be evaluated on these terms - rather than only on a polished demo - are signalling a materially different, more credible relationship with their own claims.
+
+## Related reading
+
+This connects directly to [what "AI-powered" actually means in inspection software](/blog/ai-decision-support-pipeline-integrity) and to [why false positive rate, not aggregate accuracy, is the number that matters](/blog/false-positive-rate-inspection-software).

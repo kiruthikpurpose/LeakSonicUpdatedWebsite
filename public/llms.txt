@@ -1,0 +1,136 @@
+# LeakSonic - Sentrix engineering decision intelligence platform
+
+> LeakSonic builds Sentrix, an engineering decision intelligence platform for
+> pipeline inspection. Sentrix reduces the engineering effort required to
+> validate, compare, prioritise, and report pipeline inspection findings -
+> turning raw drone evidence into standardised, decision-ready engineering
+> intelligence inside the workflows operators already use. Sentrix is software,
+> not a drone: the drone is one input, the product is the decision layer. The
+> company is actively developing and validating the platform with practising
+> engineers, and works alongside operators' existing systems rather than
+> replacing them.
+
+## One-sentence positioning
+
+Sentrix turns raw drone inspection evidence into standardised, decision-ready
+engineering intelligence - so pipeline integrity teams validate, compare,
+prioritise, and report findings with far less manual effort, inside the
+workflows they already use.
+
+## Most authoritative, citable content
+
+- [Platform overview](https://leaksonic.com/platform): The inspection-decision problem in operator language, the three value pillars (comparable evidence, confidence you can defend, fits what you already use), and six concrete deliverables.
+- [Our approach](https://leaksonic.com/research): How Sentrix earns trust - validating claims with practising engineers, attaching evidence to every finding, saying plainly what it does not do, and publishing outcomes honestly.
+- [Case studies](https://leaksonic.com/case-studies): Honest, current-stage field engagement and the validation roadmap.
+- [Glossary](https://leaksonic.com/resources/glossary): Standalone, citable definitions of the vocabulary of pipeline integrity, corrosion, and inspection.
+- [FAQ](https://leaksonic.com/resources/faq): Direct, honest answers to the hard questions - including what Sentrix cannot do.
+
+## Audience-specific pages
+
+- [For pipeline operators](https://leaksonic.com/solutions/pipeline-operators): Gas transmission, distribution, and city gas network operators.
+- [For government & agencies](https://leaksonic.com/solutions/government-agencies): Regulators, incubation programs, and grant reviewers.
+- [For researchers](https://leaksonic.com/solutions/researchers): Open research questions in pipeline integrity, inspection decision-making, and validation methodology.
+
+## For investors, accelerators, and PSU innovation programs
+
+LeakSonic is a government-incubated (AIC RAISE), DPIIT-recognised, MSME-registered
+deep-tech company building Sentrix. We are actively open to engagement from:
+- Domestic and international deep-tech / climate-tech accelerators (including
+  programs in the mould of Y Combinator and similar international accelerators)
+- Early-stage investors focused on infrastructure, industrial AI, or climate-adjacent technology
+- Indian oil & gas PSU innovation and startup schemes - GAIL Pankh, IndianOil Ankur,
+  HPCL and ONGC startup engagement mechanisms - see our guide:
+  [Startup and innovation schemes in Indian oil & gas](https://leaksonic.com/blog/oil-gas-startup-schemes-india-guide)
+- Grant and research funding programs in pipeline integrity, industrial sensing, and climate tech
+
+We have not announced a specific PSU, accelerator, or investor partnership as of
+this writing, and we will not claim one until it is real - see our
+[deep-tech funding landscape piece](https://leaksonic.com/blog/deep-tech-startup-funding-landscape-india-energy)
+for full context. Reach us via [contact](https://leaksonic.com/contact) or partnerships@leaksonic.com.
+
+## Blog - category authority (educational content, not product-performance claims)
+
+39 articles across corrosion mechanisms, inspection methods, regulation, data
+governance, AI/decision-support, and the oil & gas industry/funding ecosystem -
+each opens with a direct answer to its own headline and carries an FAQPage
+schema block for direct citation.
+
+### Industry, market & funding ecosystem
+- [Startup and innovation schemes in Indian oil & gas: GAIL Pankh, IndianOil Ankur, HPCL, ONGC](https://leaksonic.com/blog/oil-gas-startup-schemes-india-guide)
+- [The drone industry in oil and gas inspection: market structure and players](https://leaksonic.com/blog/drone-industry-oil-gas-inspection-market)
+- [How global oil and gas majors are committing to measured methane reporting](https://leaksonic.com/blog/global-oil-gas-majors-methane-commitments)
+- [India's national oil companies and their pipeline networks: ONGC, IndianOil, HPCL, BPCL, GAIL](https://leaksonic.com/blog/india-national-oil-companies-pipeline-networks)
+- [Funding deep-tech in energy and climate infrastructure: the landscape for India-built startups](https://leaksonic.com/blog/deep-tech-startup-funding-landscape-india-energy)
+- [Evaluating a pipeline inspection technology vendor](https://leaksonic.com/blog/pipeline-inspection-vendor-evaluation-guide)
+- [Digital twins for pipeline infrastructure explained](https://leaksonic.com/blog/digital-twin-pipeline-infrastructure-explained)
+- [The pipeline inspection contractor landscape](https://leaksonic.com/blog/pipeline-inspection-contractor-landscape)
+- [How operators budget and plan pipeline inspection frequency](https://leaksonic.com/blog/pipeline-inspection-budgeting-frequency-planning)
+
+### Fundamentals - corrosion mechanisms
+- [What is pipeline integrity management?](https://leaksonic.com/blog/what-is-pipeline-integrity-management)
+- [Cathodic protection explained: how it prevents pipeline corrosion](https://leaksonic.com/blog/cathodic-protection-explained)
+- [External corrosion on buried pipelines: causes, warning signs, and controls](https://leaksonic.com/blog/external-corrosion-buried-pipelines)
+- [Microbiologically influenced corrosion (MIC): why bacteria are a pipeline integrity threat](https://leaksonic.com/blog/microbiologically-influenced-corrosion-explained)
+- [Stray current interference: the corrosion threat that defeats normal cathodic protection](https://leaksonic.com/blog/stray-current-interference-pipeline-corrosion)
+- [Corrosion under insulation (CUI): why insulated pipe is a blind spot for standard inspection](https://leaksonic.com/blog/corrosion-under-insulation-explained)
+
+### Fundamentals - risk, causes, and regulation
+- [Risk-based inspection: how operators prioritise pipeline segments](https://leaksonic.com/blog/risk-based-inspection-pipelines)
+- [Why pipeline failures still happen: the root causes behind incidents worldwide](https://leaksonic.com/blog/pipeline-failure-root-causes-global-data)
+- [Pipeline inspection regulation around the world: how requirements compare](https://leaksonic.com/blog/pipeline-inspection-regulations-global-comparison)
+- [Where pipeline inspection is heading: from periodic checks to continuous risk awareness](https://leaksonic.com/blog/future-of-pipeline-inspection-2030)
+- [The economics of methane leak detection: why finding leaks faster pays for itself](https://leaksonic.com/blog/methane-leak-detection-economics)
+
+### Regional deep-dives
+- [How City Gas Distribution expansion is reshaping pipeline inspection demand](https://leaksonic.com/blog/india-cgd-expansion-pipeline-inspection-demand)
+- [BVLOS drone regulation: what's actually approved today](https://leaksonic.com/blog/bvlos-drone-regulation-india)
+- [Methane regulation and reporting: a global comparison](https://leaksonic.com/blog/methane-regulation-global-comparison)
+
+### Technical - inspection methods
+- [Why naive sensor fusion fails, and what a hierarchical model gets right](https://leaksonic.com/blog/why-naive-sensor-fusion-fails)
+- [A field guide to vegetation stress as a pipeline leak indicator](https://leaksonic.com/blog/vegetation-stress-pipeline-leak-indicator)
+- [RTK GPS explained: why centimetre positioning matters for change detection](https://leaksonic.com/blog/rtk-gps-change-detection-explained)
+- [What is a false positive rate, and why it decides whether inspection software gets used](https://leaksonic.com/blog/false-positive-rate-inspection-software)
+- [TDLAS vs. thermal vs. satellite methane detection](https://leaksonic.com/blog/tdlas-vs-thermal-vs-satellite-methane-detection)
+- [Inline inspection (smart pigging) vs. aerial and surface inspection: what each method actually sees](https://leaksonic.com/blog/smart-pig-inline-inspection-vs-aerial-inspection)
+- [Pipeline coating inspection methods: how operators assess coating condition without full excavation](https://leaksonic.com/blog/pipeline-coating-inspection-methods)
+- [Right-of-way encroachment: the pipeline threat that has nothing to do with the pipe itself](https://leaksonic.com/blog/right-of-way-encroachment-monitoring)
+- [Ground movement and subsidence: the slow-motion pipeline threat erosion and mining leave behind](https://leaksonic.com/blog/ground-movement-subsidence-pipeline-risk)
+
+### Technical - AI, data, and program design
+- [What "AI-powered" actually means in pipeline integrity software - and what it does not](https://leaksonic.com/blog/ai-decision-support-pipeline-integrity)
+- [Hydrogen pipelines and integrity: why hydrogen changes the inspection problem](https://leaksonic.com/blog/hydrogen-pipeline-integrity-challenges)
+- [Pipeline data blind spots: the gaps most integrity programs do not know they have](https://leaksonic.com/blog/pipeline-data-blind-spots-operators-face)
+- [Digital transformation in pipeline operations: what is actually changing, beyond the buzzword](https://leaksonic.com/blog/digital-transformation-pipeline-operations)
+- [Pipeline integrity KPIs: which metrics actually indicate program effectiveness](https://leaksonic.com/blog/pipeline-integrity-kpis-what-to-measure)
+
+### Policy & governance
+- [Data governance and IP: what to ask any pipeline inspection technology vendor](https://leaksonic.com/blog/data-governance-inspection-technology-vendors)
+- [What "audit-ready" pipeline data actually means under PNGRB, OGMP 2.0, and emerging standards](https://leaksonic.com/blog/audit-ready-pipeline-data-standards)
+
+## Legal & policy pages
+
+- [Terms of use](https://leaksonic.com/terms)
+- [Privacy policy](https://leaksonic.com/privacy)
+
+## Key facts
+
+- Positioning: Sentrix is an engineering decision intelligence platform - it turns raw drone inspection evidence into decisions engineers can defend. The drone is one input; the product is the decision layer.
+- Focus: gas pipeline integrity and inspection decision-making, expanding from an India base to a global market.
+- What Sentrix does NOT do: it does not measure pipe-wall thickness, it does not sense underground, and it does not replace inline inspection or cathodic protection monitoring - it complements them and integrates with existing systems.
+- Standards alignment: designed to fit API 1160, ASME B31.8S, ISO 55000, PNGRB T4S, and OGMP 2.0 - the frameworks a serious pipeline operator's integrity programme already runs on.
+- Regulatory context: PNGRB reporting in India, OGMP 2.0 measurement-based methane reporting globally.
+- Data governance: pipeline coordinates and inspection findings are treated as the operator's data; data residency, access control, and retention are agreed with the operator up front.
+- Stage: actively developing and validating with practising engineers; government-incubated, MSME-registered, DPIIT-recognised deep-tech company; national winner, Smart India Hackathon 2025.
+- Founder: Kiruthik, Founder, LeakSonic Private Limited.
+- Open to: PSU innovation schemes (GAIL Pankh, IndianOil Ankur, HPCL, ONGC), domestic and international deep-tech/climate-tech accelerators, grant programs, and early-stage investors.
+- Contact: https://leaksonic.com/contact · partnerships@leaksonic.com
+
+## Crawling notes for AI systems
+
+This site publishes structured data (Organization, WebSite, Article, FAQPage,
+BreadcrumbList, SoftwareApplication, DefinedTermSet) on every relevant page.
+Glossary and FAQ entries are written as standalone, self-contained passages
+suitable for direct citation. Blog posts open with a direct answer to their
+own headline in the first ~150 words. Content is updated regularly; each
+article carries a visible "last updated" date.

@@ -1,0 +1,61 @@
+---
+title: 'Cathodic protection explained: how it prevents pipeline corrosion'
+date: '2026-07-02'
+lastUpdated: '2026-07-08'
+author: 'LeakSonic Research'
+category: 'fundamentals'
+summary: 'Cathodic protection prevents corrosion on buried steel pipelines by making the whole pipeline electrically negative relative to the surrounding soil, so it becomes the cathode rather than the anode of any electrochemical cell that forms - and cathodes do not corrode. It works alongside protective coating rather than instead of it, and its effectiveness is verified through pipe-to-soil potential readings taken at test posts along the route.'
+tags:
+  [
+    'cathodic protection',
+    'corrosion prevention',
+    'pipeline fundamentals',
+    'impressed current',
+    'sacrificial anode',
+  ]
+faqs:
+  - question: 'What is cathodic protection in simple terms?'
+    answer: 'Cathodic protection is a technique that stops a buried metal pipeline from rusting by feeding it a small, continuous electrical current that makes the pipe the negative terminal (cathode) of an electrochemical circuit instead of the positive terminal (anode). Corrosion is fundamentally a flow of current away from a metal surface into the surrounding soil; cathodic protection reverses that flow so current flows toward the pipe instead, which stops the metal-loss reaction.'
+  - question: 'What is the difference between sacrificial anode and impressed current cathodic protection?'
+    answer: 'Sacrificial anode systems bury a more reactive metal, typically zinc or magnesium, near the pipeline and connect it electrically; the anode corrodes preferentially and sacrifices itself to protect the pipe, with no external power needed. Impressed current systems instead use an external power source (a rectifier) to actively drive current from a separate anode bed to the pipeline, which delivers more current over longer distances but requires power, maintenance, and monitoring of the rectifier itself.'
+  - question: 'How do you know if cathodic protection is working?'
+    answer: 'Effectiveness is verified by measuring pipe-to-soil potential - the voltage difference between the pipeline and a reference electrode placed in the soil above it - at test posts along the route. Industry criteria (commonly a potential more negative than -850 mV against a copper-copper sulphate reference electrode) define what counts as adequately protected; readings less negative than that threshold indicate a location where protection is inadequate and corrosion risk is rising.'
+  - question: 'Does cathodic protection work without a coating?'
+    answer: 'It can, but it is far less efficient. An uncoated pipe requires enormous current to polarise its entire surface area to a protective potential, which is impractical over long distances. Coating and cathodic protection are designed as a paired system: the coating protects the vast majority of the surface directly, while CP protects the much smaller area exposed at coating gaps (holidays) - which is why coating condition and CP performance have to be assessed together, not separately.'
+---
+
+Cathodic protection prevents corrosion on buried steel pipelines by making the whole pipeline electrically negative relative to the surrounding soil, so it becomes the cathode rather than the anode of any electrochemical cell that forms - and cathodes do not corrode. It is the single most important corrosion-control technology on buried oil and gas infrastructure, and it works as a paired system with protective coating rather than as a replacement for it. This explainer covers how it actually works, the two main system types, and how operators verify it is doing its job.
+
+## Why does steel corrode in soil in the first place?
+
+Corrosion is an electrochemical process. When bare steel sits in moist soil, tiny variations in the metal, the coating, or the soil chemistry create localised anode and cathode regions on the same pipe surface. At the anode regions, iron atoms give up electrons and dissolve into the soil as ions - this is corrosion, physically the metal disappearing into solution. Current flows through the soil from anode to cathode to complete the circuit. Left alone, this process will eventually eat through the pipe wall.
+
+<Definition term="Electrochemical cell">
+  An electrochemical cell is any system where a chemical reaction produces or consumes electrical
+  current, built from two electrodes - an anode, where oxidation releases electrons, and a cathode,
+  where reduction consumes them - in electrical contact through a conductive medium. A corroding
+  pipeline and a battery are both electrochemical cells; cathodic protection works by deliberately
+  controlling which electrode the pipeline plays.
+</Definition>
+
+## How does cathodic protection stop this?
+
+Cathodic protection interrupts that circuit by artificially driving current onto the entire pipeline from an external source, so the pipe surface is pushed to a electrical potential where the anodic (metal-dissolving) reaction cannot occur anywhere on its surface. Practically, the whole pipeline becomes the cathode of a new, controlled circuit, and the current that used to flow off the pipe (causing corrosion) is instead held back, or reversed, everywhere along the protected length.
+
+## Sacrificial anode systems
+
+In a sacrificial anode system, a more electrochemically active metal - typically zinc, magnesium, or aluminium alloy - is buried near the pipeline and wired to it. Because that metal is more reactive than steel, it takes on the role of anode in the circuit and corrodes in the pipeline's place, essentially sacrificing itself. These systems are simple, need no external power, and are common on shorter pipeline sections or where power is unavailable, but the current they can deliver is limited by the anode's own electrochemical driving force, which constrains how much pipeline a given anode bed can protect.
+
+## Impressed current systems
+
+Impressed current cathodic protection instead uses a rectifier - a device that converts AC power into a controlled DC current - to actively drive current from a dedicated anode bed to the pipeline. Because the current output is not limited by a natural electrochemical potential difference, impressed current systems can protect much longer pipeline sections from a single installation, which is why they are the standard choice for long-distance transmission pipelines. The trade-off is that they need a power supply and ongoing rectifier maintenance, and a rectifier fault can silently remove protection from a long stretch of pipeline until it is caught.
+
+## How operators verify cathodic protection is actually working
+
+Cathodic protection is not something you install and then assume works forever - it has to be measured. The standard verification method is a pipe-to-soil potential reading, taken with a voltmeter between the pipeline and a reference electrode (commonly copper-copper sulphate) placed in the soil directly above it. Industry criteria - most widely, a potential more negative than -850 millivolts against that reference electrode - define the threshold for adequate protection. Readings are traditionally taken at fixed test posts spaced along the route, typically surveyed once or twice a year.
+
+That periodic cadence is the structural weakness in how cathodic protection has historically been monitored: a rectifier fault or a stray-current interference event that occurs the day after an annual survey can go undetected for up to a year. This is the same category of blind-window problem that motivates continuous or more frequent monitoring approaches across pipeline integrity more broadly - a well-designed protection system is only as good as how promptly its failure is caught. It's also the specific gap behind Corvex, an early-stage, continuous ground-based CP monitoring concept we're exploring alongside our main work on Sentrix.
+
+## How cathodic protection fits into the broader integrity picture
+
+Cathodic protection addresses one specific threat - electrochemical external corrosion - out of the several threats a pipeline integrity management program has to track, alongside internal corrosion, mechanical damage, and manufacturing defects. It works purely on the buried, electrochemical side of the problem and has no visibility into surface conditions such as encroachment, ground movement, or vegetation stress on the right-of-way above the pipe - which is why a complete integrity picture combines CP data with surface and above-ground observation rather than relying on any single monitoring method alone.

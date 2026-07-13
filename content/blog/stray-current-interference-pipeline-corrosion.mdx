@@ -1,0 +1,59 @@
+---
+title: 'Stray current interference: the corrosion threat that defeats normal cathodic protection'
+date: '2026-07-09'
+lastUpdated: '2026-07-09'
+author: 'LeakSonic Research'
+category: 'fundamentals'
+summary: 'Stray current interference occurs when electrical current from an external source - DC transit systems, HVDC transmission, welding equipment, or another cathodic protection system - enters a pipeline and then discharges from it at an unrelated location, causing severe, highly localised corrosion at the discharge point. It is dangerous precisely because it can overwhelm a pipeline''s own cathodic protection system and cause rapid metal loss at a location the CP design never accounted for.'
+tags:
+  [
+    'stray current',
+    'AC interference',
+    'cathodic protection',
+    'corrosion mechanisms',
+    'pipeline integrity',
+  ]
+faqs:
+  - question: 'What is stray current interference on a pipeline?'
+    answer: 'Stray current interference happens when electrical current from a source unrelated to the pipeline - such as a DC-powered rail or transit system, HVDC transmission infrastructure, welding operations, or a neighbouring cathodic protection system - finds a low-resistance path through the pipeline itself, entering it at one point and discharging at another. At the discharge point, the pipeline is acting as an anode, which causes rapid, highly localised corrosion.'
+  - question: 'Why is stray current corrosion often faster and more severe than ordinary corrosion?'
+    answer: 'The current levels involved in stray current interference, particularly from DC transit systems or HVDC infrastructure, can be far larger than the current a pipeline''s own cathodic protection system is designed to manage. Because the discharge is concentrated at specific points determined by soil resistivity and proximity rather than distributed evenly, metal loss at the discharge point can proceed dramatically faster than typical background corrosion rates - in documented cases, orders of magnitude faster.'
+  - question: 'Can a properly functioning cathodic protection system still suffer stray current damage?'
+    answer: 'Yes. Stray current interference is a distinct mechanism from the general corrosion that CP is designed to counter, and a CP system tuned correctly for background soil corrosion can be overwhelmed by an external current source it was never designed to account for. This is why stray current risk assessment is typically a separate study, particularly for pipelines that cross or run parallel to DC transit lines, HVDC corridors, or other pipelines with active CP systems.'
+  - question: 'How is stray current interference detected and managed?'
+    answer: 'Detection typically involves interference surveys that measure potential fluctuations correlated with the operation of a suspected current source (for example, checking whether pipe-to-soil potential swings correspond to transit system operating schedules), along with monitoring at crossing points with other buried infrastructure. Mitigation options include bonding the pipeline electrically to the interfering structure to provide a controlled current path, installing additional sacrificial anodes at discharge points, and, for AC interference specifically, grounding mats and gradient control systems.'
+---
+
+Stray current interference is a corrosion mechanism distinct from the general electrochemical corrosion that cathodic protection is designed to control, and it is one of the few corrosion threats capable of overwhelming a properly functioning CP system entirely. Understanding it separately matters because standard CP performance metrics can look completely normal while stray current damage is actively occurring elsewhere on the same pipeline.
+
+## How stray current gets onto a pipeline
+
+Buried steel pipelines are, electrically, low-resistance conductors running through the ground - which makes them an attractive unintended path for electrical current from unrelated sources nearby. DC-powered transit systems (trains, trams) are a classic source: return current intended to flow through rails can instead find a lower-resistance path through a nearby buried pipeline. HVDC transmission infrastructure, industrial welding operations, and even the cathodic protection systems of neighbouring pipelines can all inject current into a pipeline that was never designed to carry it.
+
+<Definition term="Interference current">
+  Interference current, in a cathodic protection context, refers to any electrical current
+  affecting a structure that originates from a source external to that structure's own protection
+  system. It is distinguished from the pipeline's intended CP current, which is deliberately
+  applied and controlled; interference current is unintended and, without specific mitigation, can
+  actively work against the pipeline's protection rather than supporting it.
+</Definition>
+
+## Why the discharge point corrodes so severely
+
+Current that enters a pipeline at one point has to leave it somewhere to complete its circuit back to its source. At the point where current discharges from the pipe back into the soil, the pipeline is momentarily acting as an anode - the same role that drives ordinary corrosion, but potentially carrying far more current than background electrochemical corrosion ever would. Because the discharge is concentrated at specific points (determined by soil resistivity, proximity to the interference source, and pipeline coating condition) rather than spread evenly, metal loss at that point can proceed at rates dramatically faster than typical corrosion - which is why stray current interference is associated with some of the fastest-documented pipeline wall loss of any single mechanism.
+
+## Why it can defeat a working CP system
+
+A pipeline's cathodic protection system is designed and sized around the expected background corrosion current for that pipeline in its specific soil environment. Stray current from an external source was never part of that design calculation, and its magnitude can substantially exceed what the CP system was sized to counteract. This means a CP system can be performing exactly as designed against ordinary electrochemical corrosion, and pipe-to-soil potential readings at routine test posts can look entirely normal, while a stray current discharge point elsewhere on the same pipeline is corroding rapidly and going undetected until the next targeted interference survey or a much later inline inspection run.
+
+## Detecting interference
+
+Because stray current is intermittent and tied to the operating pattern of its source, detection typically involves correlating pipe-to-soil potential fluctuations with the operating schedule of a suspected interfering structure - for example, checking whether potential swings track a transit system's service hours. Interference surveys are typically conducted at known crossing or proximity points with transit infrastructure, HVDC lines, or other pipelines, rather than uniformly across an entire network, because the risk is inherently tied to specific geographic proximity to a current source.
+
+## Mitigation approaches
+
+Standard mitigation includes electrically bonding the pipeline to the interfering structure through a controlled resistance bond, which gives the current a defined, monitored path rather than an uncontrolled one through the soil; installing additional sacrificial anodes at known or suspected discharge points to provide extra local protection; and, for AC-specific interference from high-voltage transmission lines, grounding mats and gradient control mitigation designed for that distinct failure mode.
+
+## Related reading
+
+Stray current interference is one of several mechanisms that can undermine the performance implied by [cathodic protection](/blog/cathodic-protection-explained) readings alone, which is part of why periodic point measurements need to be paired with broader corridor-level risk awareness.

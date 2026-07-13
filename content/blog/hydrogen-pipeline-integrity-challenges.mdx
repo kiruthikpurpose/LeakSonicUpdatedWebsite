@@ -1,0 +1,60 @@
+---
+title: 'Hydrogen pipelines and integrity: why hydrogen changes the inspection problem'
+date: '2026-07-09'
+lastUpdated: '2026-07-09'
+author: 'LeakSonic Research'
+category: 'technical'
+summary: 'Transporting hydrogen through pipelines - whether newly built or repurposed from natural gas service - introduces integrity challenges distinct from conventional gas transmission, most notably hydrogen embrittlement, a mechanism where hydrogen atoms diffuse into steel and reduce its ductility and fatigue resistance. As hydrogen blending and dedicated hydrogen infrastructure expand globally, inspection and integrity programs are adapting to account for a failure mode conventional natural gas pipelines were never designed around.'
+tags:
+  [
+    'hydrogen pipelines',
+    'hydrogen embrittlement',
+    'pipeline repurposing',
+    'energy transition',
+    'pipeline integrity',
+  ]
+faqs:
+  - question: 'What is hydrogen embrittlement and why does it matter for pipelines?'
+    answer: 'Hydrogen embrittlement is a process where hydrogen atoms diffuse into the crystal structure of steel and reduce its ductility and resistance to fatigue crack growth, making the material more susceptible to cracking under stress than the same steel would be in the absence of hydrogen. For pipelines, this matters because it can reduce the safety margin of pipe, welds, and fittings that were not specifically designed or qualified for hydrogen service, particularly at welds and areas of stress concentration.'
+  - question: 'Can existing natural gas pipelines be repurposed to carry hydrogen?'
+    answer: 'In many cases, yes, but not automatically - repurposing requires an engineering assessment of the specific steel grade, weld type, and operating conditions to determine whether hydrogen embrittlement risk is acceptable at the intended hydrogen concentration and pressure. Some existing pipelines are more suitable for repurposing than others depending on their steel specification and age, and blending hydrogen into existing natural gas streams at lower concentrations is generally considered lower-risk than converting a pipeline to pure hydrogen service.'
+  - question: 'Does inline inspection work the same way on hydrogen pipelines?'
+    answer: 'Inline inspection technology developed for natural gas pipelines is not automatically validated for hydrogen service, partly because hydrogen embrittlement can produce crack-like defects that behave differently from the metal-loss and cracking mechanisms ILI tools were originally calibrated against, and partly because ILI tool materials and electronics also have to be qualified for the hydrogen environment itself. This is an active area of technology qualification as hydrogen infrastructure scales.'
+  - question: 'What inspection considerations are specific to hydrogen pipelines?'
+    answer: 'Beyond adapting inline inspection for hydrogen-specific defect types, integrity programs for hydrogen pipelines place additional emphasis on weld inspection and fatigue assessment given hydrogen embrittlement''s particular effect on crack growth, and on leak detection sensitivity given that hydrogen is a smaller, more diffusive molecule than methane and can escape through smaller defects or fitting gaps that would fully contain natural gas.'
+---
+
+As hydrogen blending into existing gas networks and dedicated hydrogen pipeline infrastructure both expand as part of the broader energy transition, the pipeline integrity discipline is adapting to a failure mode that conventional natural gas transmission systems were never specifically designed around: hydrogen embrittlement.
+
+## What hydrogen embrittlement actually is
+
+Hydrogen embrittlement occurs when hydrogen atoms - small enough to diffuse directly into the crystal lattice structure of steel - accumulate within the metal and alter its mechanical behaviour, typically reducing ductility and, critically for pipelines under cyclic pressure loading, accelerating fatigue crack growth. This is distinct from corrosion: it does not remove metal from the pipe wall the way corrosion does, but it can make existing defects or areas of stress concentration - particularly welds - more prone to crack initiation and growth than the same steel would be carrying natural gas.
+
+<Definition term="Hydrogen embrittlement">
+  Hydrogen embrittlement is the degradation of a metal's mechanical properties, particularly
+  ductility and fatigue resistance, caused by the diffusion of hydrogen atoms into its crystal
+  structure. It is a well-understood phenomenon in materials science generally, but its practical
+  significance for pipeline integrity has grown specifically alongside the expansion of hydrogen
+  transport infrastructure, where steel that was qualified for natural gas service is now being
+  evaluated or repurposed for a hydrogen-containing product stream.
+</Definition>
+
+## Repurposing existing infrastructure: not automatic
+
+A significant share of near-term hydrogen transport capacity, globally, is expected to come from repurposing existing natural gas pipelines rather than building entirely new hydrogen-dedicated infrastructure - repurposing is typically far less capital-intensive than new construction. But repurposing is not a simple product swap: it requires an engineering assessment of the specific steel grade, weld procedures used in original construction, operating pressure, and cyclic loading pattern to determine whether hydrogen embrittlement risk at the intended hydrogen concentration is acceptable. Some pipeline steel specifications and weld types are meaningfully more resistant to hydrogen embrittlement than others, which means suitability for repurposing varies pipeline by pipeline rather than being a network-wide determination.
+
+## Why blending is generally lower-risk than pure hydrogen service
+
+Blending hydrogen into an existing natural gas stream at lower concentrations - a common near-term energy transition strategy - is generally considered to carry lower embrittlement risk than converting a pipeline to carry pure or high-concentration hydrogen, because embrittlement severity scales with hydrogen exposure. This is part of why many jurisdictions are approaching hydrogen blending as an incremental, concentration-limited step, with dedicated hydrogen infrastructure treated as a separate, more demanding engineering case.
+
+## Inspection technology has to adapt too
+
+Inline inspection tools - the magnetic flux leakage and ultrasonic technologies described in our [inline vs. aerial inspection comparison](/blog/smart-pig-inline-inspection-vs-aerial-inspection) - were developed and calibrated primarily against natural gas service conditions and the metal-loss and cracking signatures typical there. Hydrogen embrittlement can produce crack-like defects with different growth behaviour, and the ILI tools themselves - their materials, seals, and electronics - also need to be qualified as safe and functional in a hydrogen environment. Validating and adapting inline inspection technology for hydrogen service is an active area of industry work as hydrogen infrastructure scales, rather than a solved problem simply inherited from natural gas practice.
+
+## Leak detection sensitivity
+
+Hydrogen is a smaller and more diffusive molecule than methane, meaning it can escape through smaller defects, fitting gaps, and seal imperfections that would fully contain natural gas without measurable loss. This has direct implications for leak detection sensitivity requirements and for how seriously minor fitting or seal degradation needs to be treated on hydrogen infrastructure compared to equivalent conditions on a conventional gas pipeline.
+
+## Related reading
+
+Hydrogen embrittlement's effect on crack growth connects to the broader discussion of [why pipeline failures happen](/blog/pipeline-failure-root-causes-global-data), and inspection technology adaptation for hydrogen sits alongside the comparison of [inline vs. aerial and surface inspection methods](/blog/smart-pig-inline-inspection-vs-aerial-inspection).

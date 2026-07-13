@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Dark theme (default). Values are space-separated RGB triplets so Tailwind
+     can apply opacity modifiers (bg-accent/10 etc.) via rgb(var(..) / a). */
+  :root {
+    color-scheme: dark;
+    --color-base: 10 10 11;
+    --color-surface: 15 15 17;
+    --color-card: 20 20 23;
+    --color-elevated: 26 26 30;
+    --color-line: 38 38 43;
+    --color-line-strong: 51 51 58;
+
+    --color-accent: 196 31 43;
+    --color-accent-hover: 220 42 54;
+    --color-accent-muted: 122 22 32;
+    --color-accent-dim: 51 9 13;
+
+    --color-ink: 255 255 255;
+    --color-ink-body: 245 245 244;
+    --color-ink-secondary: 196 196 198;
+    --color-ink-muted: 138 138 144;
+    --color-ink-faint: 90 90 97;
+
+    --grid-line: 255 255 255;
+    --grid-line-opacity: 0.025;
+    --grain-opacity: 0.035;
+    --grain-blend: overlay;
+  }
+
+  /* Light theme override - toggled by adding `.light` to <html>. Every
+     existing bg-base / text-ink / border-line usage repaints automatically;
+     no component markup changes needed. */
+  :root.light {
+    color-scheme: light;
+    --color-base: 250 250 249;
+    --color-surface: 255 255 255;
+    --color-card: 255 255 255;
+    --color-elevated: 244 244 242;
+    --color-line: 226 226 222;
+    --color-line-strong: 205 205 200;
+
+    --color-accent: 196 31 43;
+    --color-accent-hover: 168 24 34;
+    --color-accent-muted: 250 226 227;
+    --color-accent-dim: 253 242 242;
+
+    --color-ink: 13 13 12;
+    --color-ink-body: 32 32 30;
+    --color-ink-secondary: 82 82 78;
+    --color-ink-muted: 122 122 116;
+    --color-ink-faint: 165 165 158;
+
+    --grid-line: 10 10 10;
+    --grid-line-opacity: 0.035;
+    --grain-opacity: 0.02;
+    --grain-blend: multiply;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  body {
+    @apply bg-base text-ink-body antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    text-rendering: optimizeLegibility;
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease;
+  }
+
+  ::selection {
+    background: rgb(var(--color-accent) / 0.32);
+    color: rgb(var(--color-ink));
+  }
+
+  /* Consistent focus ring for keyboard users */
+  :focus-visible {
+    outline: 2px solid rgb(var(--color-accent));
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply text-ink;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Thin scrollbar consistent with the active theme */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgb(var(--color-base));
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(var(--color-line));
+    border-radius: 5px;
+    border: 2px solid rgb(var(--color-base));
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(var(--color-line-strong));
+  }
+}
+
+@layer components {
+  /* Standard content container - widened so wide viewports don't leave large
+     unstyled margins either side of the copy. */
+  .container-content {
+    @apply relative mx-auto w-full max-w-content px-5 sm:px-6 lg:px-10 xl:px-14;
+  }
+
+  /* Small uppercase label - used for eyebrow labels, spec keys, coordinates */
+  .mono-label {
+    @apply font-sans text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-ink-muted;
+  }
+
+  /* Subtle 1px-bordered surface panel, squircle-radius */
+  .panel {
+    @apply rounded-squircle border border-line bg-card;
+  }
+
+  /* Hairline divider */
+  .hairline {
+    @apply h-px w-full bg-line;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Grid backdrop used sparingly on hero/section backgrounds - line colour
+     and opacity flip with the active theme via CSS custom properties. */
+  .bg-grid {
+    background-image:
+      linear-gradient(
+        to right,
+        rgb(var(--grid-line) / var(--grid-line-opacity)) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        rgb(var(--grid-line) / var(--grid-line-opacity)) 1px,
+        transparent 1px
+      );
+    background-size: 64px 64px;
+  }
+
+  /* Film-grain texture: a real, deliberate design technique (Stripe, Vercel,
+     Linear, Raycast all use it) that breaks up flat colour fields and is one
+     of the more effective, cheap ways to stop a dark UI from reading as a
+     sterile, machine-generated flat fill. Pure CSS/SVG, no image request. */
+  .bg-grain {
+    position: relative;
+  }
+  .bg-grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: var(--grain-opacity);
+    mix-blend-mode: var(--grain-blend);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+}

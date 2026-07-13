@@ -1,0 +1,46 @@
+---
+title: 'Why naive sensor fusion fails, and what a hierarchical model gets right'
+date: '2026-05-27'
+lastUpdated: '2026-06-30'
+author: 'LeakSonic Research'
+category: 'technical'
+summary: 'Naive sensor fusion - averaging or concatenating signals into one model as if they were interchangeable - fails because pipeline signals differ fundamentally in confidence, timescale, and failure mode. Thermal, gas, RGB, and satellite vegetation data are not noisy copies of one truth; they are different measurements of different things. A hierarchical model respects that structure: it fuses signals in stages, weights them by reliability and timescale, and carries evidence forward, which is what keeps false positives from overwhelming a real detection.'
+tags: ['sensor fusion', 'hierarchical model', 'change detection', 'machine learning', 'pipeline']
+faqs:
+  - question: 'What is naive sensor fusion?'
+    answer: 'Naive sensor fusion is combining multiple sensor inputs by simply averaging them, or concatenating them into a single flat feature vector for one model, as though every signal were an equally reliable measurement of the same underlying quantity. It ignores the differences in confidence, resolution, and timescale between signals, which is where it breaks down.'
+  - question: 'Why does averaging signals cause problems?'
+    answer: 'Because averaging lets a large number of weak, low-confidence signals swamp a small number of strong, high-confidence ones - or vice versa - without regard to which deserves trust. A continuous but coarse satellite reading and a sharp but rare gas reading carry very different evidential weight, and treating them as interchangeable discards exactly the information that makes fusion valuable.'
+  - question: 'What makes a hierarchical fusion model better?'
+    answer: 'A hierarchical model fuses signals in stages that respect their structure: fast high-confidence signals and slow low-confidence signals are combined into intermediate hypotheses, which a higher tier then ranks, contextualises with operational data, and thresholds. This staged approach preserves confidence information, handles differing timescales explicitly, and attaches evidence to each output rather than collapsing everything into one opaque score.'
+---
+
+Naive sensor fusion fails for a reason that is easy to state and easy to underestimate: the signals in a pipeline-monitoring system are not noisy copies of a single truth, and treating them as if they were throws away the information that makes fusing them worthwhile. Thermal, gas, RGB, and satellite vegetation data differ fundamentally in confidence per reading, in the timescale on which they update, and in how they fail. Averaging them, or concatenating them into one flat feature vector for a single model, ignores that structure. A hierarchical model instead fuses signals in stages, weights them by reliability and timescale, and carries evidence forward - which is precisely what keeps false positives from drowning a genuine detection.
+
+## What does "naive" fusion actually look like?
+
+The two most common naive approaches are averaging and early concatenation. Averaging combines signals into a single blended score - a tidy number that hides which input drove it. Early concatenation stacks all raw features into one long vector and hands it to a single classifier, letting the model "figure out" the relationships from data alone.
+
+Both feel principled and both quietly fail on real pipeline data. The core problem is that they assume the signals are commensurable - that a unit of thermal contrast, a unit of methane concentration, and a unit of vegetation-index change all carry comparable evidential weight. They do not. A gas reading during a flight is sharp and trustworthy but available only in that moment; a satellite vegetation index is continuous and free but coarse and easily confounded. Blend them naively and the abundant weak signal can swamp the rare strong one, or an outlier in one channel can drag the whole score.
+
+## Why do differing timescales break single-model fusion?
+
+Signals in this domain live on different clocks. Fast signals - thermal, gas, RGB - exist only when the drone is overhead, perhaps once per inspection cycle, but each reading is high-confidence. Slow signals - satellite vegetation stress, SAR surface change - update continuously and cheaply, but any single reading is low-confidence.
+
+A single flat model has no natural way to represent "high confidence but rare" versus "low confidence but constant." It sees a feature vector at one instant and cannot express that the satellite channel is a slowly-drifting prior while the gas channel is a sharp, momentary observation. The temporal structure that a human analyst uses intuitively - trusting a fresh direct reading, treating a slow index as background - is exactly what gets flattened away. The result is a model that is confidently wrong when the signals disagree, which in leak detection is the situation that matters most.
+
+## How does a hierarchical model respect the structure?
+
+A hierarchical model fuses in stages that mirror the structure of the problem. A first tier combines the fast and slow signals per pipeline segment into intermediate hypotheses - "this segment shows a change consistent with a surface anomaly" - while preserving how much each contributing signal should be trusted. A second tier then takes those hypotheses, adds operational context (SCADA pressure, cathodic-protection state, history), ranks them, applies thresholds calibrated to what an integrity team will tolerate, and attaches the supporting evidence to each output.
+
+The gains from this staging are concrete. First, confidence information survives: a detection backed by a direct gas reading and a corroborating change signal is ranked above one resting on a coarse index alone. Second, timescale is handled explicitly, because slow signals enter as priors that raise or lower attention rather than as equal votes. Third - and most important operationally - every output carries its evidence, so an engineer can see _why_ a segment was flagged instead of trusting an opaque blended score.
+
+## Isn't a big enough neural network supposed to learn all this?
+
+In principle, a sufficiently large model trained on enough data could learn some of this structure implicitly. In practice, pipeline integrity is a small-data, high-consequence domain: real labelled leaks are rare, the cost of a false negative is severe, and the cost of a flood of false positives is that engineers stop trusting the system entirely. In that regime, building known structure into the model - rather than hoping it is discovered from scarce data - is not a lack of ambition; it is sound engineering.
+
+Hierarchy also buys interpretability, which is not a luxury here. A regulator or a chief engineer will not act on a number they cannot interrogate. A staged model whose intermediate hypotheses and evidence are inspectable is far more deployable than a monolithic classifier that emits a single unexplained probability, however high its benchmark accuracy.
+
+## The takeaway
+
+The instinct to "just fuse everything and let the model sort it out" is understandable and, on this kind of data, wrong. The signals differ in confidence, timescale, and failure mode, and a fusion approach that ignores those differences discards the very information that justified combining them. A hierarchical model - fusing in stages, weighting by reliability, and carrying evidence forward - is not a more complicated way to do the same thing. It is the difference between a system an integrity team can trust and one they will quietly switch off.

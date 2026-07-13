@@ -1,0 +1,40 @@
+---
+title: 'RTK GPS explained: why centimetre positioning matters for change detection'
+date: '2026-07-05'
+lastUpdated: '2026-07-08'
+author: 'LeakSonic Research'
+category: 'technical'
+summary: 'RTK (Real-Time Kinematic) GPS resolves position to roughly one to three centimetres by using carrier-phase corrections from a nearby reference station, compared to the three-to-five-metre accuracy of standard consumer GPS. For pipeline change detection, that precision is not a nice-to-have - it is the specific technical requirement that determines whether a difference between two inspection flights reflects a real surface change or is simply positioning error, which is why any change-detection claim is only as credible as the positioning system underneath it.'
+tags: ['RTK GPS', 'NTRIP', 'change detection', 'drone positioning', 'geolocation accuracy']
+faqs:
+  - question: 'How accurate is standard GPS compared to RTK?'
+    answer: 'Standard consumer-grade GPS, the kind in a smartphone, typically resolves position to somewhere between three and five metres under good conditions, and can be considerably worse under tree cover or near tall structures. RTK GPS, by contrast, resolves position to roughly one to three centimetres by using carrier-phase corrections from a nearby reference station rather than relying on the raw satellite signal alone - a roughly two-hundred-fold improvement in precision.'
+  - question: 'What is the difference between RTK and PPK?'
+    answer: 'RTK (Real-Time Kinematic) applies correction data live during a flight, streamed from a base station or a network service via NTRIP, so the corrected position is available immediately. PPK (Post-Processed Kinematic) instead logs raw satellite data during the flight and applies correction data afterward in software, which removes any dependency on a live data link during flight but means corrected positions are not available until after the flight is processed. Both can achieve similar final accuracy; the choice is mainly about whether real-time positioning or field connectivity is the bigger constraint.'
+  - question: 'Why does drone photography need RTK if the images already show visible detail?'
+    answer: 'Visible detail in an image tells you what something looks like, but not precisely where it is in absolute, repeatable coordinates - and without that, you cannot reliably tell whether a feature in this month’s flight is in the same physical location as a feature in last month’s flight, or a few metres away and therefore a different thing. RTK provides the coordinate precision needed to align successive flights to the same physical ground truth, which is what makes comparing them meaningful rather than just visually plausible.'
+  - question: 'What is NTRIP and why is it needed alongside RTK?'
+    answer: 'NTRIP (Networked Transport of RTCM via Internet Protocol) is the standard protocol used to stream RTK correction data from a reference station network to a moving receiver (a rover) over the internet, typically via a cellular connection. Without NTRIP, an operator would need to set up and maintain their own physical base station within range of every survey site; NTRIP networks let a rover pull corrections from a shared network of permanent reference stations instead, which is far more practical for surveying dispersed pipeline routes.'
+---
+
+RTK GPS resolves position to roughly one to three centimetres by using carrier-phase corrections from a nearby reference station, compared to the three-to-five-metre accuracy of standard consumer GPS. For pipeline change detection specifically, that precision is not a nice-to-have feature - it is the specific technical requirement that determines whether a difference observed between two inspection flights reflects a real change on the ground or is simply positioning error. This explainer covers how RTK achieves that precision, how it differs from ordinary GPS and from PPK, and why it is foundational rather than optional for any credible change-detection claim.
+
+## Why does standard GPS fall short for this purpose?
+
+Standard GPS calculates position from the timing of signals received from satellites, but that timing is affected by delays as the signal passes through the atmosphere, by signal reflections off nearby surfaces, and by inherent limitations in the satellite clock and orbit data. These combined error sources typically leave consumer GPS accurate to somewhere between three and five metres. For most everyday uses - navigation, general mapping - that is entirely adequate. For detecting whether a specific patch of vegetation, a specific section of exposed pipe, or a specific coating anomaly has changed since a prior inspection, three to five metres of positional uncertainty can mean comparing two completely different physical locations while believing you are comparing the same one.
+
+## How does RTK correct for this?
+
+RTK works by placing a fixed reference station at a precisely known location, which continuously calculates the difference between its known position and the position the raw satellite signals suggest - which reveals the current atmospheric and signal-path error at that moment. That correction data is then transmitted to a moving receiver (the rover, in this case mounted on a drone) nearby, which applies the same correction to its own raw satellite readings, cancelling out the shared error sources. Because both the base and rover experience nearly identical atmospheric conditions when reasonably close together, this differential approach reduces position error from metres to centimetres.
+
+## RTK versus PPK: real-time versus post-processed
+
+RTK applies the correction live, during the flight, which means the drone's system knows its precise position in real time - useful for live navigation and immediate quality checks in the field. PPK (Post-Processed Kinematic) instead logs the raw satellite data during flight and applies correction data afterward, in software, once the flight is complete. PPK removes the dependency on a live, uninterrupted data connection during flight, which can matter in areas with unreliable cellular coverage, at the cost of not knowing final accuracy until after the flight is processed. Both methods can reach similar final precision; the choice between them is largely about field connectivity and workflow rather than achievable accuracy.
+
+## What is NTRIP, and why does it matter operationally?
+
+NTRIP (Networked Transport of RTCM via Internet Protocol) is the standard protocol for streaming RTK correction data from a reference station to a rover over the internet, typically via a cellular data connection. Rather than requiring every operator to set up and maintain their own physical base station within a few kilometres of every survey site - impractical across a dispersed pipeline network - NTRIP lets a rover pull corrections from a shared network of permanent reference stations covering a wide area. This is what makes RTK practical to deploy consistently across a long pipeline route rather than only at a handful of locations near a fixed base station.
+
+## Why this is the foundation, not a footnote, for change detection
+
+The entire premise of cycle-over-cycle change detection - the core capability that distinguishes a useful inspection system from one that just produces a new set of photos each cycle - depends on being able to say with confidence that two observations, taken months apart, refer to the same physical location. Without centimetre-level positioning, any apparent "change" between two flights is statistically indistinguishable from ordinary positioning drift, and a system built on that foundation cannot reliably tell an engineer what actually changed versus what simply looks different because the second flight photographed a slightly different spot. RTK positioning is, in this sense, the unglamorous prerequisite that everything else in a change-detection system is built on top of - it rarely gets discussed as exciting technology, but it is the part that determines whether the rest of the system's output can be trusted at all.

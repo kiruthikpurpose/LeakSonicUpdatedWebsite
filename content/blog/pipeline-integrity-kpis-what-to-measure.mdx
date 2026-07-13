@@ -1,0 +1,60 @@
+---
+title: 'Pipeline integrity KPIs: which metrics actually indicate program effectiveness'
+date: '2026-07-09'
+lastUpdated: '2026-07-09'
+author: 'LeakSonic Research'
+category: 'technical'
+summary: 'Many commonly tracked pipeline integrity metrics - number of inspections completed, kilometres surveyed, findings closed - measure activity rather than effectiveness, and can look strong even while real risk goes undetected. More meaningful indicators focus on detection-to-repair time, the proportion of the network with current data versus stale or absent data, and false positive and false negative rates for whatever detection methods are in use.'
+tags:
+  [
+    'pipeline integrity KPIs',
+    'performance metrics',
+    'inspection effectiveness',
+    'integrity management',
+    'risk management',
+  ]
+faqs:
+  - question: 'Why are activity-based metrics like inspections completed or kilometres surveyed misleading?'
+    answer: 'Activity-based metrics measure how much inspection work was performed, not whether that work actually reduced risk or caught the conditions that matter. A program can complete a high volume of inspections or survey extensive mileage while systematically missing the specific segments or threat categories where real risk is concentrated, particularly if inspection effort is distributed based on convenience or fixed schedules rather than actual risk. High activity numbers can create a false sense of program effectiveness that a more outcome-focused metric would not.'
+  - question: 'What is detection-to-repair time and why does it matter?'
+    answer: 'Detection-to-repair time measures the interval between when a condition becomes detectable by available methods and when it is actually remediated - encompassing both how quickly it was found after becoming detectable and how quickly it was addressed once found. This metric matters because, as covered in our piece on failure root causes, many incidents trace back to conditions that existed and were in principle detectable for a meaningful period before they were actually found or acted on - shortening this interval directly reduces the window during which a developing threat can progress toward failure.'
+  - question: 'How should an operator measure what proportion of their network has current data?'
+    answer: 'This requires mapping, for each segment of the network, when it was last assessed by each relevant inspection method and comparing that against how quickly the threats most relevant to that segment can plausibly progress - producing a coverage metric that reflects actual data currency relative to risk, rather than simply whether a segment has ever been inspected at some point in its history. A segment inspected five years ago with no update since should be flagged very differently depending on what threat categories are most relevant to it.'
+  - question: 'Why do false positive and false negative rates matter as KPIs for inspection technology specifically?'
+    answer: 'For any inspection method or system that flags findings for review, false positive rate determines how much of a reviewing engineer''s time is spent on findings that turn out not to be real issues, directly affecting whether the system saves or costs net engineering time. False negative rate determines how much real risk is going undetected despite the system reporting clean results. Both numbers, tracked and reported honestly, are far more informative about whether a system is actually working than an aggregate accuracy percentage alone.'
+---
+
+The metrics a pipeline integrity program chooses to track shape what the program actually optimises for - and many of the most commonly reported metrics measure activity rather than effectiveness, which can create a misleading picture of program health even when reported numbers look strong.
+
+## The activity-metric trap
+
+Number of inspections completed, total kilometres surveyed, and count of findings closed are all commonly reported integrity program metrics, and all three share the same structural weakness: they measure how much work was performed, not whether that work found and addressed the risk that actually matters. A program can report a high inspection count while concentrating that effort on easily accessible, low-risk segments and systematically under-inspecting harder-to-reach or genuinely higher-risk locations - the activity metric looks strong throughout, while real risk exposure remains unaddressed and effectively invisible to anyone reading only the summary numbers.
+
+<Definition term="Outcome metric">
+  An outcome metric measures the actual result a process is meant to achieve, as distinct from an
+  activity metric, which measures how much of the process was performed. In pipeline integrity,
+  an outcome metric might be "proportion of known high-risk segments with data current within the
+  last 12 months," while the corresponding activity metric - "number of inspections completed" -
+  can be high without necessarily improving that outcome at all, if the inspections performed were
+  not the ones addressing the highest-risk segments.
+</Definition>
+
+## Detection-to-repair time
+
+A more meaningful indicator is the interval between when a condition becomes detectable by whatever methods are available and when it is actually remediated - combining both how promptly it was found after becoming detectable, and how promptly it was addressed once found. This metric connects directly to the root-cause pattern explored in our piece on [why pipeline failures still happen](/blog/pipeline-failure-root-causes-global-data): many documented incidents trace back to a condition that existed and was, in principle, detectable for a meaningful period before it was actually found or acted upon. Shortening detection-to-repair time is a direct lever on exactly that gap, and it is a genuinely outcome-oriented metric in a way that "number of inspections completed" is not.
+
+## Data currency relative to risk, not just data existence
+
+Rather than simply tracking whether a segment has ever been inspected, a more useful metric maps, for each segment, when it was last assessed by each relevant method and compares that against how fast the specific threats most relevant to that segment can plausibly progress. A segment last surveyed five years ago should be flagged very differently depending on whether the dominant risk there is slow general corrosion or fast-developing encroachment risk near active construction - a single "last inspected" date, without that context, understates risk in some cases and overstates it in others.
+
+## False positive and false negative rate as core KPIs
+
+For any inspection method or system that flags findings for engineering review - which increasingly includes fusion-based, partially automated systems - two numbers matter more than an aggregate accuracy figure: false positive rate, which determines how much of a reviewing engineer's limited time is consumed by findings that turn out not to be genuine issues, and false negative rate, which determines how much real risk is going undetected despite a clean report. A system with an impressive-sounding overall accuracy figure can still have a false positive rate high enough to make it a net time cost rather than a net time saver for the engineers using it - see our related piece on [false positive rate in inspection software](/blog/false-positive-rate-inspection-software) for why this specific number deserves more scrutiny than aggregate accuracy claims typically receive.
+
+## Choosing metrics that reflect the program's actual job
+
+The throughline across all of these more meaningful metrics is that they measure outcomes tied to risk reduction and response speed, rather than volume of activity performed. A pipeline integrity program genuinely improving its risk posture over time should be able to show, and should be asked to show, that detection-to-repair intervals are shrinking, that data currency is improving specifically where risk is highest, and that the false positive and false negative rates of whatever detection methods it relies on are known, tracked, and trending in the right direction - not simply that more inspections were performed this year than last.
+
+## Related reading
+
+This connects directly to the outcome-focused framing in [risk-based inspection](/blog/risk-based-inspection-pipelines) and to the [audit-ready data standards](/blog/audit-ready-pipeline-data-standards) required to actually measure these KPIs credibly rather than just assert them.

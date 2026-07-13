@@ -1,0 +1,54 @@
+---
+title: 'TDLAS vs. thermal imaging vs. satellite methane detection: how they actually compare'
+date: '2026-03-04'
+lastUpdated: '2026-06-30'
+author: 'LeakSonic Research'
+category: 'fundamentals'
+summary: 'TDLAS gives selective, quantitative methane concentration along a laser path and is best for airborne and handheld confirmation; thermal imaging is fast and wide-area but indirect and easily confounded; satellite methane sensing (TROPOMI-class) is continuous and free but far too coarse to localise a pipeline leak. None is a complete answer alone - they operate at different resolutions, confidence levels, and timescales, which is exactly why serious systems fuse them rather than picking one.'
+tags: ['TDLAS', 'thermal imaging', 'satellite methane', 'TROPOMI', 'leak detection']
+faqs:
+  - question: 'Which method is best for detecting a pipeline methane leak?'
+    answer: 'There is no single best method - each answers a different question. TDLAS is best for selectively confirming and quantifying methane along a path; thermal imaging is best for fast, wide-area screening of surface anomalies; satellite sensing is best for continuous regional context. Effective detection combines their complementary strengths rather than relying on any one.'
+  - question: 'Can satellites detect leaks from individual pipelines?'
+    answer: 'Not at the segment level for most infrastructure. Instruments such as TROPOMI on Sentinel-5P map methane columns at roughly kilometre-scale resolution, which is excellent for identifying large regional sources and super-emitters but far too coarse to localise a specific leak on a distribution pipeline. Newer targeted satellites narrow this gap for large point sources, but ground and airborne sensing remain necessary for localisation.'
+  - question: 'Why is thermal imaging considered indirect for methane?'
+    answer: 'Because thermal cameras detect temperature contrast, not methane itself. Escaping gas can create a thermal signature through expansion cooling or by changing surface conditions, but so can shadows, moisture, vegetation, and material differences. Thermal is fast and wide-area, which makes it valuable for screening, but a thermal anomaly is a hypothesis to be corroborated, not a confirmed leak.'
+---
+
+TDLAS, thermal imaging, and satellite methane sensing are often discussed as if they were competitors for the same job. They are not. Each measures a different physical quantity, at a different spatial resolution, with a different confidence per reading, and on a different timescale. TDLAS gives selective, quantitative methane concentration along a laser path; thermal imaging gives fast, wide-area temperature contrast that is only indirectly linked to gas; satellite sensing gives continuous, free, but very coarse regional methane maps. Understanding how they differ is the first step to understanding why a serious detection system fuses them rather than choosing one.
+
+## How do the three methods compare at a glance?
+
+The clearest way to see the trade-offs is side by side. The table below summarises the properties that matter for pipeline work - what each method actually measures, how selective it is, its practical resolution, and where it fits.
+
+| Property               | TDLAS                                     | Thermal imaging              | Satellite (TROPOMI-class)        |
+| ---------------------- | ----------------------------------------- | ---------------------------- | -------------------------------- |
+| What it measures       | Methane concentration along a beam path   | Surface temperature contrast | Atmospheric methane column       |
+| Directness for methane | Direct and selective                      | Indirect (proxy)             | Direct but path-integrated       |
+| Selectivity            | High - tuned to a methane absorption line | Low - many non-gas causes    | Moderate - column, not source    |
+| Practical resolution   | Point / path (cm–m)                       | Wide-area (m)                | Coarse (≈ km)                    |
+| Update frequency       | During a survey only                      | During a survey only         | Continuous (daily-ish)           |
+| Cost profile           | Sensor + platform                         | Sensor + platform            | Free (public data)               |
+| Best role              | Confirm and quantify                      | Fast wide-area screening     | Regional context, super-emitters |
+
+## When is TDLAS the right tool?
+
+Tunable Diode Laser Absorption Spectroscopy works by tuning a laser to a wavelength that methane absorbs and measuring how much light is lost across the path between the sensor and a surface. Because it keys on a specific absorption line, it is highly selective for methane and largely immune to interference from other gases. That selectivity is its defining advantage: when a TDLAS reading rises, methane is genuinely present along the beam.
+
+Its limitation is geometric. TDLAS reports an integrated concentration along the path, so it confirms that methane exists between the sensor and the surface but does not, by itself, resolve exactly where along that path the source sits. In airborne pipeline work this makes it excellent for confirming and quantifying a suspected leak once you are looking in roughly the right place - but it is a confirmation-and-quantification instrument, not a wide-area search tool.
+
+## When does thermal imaging earn its place?
+
+Thermal imaging's strength is speed and coverage. A thermal camera on a drone can screen a wide swath of right-of-way quickly, flagging temperature anomalies that merit a closer look. Escaping gas can produce a thermal signature - expansion cooling at a release point, or altered surface moisture and temperature over a migration path - which is why thermal is a useful early filter.
+
+The catch is that thermal is indirect. A thermal camera measures temperature contrast, and many things other than methane produce contrast: shadows, damp ground, vegetation, buried objects, and material changes. A thermal hotspot is therefore best treated as a hypothesis. Used alone it generates false positives; used as a fast first pass that hands candidates to a selective sensor, it is genuinely valuable.
+
+## What can satellites realistically contribute?
+
+Instruments such as TROPOMI on the Sentinel-5P satellite map atmospheric methane columns globally, roughly daily, and the data is free under the Copernicus programme. For regional monitoring and for catching large super-emitters, this is transformative - a continuous, no-cost watch layer over enormous areas.
+
+But the resolution is coarse, on the order of kilometres per pixel, which is far too blunt to localise a leak on a specific distribution pipeline. Satellite methane data tells you a region is emitting more than expected; it cannot tell an integrity engineer which valve or which segment to inspect. Newer targeted satellites are narrowing the gap for large point sources, but for the fine-grained localisation pipeline integrity needs, satellite data functions as context and prior, not as the localiser.
+
+## So which one should you use?
+
+The honest answer is that the framing of the question is wrong. These are complementary layers, not substitutes. Satellite data provides a continuous, free regional prior; thermal provides fast wide-area screening; TDLAS provides selective confirmation and quantification. The engineering problem worth solving is not picking a winner but combining them so that each covers the others' blind spots - coarse-but-constant against sharp-but-rare, indirect-but-fast against direct-but-narrow. That is the premise behind multi-signal fusion, and it is why any vendor claiming a single sensor solves methane detection should be read skeptically.

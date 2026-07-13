@@ -1,0 +1,48 @@
+---
+title: 'Risk-based inspection: how operators prioritise pipeline segments'
+date: '2026-07-03'
+lastUpdated: '2026-07-08'
+author: 'LeakSonic Research'
+category: 'fundamentals'
+summary: 'Risk-based inspection ranks pipeline segments by combining the probability of a failure with the consequence if one occurred, so that inspection budget and effort are pointed at the segments carrying the most real risk rather than spread uniformly across an entire network. It replaces fixed-interval, walk-the-whole-line inspection with a structured, data-driven prioritisation that most regulators now expect for transmission pipelines and that operators increasingly need for growing distribution networks as well.'
+tags:
+  [
+    'risk-based inspection',
+    'pipeline prioritisation',
+    'integrity management',
+    'inspection planning',
+  ]
+faqs:
+  - question: 'What is risk-based inspection?'
+    answer: 'Risk-based inspection is a methodology that ranks pipeline segments for inspection priority by multiplying an estimated probability of failure by the consequence if that failure occurred, producing a risk score used to sequence inspection and maintenance work. It replaces uniform, calendar-driven inspection of an entire network with a targeted approach that spends the most inspection effort where risk is actually concentrated.'
+  - question: 'What factors go into a pipeline risk score?'
+    answer: 'Probability-of-failure inputs typically include pipe age, coating type and condition, cathodic protection history, soil corrosivity, wall thickness, and prior inspection findings. Consequence-of-failure inputs typically include population density along the route (class location), proximity to water bodies or sensitive environments, and the pipeline’s operating pressure and diameter. The two are combined, usually multiplicatively, into a single ranked risk score per segment.'
+  - question: 'How is risk-based inspection different from time-based inspection?'
+    answer: 'Time-based inspection assigns every segment the same inspection interval, typically driven by a regulatory maximum, regardless of its actual condition or context - a low-risk rural segment and a high-risk urban crossing get inspected on the same schedule. Risk-based inspection instead varies the interval and inspection intensity per segment according to its calculated risk, so high-risk segments are examined more often and with more rigorous methods, and low-risk segments are examined less frequently, within regulatory limits.'
+  - question: 'Does risk-based inspection replace regulatory inspection requirements?'
+    answer: 'No. Risk-based inspection operates within regulatory minimums, not instead of them - regulators typically set maximum allowable intervals and required methods for high consequence areas specifically. What risk-based inspection changes is how an operator allocates inspection effort above that regulatory floor, and how they justify and document the prioritisation logic behind their integrity management program.'
+---
+
+Risk-based inspection ranks pipeline segments by combining the probability of a failure with the consequence if one occurred, so that inspection budget and effort are pointed at the segments carrying the most real risk rather than spread uniformly across an entire network. For a pipeline network that can run into hundreds or thousands of kilometres, treating every segment identically is neither affordable nor sensible - risk-based inspection is the structured alternative that most transmission-pipeline regulators now expect, and that operators of growing distribution networks increasingly need as their own inspection capacity comes under pressure.
+
+## What problem does risk-based inspection actually solve?
+
+Before risk-based methodologies became standard, the typical inspection model was time-based: every segment of pipeline got inspected on the same fixed interval, usually driven by the maximum interval a regulator would allow. That approach treats a quiet rural segment with excellent coating and strong cathodic protection the same as a decades-old segment crossing a river near a populated area with a documented history of coating damage - even though the two carry wildly different real-world risk. Risk-based inspection exists to correct that mismatch: it directs more frequent, more rigorous inspection to the segments that actually warrant it, and allows lower-risk segments to be inspected less intensively, within whatever regulatory floor applies.
+
+## How is a risk score actually calculated?
+
+A risk score is generally the product of two components, evaluated separately for each pipeline segment.
+
+**Probability of failure** draws on the threats a segment faces: pipe age and material, coating type and its known degradation pattern, cathodic protection history and any documented gaps, soil corrosivity, wall thickness relative to design pressure, and findings from prior inspections such as in-line inspection runs or direct examinations. A segment with ageing coating, a history of inadequate CP readings, and aggressive soil chemistry scores higher on probability than a newer segment with strong, well-documented protection.
+
+**Consequence of failure** captures what happens if that segment does fail: class location (population density along the route), proximity to environmentally sensitive areas or drinking-water sources, and the pipeline's operating pressure and diameter, which determine how large a release could be. A segment running through a densely populated area scores far higher on consequence than an equivalent segment in open rural land, even if their probability of failure is identical.
+
+Multiplying these two components together - rather than looking at either alone - is what makes the method work: a high-probability, low-consequence segment and a low-probability, high-consequence segment can land at a similar priority level, which matches how a careful engineer would actually reason about the trade-off.
+
+## What does risk-based inspection change in practice?
+
+Once segments are ranked, the practical effects follow directly. High-risk segments get shorter inspection intervals, more rigorous methods (such as in-line inspection rather than indirect surveys), and faster response timelines when an anomaly is found. Lower-risk segments can be inspected less frequently or with lighter-touch methods, freeing up budget and field crews to concentrate where it matters. Over successive cycles, the ranking is also expected to update as new data comes in - a segment that scored as low-risk five years ago but has since accumulated coating defects or a documented CP gap should move up the list, not stay frozen at its original assessment.
+
+## Why does risk-based inspection depend on good underlying data?
+
+The entire method is only as good as the data feeding it. A risk score built on stale, incomplete, or poorly geolocated inspection history will misrank segments regardless of how sound the scoring formula is - which is a real, common failure mode in practice, since much of the underlying data (coating records, CP survey history, prior anomaly findings) is often scattered across paper records, disconnected systems, or institutional memory rather than a single structured, current source. Improving the underlying data quality and currency that feeds a risk model is frequently a bigger lever on inspection outcomes than refining the risk formula itself, and it is exactly the kind of unglamorous, foundational problem that determines whether a risk-based program is genuinely prioritising the right segments or just producing a well-organised list built on outdated inputs.
