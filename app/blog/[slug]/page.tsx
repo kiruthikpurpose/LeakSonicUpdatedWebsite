@@ -11,10 +11,19 @@ import { SectionLabel } from '@/components/ui/SectionLabel';
 import { QuickAnswer } from '@/components/blog/QuickAnswer';
 import { BlogCard } from '@/components/blog/BlogCard';
 import { BlogCover } from '@/components/diagrams/BlogCover';
+import { ReadingProgress } from '@/components/blog/ReadingProgress';
+import { TableOfContents } from '@/components/blog/TableOfContents';
 import { FaqBlock } from '@/components/ui/FaqBlock';
 import { mdxComponents } from '@/components/blog/mdxComponents';
 import JsonLd from '@/components/JsonLd';
-import { getPost, getPostSlugs, getRelatedPosts, formatDate, BLOG_CATEGORIES } from '@/lib/blog';
+import {
+  getPost,
+  getPostSlugs,
+  getRelatedPosts,
+  formatDate,
+  extractToc,
+  BLOG_CATEGORIES,
+} from '@/lib/blog';
 import { buildMetadata } from '@/lib/metadata';
 import { articleSchema, breadcrumbSchema, faqSchema } from '@/lib/schema';
 
@@ -47,6 +56,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const related = getRelatedPosts(post.slug, post.category);
   const category = BLOG_CATEGORIES.find((c) => c.id === post.category);
   const hasFaqs = (post.faqs?.length ?? 0) > 0;
+  const toc = extractToc(post.content);
 
   const crumbs = [
     { name: 'Home', path: '/' },
@@ -74,6 +84,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
   return (
     <>
       <JsonLd data={schemas} />
+      <ReadingProgress />
       <article className="bg-base">
         {/* Header */}
         <header className="border-b border-line bg-surface">
@@ -96,25 +107,36 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           </div>
         </header>
 
-        {/* Body */}
+        {/* Body - article column + sticky table of contents on large screens */}
         <div className="container-content py-14">
-          <div className="mx-auto max-w-4xl">
-            <QuickAnswer>{post.summary}</QuickAnswer>
+          <div className="mx-auto grid max-w-6xl grid-cols-1 gap-x-12 gap-y-10 lg:grid-cols-[minmax(0,1fr)_220px]">
+            {/* Table of contents - first in source for a11y, visually to the
+                right on desktop, hidden on mobile. */}
+            {toc.length >= 3 && (
+              <aside className="order-first hidden lg:order-last lg:block">
+                <div className="sticky top-24">
+                  <TableOfContents items={toc} />
+                </div>
+              </aside>
+            )}
 
-            <div className="mt-10">
-              <MDXRemote
-                source={post.content}
-                components={mdxComponents}
-                options={{
-                  mdxOptions: {
-                    remarkPlugins: [remarkGfm],
-                    rehypePlugins: [rehypeSlug],
-                  },
-                }}
-              />
-            </div>
+            <div className="min-w-0 max-w-3xl">
+              <QuickAnswer>{post.summary}</QuickAnswer>
 
-            {/* FAQ */}
+              <div className="mt-10">
+                <MDXRemote
+                  source={post.content}
+                  components={mdxComponents}
+                  options={{
+                    mdxOptions: {
+                      remarkPlugins: [remarkGfm],
+                      rehypePlugins: [rehypeSlug],
+                    },
+                  }}
+                />
+              </div>
+
+              {/* FAQ */}
             {hasFaqs && (
               <section className="mt-9">
                 <SectionLabel>Frequently asked</SectionLabel>
@@ -149,6 +171,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
               >
                 <ArrowLeft className="h-3.5 w-3.5" /> All posts
               </Link>
+            </div>
             </div>
           </div>
         </div>

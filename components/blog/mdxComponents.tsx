@@ -10,14 +10,52 @@ import { LeakDetectionSpectrum, PiggingFlow, DroneMarketLayers } from './InlineD
  * horizontally inside its own container on narrow screens.
  */
 export const mdxComponents: MDXComponents = {
-  h2: ({ className, ...props }) => (
+  // Headings carry the rehype-slug `id`. On hover, a subtle "#" anchor appears
+  // so a reader can grab a deep link to a section - pairs with the sidebar TOC.
+  h2: ({ className, id, children, ...props }) => (
     <h2
-      className={cn('mt-10 scroll-mt-24 text-h2 font-bold text-ink first:mt-0', className)}
+      id={id}
+      className={cn(
+        'group mt-12 scroll-mt-24 text-h2 font-bold text-ink first:mt-0',
+        className,
+      )}
       {...props}
-    />
+    >
+      {id ? (
+        <a href={`#${id}`} className="no-underline">
+          {children}
+          <span
+            aria-hidden
+            className="ml-2 text-accent opacity-0 transition-opacity group-hover:opacity-100"
+          >
+            #
+          </span>
+        </a>
+      ) : (
+        children
+      )}
+    </h2>
   ),
-  h3: ({ className, ...props }) => (
-    <h3 className={cn('mt-10 scroll-mt-24 text-h3 font-semibold text-ink', className)} {...props} />
+  h3: ({ className, id, children, ...props }) => (
+    <h3
+      id={id}
+      className={cn('group mt-10 scroll-mt-24 text-h3 font-semibold text-ink', className)}
+      {...props}
+    >
+      {id ? (
+        <a href={`#${id}`} className="no-underline">
+          {children}
+          <span
+            aria-hidden
+            className="ml-2 text-accent opacity-0 transition-opacity group-hover:opacity-100"
+          >
+            #
+          </span>
+        </a>
+      ) : (
+        children
+      )}
+    </h3>
   ),
   p: ({ className, ...props }) => (
     <p

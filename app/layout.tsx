@@ -5,6 +5,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import JsonLd from '@/components/JsonLd';
 import { MotionProvider } from '@/components/MotionProvider';
+import { ScrollToTop } from '@/components/ui/ScrollToTop';
 import { organizationSchema, websiteSchema } from '@/lib/schema';
 import { SITE } from '@/lib/site';
 
@@ -69,6 +70,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Navbar />
           <main id="main">{children}</main>
           <Footer />
+          <ScrollToTop />
         </MotionProvider>
       </body>
     </html>
