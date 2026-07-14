@@ -31,6 +31,7 @@ const CATEGORY_LABEL: Record<BlogCategoryId, string> = {
   fundamentals: 'FUNDAMENTALS',
   india: 'INDIA',
   technical: 'TECHNICAL',
+  industry: 'INDUSTRY & MARKET',
 };
 
 /** Atmospheric backdrop shared by every cover: horizon, depth, soft bokeh. */
@@ -219,6 +220,153 @@ function TechnicalMotif({ s }: { s: number }) {
   );
 }
 
+function IndustryMotif({ s }: { s: number }) {
+  // Rising columns with a trend line - market/ecosystem feel, same precision
+  // language as the other motifs (thin strokes, single accent).
+  const bars = Array.from({ length: 9 }).map((_, i) => {
+    const h = 30 + ((s >> i) % 7) * 14 + i * 9;
+    return { x: 110 + i * 46, h };
+  });
+  const trend = bars.map((b) => `${b.x + 12},${(238 - b.h - 16).toFixed(0)}`).join(' ');
+  return (
+    <g>
+      {bars.map((b, i) => (
+        <rect
+          key={b.x}
+          x={b.x}
+          y={238 - b.h}
+          width="24"
+          height={b.h}
+          rx="4"
+          fill={i === bars.length - 2 ? 'rgba(196,31,43,0.55)' : '#1D1D22'}
+          stroke={i === bars.length - 2 ? '#C41F2B' : '#33333A'}
+          strokeWidth="1"
+        />
+      ))}
+      <polyline points={trend} fill="none" stroke="#C41F2B" strokeWidth="1.5" opacity="0.7" />
+      <line x1="90" y1="238" x2="530" y2="238" stroke="#33333A" strokeWidth="1" />
+    </g>
+  );
+}
+
+function FundamentalsAltMotif({ s }: { s: number }) {
+  // Horizontal strata band - coating / steel / soil layers - a structurally
+  // different composition from the concentric cross-section, for variety.
+  const bandY = 90 + ((s >> 3) % 20);
+  return (
+    <g>
+      <rect x="80" y={bandY} width="440" height="16" fill="#1D1D22" stroke="#33333A" />
+      <rect x="80" y={bandY + 16} width="440" height="10" fill="#C41F2B" opacity="0.55" />
+      <rect x="80" y={bandY + 26} width="440" height="30" fill="#141417" stroke="#26262B" />
+      {Array.from({ length: 10 }).map((_, i) => (
+        <line
+          key={i}
+          x1={80 + i * 44}
+          y1={bandY - 14}
+          x2={80 + i * 44}
+          y2={bandY}
+          stroke="#33333A"
+          strokeWidth="1"
+        />
+      ))}
+      <circle cx={140 + ((s >> 2) % 320)} cy={bandY + 21} r="4" fill="#C41F2B" />
+    </g>
+  );
+}
+
+function IndiaAltMotif({ s }: { s: number }) {
+  // Skyline of authorised-area markers - a growth/build-out feel, distinct
+  // from the node-graph composition.
+  const bars = Array.from({ length: 11 }).map((_, i) => ({
+    x: 96 + i * 38,
+    h: 24 + ((s >> i) % 8) * 12,
+  }));
+  const peak = s % bars.length;
+  return (
+    <g>
+      <line x1="90" y1="230" x2="510" y2="230" stroke="#33333A" strokeWidth="1" />
+      {bars.map((b, i) => (
+        <rect
+          key={b.x}
+          x={b.x}
+          y={230 - b.h}
+          width="18"
+          height={b.h}
+          fill={i === peak ? '#C41F2B' : '#1D1D22'}
+          stroke={i === peak ? '#C41F2B' : '#33333A'}
+        />
+      ))}
+    </g>
+  );
+}
+
+function TechnicalAltMotif({ s }: { s: number }) {
+  // Radar/scan sweep with concentric range rings - a distinct instrumentation
+  // motif from the converging signal bands.
+  const cx = 300;
+  const cy = 160;
+  const angle = ((s % 360) * Math.PI) / 180;
+  return (
+    <g>
+      {[100, 76, 50].map((r) => (
+        <circle key={r} cx={cx} cy={cy} r={r} fill="none" stroke="#26262B" strokeWidth="1" />
+      ))}
+      <line
+        x1={cx}
+        y1={cy}
+        x2={cx + 100 * Math.cos(angle)}
+        y2={cy + 100 * Math.sin(angle)}
+        stroke="#C41F2B"
+        strokeWidth="1.5"
+        opacity="0.8"
+      />
+      <circle
+        cx={cx + 60 * Math.cos(angle - 0.6)}
+        cy={cy + 60 * Math.sin(angle - 0.6)}
+        r="4"
+        fill="#C41F2B"
+      />
+    </g>
+  );
+}
+
+function IndustryAltMotif({ s }: { s: number }) {
+  // Node-and-edge ecosystem map - distinct from the bar-chart composition,
+  // reads as "market/network" rather than "growth over time."
+  const nodes = Array.from({ length: 6 }).map((_, i) => ({
+    x: 140 + ((s >> (i * 2)) % 5) * 68,
+    y: 90 + ((s >> (i * 3)) % 3) * 55,
+  }));
+  return (
+    <g>
+      {nodes.map((n, i) =>
+        i > 0 ? (
+          <line
+            key={`e${i}`}
+            x1={nodes[0]!.x}
+            y1={nodes[0]!.y}
+            x2={n.x}
+            y2={n.y}
+            stroke="#33333A"
+            strokeWidth="1"
+          />
+        ) : null,
+      )}
+      {nodes.map((n, i) => (
+        <circle
+          key={i}
+          cx={n.x}
+          cy={n.y}
+          r={i === 0 ? 9 : 5}
+          fill={i === 0 ? '#C41F2B' : '#141417'}
+          stroke={i === 0 ? '#C41F2B' : '#4A4A52'}
+          strokeWidth="1.5"
+        />
+      ))}
+    </g>
+  );
+}
+
 export function BlogCover({
   slug,
   category,
@@ -240,9 +388,16 @@ export function BlogCover({
       >
         <Atmosphere id={id} s={s} />
 
-        {category === 'fundamentals' && <FundamentalsMotif s={s} />}
-        {category === 'india' && <IndiaMotif s={s} />}
-        {category === 'technical' && <TechnicalMotif s={s} />}
+        {/* Two structurally distinct compositions per category, chosen
+            deterministically by slug so variety doesn't come only from
+            per-slug parameter tweaks - eight looks total, not four. */}
+        {category === 'fundamentals' &&
+          (s % 2 === 0 ? <FundamentalsMotif s={s} /> : <FundamentalsAltMotif s={s} />)}
+        {category === 'india' && (s % 2 === 0 ? <IndiaMotif s={s} /> : <IndiaAltMotif s={s} />)}
+        {category === 'technical' &&
+          (s % 2 === 0 ? <TechnicalMotif s={s} /> : <TechnicalAltMotif s={s} />)}
+        {category === 'industry' &&
+          (s % 2 === 0 ? <IndustryMotif s={s} /> : <IndustryAltMotif s={s} />)}
 
         <rect width="600" height="300" fill={`url(#vignette-${id})`} />
 

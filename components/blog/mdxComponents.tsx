@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { MDXComponents } from 'mdx/types';
 import { cn } from '@/lib/cn';
 import { DefinitionBox } from './DefinitionBox';
+import { LeakDetectionSpectrum, PiggingFlow, DroneMarketLayers } from './InlineDiagrams';
 
 /**
  * Restyled MDX element mapping. Enterprise-dark prose: generous line-height,
@@ -99,4 +100,7 @@ export const mdxComponents: MDXComponents = {
     />
   ),
   Definition: DefinitionBox,
+  LeakDetectionSpectrum,
+  PiggingFlow,
+  DroneMarketLayers,
 };

@@ -10,12 +10,15 @@ export const SITE = {
   // Product category - Sentrix is a decision layer, not a drone or a sensor.
   category: 'Engineering Decision Intelligence Platform',
   // Positioning spine - reused verbatim across the site and in structured data.
+  // Covers the full range of oil and gas inspection applications we work
+  // across - pipeline corridors, refineries, terminals, and offshore
+  // platforms - not pipelines alone.
   positioning:
-    'Sentrix reduces the engineering effort required to validate, compare, prioritise, and report pipeline inspection findings - turning raw drone evidence into standardised, decision-ready engineering intelligence inside the workflows operators already use.',
+    'Sentrix reduces the engineering effort required to validate, compare, prioritise, and report inspection findings across oil and gas infrastructure - pipeline corridors, refineries, terminals, and offshore platforms - turning raw drone evidence into standardised, decision-ready engineering intelligence inside the workflows operators already use.',
   // Shorter form for meta descriptions and cards (~150 chars).
   shortPositioning:
-    'Sentrix turns raw drone inspection evidence into standardised, decision-ready engineering intelligence - inside the workflows pipeline operators already use.',
-  tagline: 'Engineering decision intelligence for pipeline inspection.',
+    'Sentrix turns raw drone inspection evidence into standardised, decision-ready engineering intelligence across oil and gas infrastructure - inside the workflows operators already use.',
+  tagline: 'Engineering decision intelligence for oil and gas inspection.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://leaksonic.com',
   // Contact routing
   email: 'contact@leaksonic.com',
@@ -47,19 +50,32 @@ export const SITE = {
   knowsAbout: [
     'Pipeline integrity management',
     'Gas pipeline inspection',
+    'Oil and gas pipeline inspection',
     'Engineering decision intelligence',
     'Drone-based pipeline inspection',
+    'Drone inspection for oil and gas',
+    'BVLOS drone operations',
     'Methane leak detection',
+    'Fugitive emissions monitoring',
     'Risk-based inspection',
     'Cathodic protection',
     'Pipeline corrosion',
+    'Corrosion under insulation',
     'Right-of-way encroachment monitoring',
     'Inspection data governance',
     'PNGRB integrity reporting',
     'OGMP 2.0 methane reporting',
     'Inline inspection',
+    'Pipeline pigging',
+    'Storage tank inspection',
+    'Offshore asset integrity',
+    'City gas distribution',
+    'LNG infrastructure',
+    'Hydrogen pipeline integrity',
     'Pipeline geohazards',
     'Change detection for infrastructure inspection',
+    'Sensor fusion for infrastructure monitoring',
+    'Industrial AI for asset integrity',
   ],
   // Industry standards and frameworks the platform is designed to align with -
   // the language a major operator's integrity department speaks. Standards
@@ -119,7 +135,7 @@ export const FOOTER_COLUMNS: { title: string; links: NavChild[] }[] = [
     title: 'Platform',
     links: [
       { label: 'Platform overview', href: '/platform' },
-      { label: 'Our approach', href: '/research' },
+      { label: 'Approach', href: '/research' },
       { label: 'Case studies', href: '/case-studies' },
     ],
   },

@@ -1,0 +1,65 @@
+---
+title: 'Gas leak detection methods: a complete overview from handheld sniffers to satellites'
+date: '2026-07-13'
+lastUpdated: '2026-07-13'
+author: 'LeakSonic Research'
+category: 'fundamentals'
+summary: 'Gas leak detection spans a spectrum of methods that trade off sensitivity, coverage, and cost: handheld and vehicle-mounted surveys detect small leaks precisely but cover ground slowly; fixed sensors watch one point continuously; aerial methods screen long corridors quickly at moderate sensitivity; and satellites cover everything but only see large emitters. No single method wins on all three axes - which is why serious leak detection programs are built as layered systems, with each layer directing the next.'
+tags:
+  [
+    'gas leak detection methods',
+    'natural gas leak detection',
+    'leak detection survey',
+    'methane detection technology',
+    'pipeline leak detection',
+  ]
+faqs:
+  - question: 'What are the main categories of gas leak detection?'
+    answer: 'Five broad categories cover the field: handheld and walking surveys (flame ionisation, laser-based detectors, soap testing at fittings), vehicle-mounted mobile surveys, fixed continuous sensors at facilities, aerial screening (drone- and aircraft-mounted optical gas imaging and laser absorption), and satellite-based detection for large emission sources. They differ primarily in the trade-off between sensitivity (smallest detectable leak), coverage rate (distance or area per day), and cost per unit covered.'
+  - question: 'Why is odorant added to natural gas if detection technology exists?'
+    answer: 'Odorisation - adding mercaptan-family compounds that give gas its characteristic smell - turns every person near a distribution network into a passive leak detector, which remains one of the most effective safety mechanisms for the small, near-consumer leaks that instrumented surveys visit only periodically. Public smell reports are a genuine detection layer in distribution networks; instrumented methods exist because odour is unreliable outdoors, at distance, underground, and for quantification.'
+  - question: 'What is the difference between leak detection and leak quantification?'
+    answer: 'Detection answers whether and roughly where a leak exists; quantification estimates how much gas is escaping, usually as a rate. The distinction has become commercially important because measurement-based reporting frameworks such as OGMP 2.0 increasingly require operators to report quantified emissions rather than counts of leaks found - so a method that can only flag presence, without supporting a defensible rate estimate, addresses safety but only part of the reporting obligation.'
+  - question: 'Which leak detection method is best?'
+    answer: 'None, in isolation - the methods occupy genuinely different points on the sensitivity/coverage/cost trade-off, and the effective pattern is layering: wide, cheap, frequent screening (satellite, aerial) to find candidate locations, followed by precise, slower methods (vehicle, walking survey) to confirm, localise, and quantify. The design question for an operator is not which method to buy but how the layers hand off to one another - and how the resulting evidence is kept organised and comparable.'
+---
+
+Ask how gas leaks are detected and you will get a different answer from a distribution technician, a transmission integrity engineer, and an emissions analyst - because gas leak detection is not one method but a spectrum, and every point on it trades sensitivity against coverage against cost.
+
+<LeakDetectionSpectrum />
+
+## The ground layer: handheld and walking surveys
+
+The oldest instrumented layer is a person with a detector walking the line or checking fittings: flame ionisation detectors, laser-based handheld units, and soap-bubble testing at joints. Walking surveys detect very small leaks and localise them to the fitting - unmatched precision - but coverage is measured in single-digit kilometres per day, which is why this layer is reserved for confirmation, high-consequence areas, and the periodic surveys regulation requires. Beneath even this layer sits odorisation: the mercaptan smell added to gas makes every member of the public a passive detector, and smell reports remain a genuinely important detection channel in distribution networks.
+
+<Definition term="Optical gas imaging (OGI)">
+  Optical gas imaging uses infrared cameras filtered to wavelengths that hydrocarbon gases absorb,
+  making an otherwise invisible gas plume appear as a visible cloud in the camera image. OGI is
+  widely used for facility leak screening and increasingly flown on drones and aircraft; it shows
+  where gas is escaping and roughly how vigorously, though converting an image into a quantified
+  leak rate requires additional measurement or modelling.
+</Definition>
+
+## The mobile layer: vehicle-mounted surveys
+
+Vehicle-mounted laser absorption systems sample air continuously while driving, detecting plumes that drift across roads from nearby leaks. Coverage jumps to tens of kilometres per day at good sensitivity, making mobile survey the workhorse of urban distribution leak programs - but it only finds what the wind carries to a drivable road, and localisation from a moving plume detection back to a specific fitting still requires ground follow-up.
+
+## The fixed layer: continuous point sensors
+
+Compressor stations, city-gate stations, and plants use fixed gas detectors that watch one location continuously - the inverse trade-off of every survey method. Sensitivity and response time at that point are excellent; coverage is only that point. Fixed sensing anchors facility safety systems but cannot economically extend along hundreds of kilometres of buried linear asset.
+
+## The aerial layer: drones and aircraft
+
+Aircraft- and drone-mounted sensing - optical gas imaging and laser absorption instruments looking down along a corridor - occupies the middle of the trade-off deliberately: kilometres of pipeline screened per hour at sensitivity adequate to catch meaningful leaks, feeding precise ground methods only where a signal warrants it. This is the layer that changed the economics of transmission-corridor leak screening, for the reasons covered in [our comparison of TDLAS, thermal, and satellite methane detection](/blog/tdlas-vs-thermal-vs-satellite-methane-detection) and in [how drones transformed oil and gas operations](/blog/how-drones-transform-oil-gas-operations) more broadly.
+
+## The orbital layer: satellites
+
+Satellite methane instruments cover everything, everywhere, on a revisit schedule - and see only the largest emitters, at kilometre-scale localisation. Their role in an operator's program is watchdog and prioritiser: a satellite detection over your corridor is a strong signal that something warrants aerial or ground follow-up, not a finding you can excavate against. The layer's value is that it never sleeps and costs the operator almost nothing to consume.
+
+## Why layering, and what layering demands
+
+No method wins on sensitivity, coverage, and cost simultaneously, so serious programs are built as handoff chains: satellite and aerial screening find candidates cheaply and often; mobile and walking methods confirm, localise, and quantify precisely. The under-appreciated requirement is what the chain produces as a side effect - detections from four different methods, in four different formats, at four different confidence levels, all describing the same network. Keeping that evidence organised, comparable across cycles, and prioritised into a single defensible worklist is the quiet, unglamorous problem that determines whether the layered system actually works - the same [evidence-comparison problem](/blog/pipeline-data-blind-spots-operators-face) that runs through every inspection domain, and the reason quantification-capable, evidence-linked findings matter under [measurement-based reporting](/blog/global-oil-gas-majors-methane-commitments).
+
+## Related reading
+
+For the airborne technologies in depth, see [TDLAS vs. thermal vs. satellite methane detection](/blog/tdlas-vs-thermal-vs-satellite-methane-detection); for why finding leaks faster pays for itself, see [the economics of methane leak detection](/blog/methane-leak-detection-economics).

@@ -7,6 +7,7 @@ import { SectionLabel } from '@/components/ui/SectionLabel';
 import { Card } from '@/components/ui/Card';
 import { FlowDiagram } from '@/components/diagrams/FlowDiagram';
 import { DashboardPreview } from '@/components/diagrams/DashboardPreview';
+import { EvidenceTrail } from '@/components/diagrams/EvidenceTrail';
 import { CtaBand } from '@/components/sections/CtaBand';
 import JsonLd from '@/components/JsonLd';
 import { CAPABILITIES } from '@/lib/content';
@@ -189,12 +190,16 @@ export default function PlatformPage() {
             ))}
           </div>
 
-          <Reveal delay={0.1}>
-            <div className="mt-10">
+          <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+            <Reveal delay={0.1}>
               <p className="mono-label mb-4">Illustrative integrity console</p>
               <DashboardPreview />
-            </div>
-          </Reveal>
+            </Reveal>
+            <Reveal delay={0.18}>
+              <p className="mono-label mb-4">Illustrative finding detail</p>
+              <EvidenceTrail />
+            </Reveal>
+          </div>
         </div>
       </section>
 

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { FileText, Download, Lock } from 'lucide-react';
+import Link from 'next/link';
+import { FileText, ArrowRight, Lock } from 'lucide-react';
 import { PageHero } from '@/components/ui/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
 import { Badge } from '@/components/ui/Badge';
@@ -23,17 +24,35 @@ const crumbs = [
 
 const REPORTS = [
   {
+    title: 'How we validate',
+    desc: 'The claims we test before we assert them, how each is tested with practising engineers, and the criteria for calling each proven or disproven.',
+    status: 'Read now',
+    href: '/research',
+  },
+  {
+    title: 'Pipeline integrity glossary',
+    desc: '30+ standalone, citable definitions covering cathodic protection, inline inspection, DCVG, CIPS, MAOP, HCA, MIC, false positive rate, and more - the reference we point our own team to.',
+    status: 'Read now',
+    href: '/resources/glossary',
+  },
+  {
+    title: 'Standards & governance brief',
+    desc: 'How Sentrix is designed to fit API 1160, ASME B31.8S, ISO 55000, PNGRB T4S, and OGMP 2.0 - the frameworks a serious integrity programme already runs on.',
+    status: 'Read now',
+    href: '/platform#deliverables',
+  },
+  {
+    title: 'The oil & gas inspection library',
+    desc: '48 in-depth articles on corrosion mechanisms, inspection methods, regulation, drone industry structure, and the funding and PSU-scheme landscape.',
+    status: 'Read now',
+    href: '/blog',
+  },
+  {
     title: 'Sentrix whitepaper',
     desc: 'A plain-language treatment of the inspection-decision problem, how Sentrix reduces the engineering effort it takes, and how we validate what we claim.',
     status: 'In preparation',
     // TODO: replace href with the real PDF once published, e.g. /reports/sentrix-whitepaper.pdf
     href: null,
-  },
-  {
-    title: 'How we validate',
-    desc: 'The claims we test before we assert them, how each is tested with practising engineers, and the criteria for calling each proven or disproven.',
-    status: 'See our approach',
-    href: '/research',
   },
 ];
 
@@ -66,12 +85,12 @@ export default function ReportsPage() {
                   </div>
                 </div>
                 {r.href ? (
-                  <a
+                  <Link
                     href={r.href}
                     className="inline-flex shrink-0 items-center gap-2 rounded-xl border border-line-strong bg-card px-5 py-3 text-sm font-semibold text-ink transition-colors hover:bg-elevated"
                   >
-                    <Download className="h-4 w-4" /> Read
-                  </a>
+                    <ArrowRight className="h-4 w-4" /> Read
+                  </Link>
                 ) : (
                   <span className="inline-flex shrink-0 items-center gap-2 rounded-xl border border-line px-5 py-3 text-sm font-medium text-ink-muted">
                     <Lock className="h-4 w-4" /> Coming soon

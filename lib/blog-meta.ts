@@ -9,6 +9,7 @@ export const BLOG_CATEGORIES = [
   { id: 'fundamentals', label: 'Fundamentals' },
   { id: 'india', label: 'India' },
   { id: 'technical', label: 'Technical' },
+  { id: 'industry', label: 'Industry & Market' },
 ] as const;
 
 export type BlogCategoryId = (typeof BLOG_CATEGORIES)[number]['id'];

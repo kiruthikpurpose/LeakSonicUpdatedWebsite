@@ -5,8 +5,10 @@ import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Card } from '@/components/ui/Card';
 import { CtaBand } from '@/components/sections/CtaBand';
+import { FlowDiagram } from '@/components/diagrams/FlowDiagram';
+import { SectionLabel } from '@/components/ui/SectionLabel';
 import JsonLd from '@/components/JsonLd';
-import { breadcrumbSchema, type Crumb } from '@/lib/schema';
+import { breadcrumbSchema, faqSchema, type Crumb } from '@/lib/schema';
 
 export type AudienceConcern = { title: string; body: string };
 export type AudienceValue = { title: string; body: string };
@@ -45,7 +47,14 @@ export function AudienceLayout({ content }: { content: AudienceContent }) {
 
   return (
     <>
-      <JsonLd data={breadcrumbSchema(crumbs)} />
+      {/* Concerns are written as direct question-and-answer pairs, so they are
+          emitted as FAQPage schema too - a strong AEO signal on each audience page. */}
+      <JsonLd
+        data={[
+          breadcrumbSchema(crumbs),
+          faqSchema(content.concerns.map((c) => ({ question: c.title, answer: c.body }))),
+        ]}
+      />
       <PageHero eyebrow={content.eyebrow} title={content.title} lead={content.lead} crumbs={crumbs}>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
           {content.stats.map((s) => {
@@ -87,6 +96,20 @@ export function AudienceLayout({ content }: { content: AudienceContent }) {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="border-b border-line bg-base py-section">
+        <div className="container-content">
+          <Reveal>
+            <SectionLabel>Where it fits</SectionLabel>
+            <h2 className="mt-4 max-w-2xl text-h2 font-bold text-ink">
+              A decision layer, not another system to adopt
+            </h2>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <FlowDiagram className="mt-8" />
+          </Reveal>
         </div>
       </section>
 

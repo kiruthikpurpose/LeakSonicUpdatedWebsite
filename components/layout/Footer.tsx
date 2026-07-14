@@ -29,7 +29,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-6">
           <div className="lg:col-span-2">
             <Logo />
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-muted">{SITE.tagline}</p>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-muted">
+              Sentrix by LeakSonic turns raw drone inspection evidence into decision-ready
+              engineering intelligence for gas transmission, distribution, and city gas distribution
+              networks.
+            </p>
             <address className="mt-5 text-sm not-italic leading-relaxed text-ink-muted">
               {SITE.address.org}
               <br />
@@ -87,7 +91,7 @@ export default function Footer() {
               Terms
             </Link>
             <span className="max-w-md text-right text-ink-faint">
-              Pipeline integrity intelligence for gas infrastructure.
+              Engineering decision intelligence for oil and gas pipeline inspection.
             </span>
           </div>
         </div>

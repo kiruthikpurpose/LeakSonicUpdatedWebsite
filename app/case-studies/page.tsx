@@ -1,12 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRight, MapPin } from 'lucide-react';
+import { ArrowRight, MapPin, Flame, Waves, Warehouse, Milestone } from 'lucide-react';
 import { PageHero } from '@/components/ui/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { SectionLabel } from '@/components/ui/SectionLabel';
 import { Badge } from '@/components/ui/Badge';
-import { ImagePlaceholder } from '@/components/ui/ImagePlaceholder';
 import { CtaBand } from '@/components/sections/CtaBand';
 import JsonLd from '@/components/JsonLd';
 import { buildMetadata } from '@/lib/metadata';
@@ -28,6 +27,55 @@ export const metadata: Metadata = buildMetadata({
 const crumbs = [
   { name: 'Home', path: '/' },
   { name: 'Case studies', path: '/case-studies' },
+];
+
+// Real, documented industry problems the platform's drone-evidence category is
+// built against - not invented pilot outcomes. Each links to the underlying
+// research writeup so the claim is checkable, not just asserted.
+const PROBLEMS = [
+  {
+    icon: Milestone,
+    label: 'Pipeline corridors',
+    body: 'Right-of-way patrol and encroachment monitoring across long linear corridors, where visual-line-of-sight rules make ground patrol slow and expensive.',
+    href: '/blog/right-of-way-encroachment-monitoring',
+    linkLabel: 'How encroachment monitoring works',
+  },
+  {
+    icon: Flame,
+    label: 'Refineries & terminals - scaffolding and rope access',
+    body: 'Flare stacks, elevated structures, and tank shells traditionally require scaffolding, mobile platforms, or rope-access teams working at height. Drone survey absorbs much of that evidence-gathering, cutting both cost and the hours a person spends at height.',
+    href: '/blog/storage-tank-terminal-drone-inspection',
+    linkLabel: 'Storage tank & terminal drone inspection',
+  },
+  {
+    icon: Waves,
+    label: 'Offshore platforms',
+    body: 'Splash zones, underdecks, and flare booms sit among the most hazardous routine inspection work in the industry - historically rope-access teams working at height over open water. Screening by drone means rope hours are fewer, and better targeted.',
+    href: '/blog/offshore-platform-drone-inspection',
+    linkLabel: 'Offshore platform drone inspection',
+  },
+  {
+    icon: Warehouse,
+    label: 'Confined-space tank entry',
+    body: 'Internal tank inspection has historically meant gas-freeing, ventilation, and a person entering a confined hydrocarbon space under standby rescue cover. Collision-tolerant indoor drones now capture that evidence without an entry at all.',
+    href: '/blog/storage-tank-terminal-drone-inspection',
+    linkLabel: 'How internal tank inspection changed',
+  },
+];
+
+const FIELD_VISIT = [
+  {
+    label: 'Why we went',
+    body: 'Understanding the inspection problem from a slide deck is not the same as standing on a right-of-way. We visited an active gas pipeline construction site to see how the corridor is actually built and monitored.',
+  },
+  {
+    label: 'What we learned',
+    body: 'Right-of-way conditions, the practical constraints on repeat access, and where operational data already exists but sits disconnected from inspection decisions. The hard part is downstream of data collection - exactly where Sentrix is aimed.',
+  },
+  {
+    label: 'What this is - and isn’t',
+    body: 'Evidence of serious domain engagement, not a product outcome. We are not claiming a result here - we are showing our understanding is grounded in the field, the honest foundation a pilot has to be built on.',
+  },
 ];
 
 const ROADMAP = [
@@ -62,8 +110,48 @@ export default function CaseStudiesPage() {
         crumbs={crumbs}
       />
 
-      {/* Field visit write-up */}
+      {/* Problems the category is built for - grounded in published research,
+          each card links to the underlying writeup rather than asserting an
+          outcome. Covers pipeline corridors plus refinery/terminal and
+          offshore scaffolding/rope-access replacement. */}
       <section className="border-b border-line bg-base py-section">
+        <div className="container-content">
+          <Reveal>
+            <SectionHeading
+              eyebrow="Where drone evidence already changes the work"
+              title="Problems we’re built for - documented, not invented"
+              lead="Beyond pipeline corridors, the same evidence-to-decision problem shows up wherever inspection has meant scaffolding, mobile platforms, or rope access. Each of these is grounded in published research, not a claimed result."
+            />
+          </Reveal>
+          <div className="mt-9 grid grid-cols-1 gap-5 md:grid-cols-2">
+            {PROBLEMS.map((p, i) => {
+              const Icon = p.icon;
+              return (
+                <Reveal key={p.label} delay={i * 0.06}>
+                  <div className="flex h-full flex-col rounded-card border border-line bg-card p-6">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-tile border border-line bg-surface text-accent">
+                      <Icon className="h-4.5 w-4.5" aria-hidden />
+                    </span>
+                    <h3 className="mt-4 text-h3 font-semibold text-ink">{p.label}</h3>
+                    <p className="mt-2 flex-1 text-sm leading-relaxed text-ink-secondary">
+                      {p.body}
+                    </p>
+                    <Link
+                      href={p.href}
+                      className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover"
+                    >
+                      {p.linkLabel} <ArrowRight className="h-3.5 w-3.5" />
+                    </Link>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Field visit write-up */}
+      <section className="border-b border-line bg-surface py-section">
         <div className="container-content">
           <Reveal>
             <div className="flex items-center gap-3">
@@ -73,57 +161,22 @@ export default function CaseStudiesPage() {
               </span>
             </div>
           </Reveal>
-          <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[1.1fr_1fr] lg:items-start">
-            <Reveal>
-              <div className="space-y-5">
-                <h2 className="text-h2 font-bold text-ink">
-                  A field visit to a live pipeline construction site
-                </h2>
-                <div>
-                  <div className="mono-label">Why we went</div>
-                  <p className="mt-2 text-base leading-relaxed text-ink-secondary">
-                    Understanding the inspection problem from a slide deck is not the same as
-                    standing on a right-of-way. We visited an active gas pipeline construction site
-                    to see how the corridor is actually built and monitored, and to ground our
-                    assumptions in what integrity work looks like on the ground rather than in the
-                    abstract.
+          <Reveal>
+            <h2 className="mt-6 max-w-2xl text-h2 font-bold text-ink">
+              A field visit to a live pipeline construction site
+            </h2>
+          </Reveal>
+          <div className="mt-9 grid grid-cols-1 gap-5 md:grid-cols-3">
+            {FIELD_VISIT.map((item, i) => (
+              <Reveal key={item.label} delay={i * 0.08}>
+                <div className="flex h-full flex-col rounded-card border border-line bg-card p-6">
+                  <div className="mono-label">{item.label}</div>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-secondary">
+                    {item.body}
                   </p>
                 </div>
-                <div>
-                  <div className="mono-label">What we learned</div>
-                  <p className="mt-2 text-base leading-relaxed text-ink-secondary">
-                    The visit sharpened our understanding of right-of-way conditions, the practical
-                    constraints on repeat access, and where operational data already exists but sits
-                    disconnected from inspection decisions. It confirmed that the hard part of the
-                    problem is downstream of data collection - in review, correlation, and reporting
-                    - which is exactly where Sentrix is aimed.
-                  </p>
-                </div>
-                <div>
-                  <div className="mono-label">What this is - and isn’t</div>
-                  <p className="mt-2 text-base leading-relaxed text-ink-secondary">
-                    This is evidence of serious domain engagement, not a product outcome. We are not
-                    claiming a result here; we are showing that our understanding of the problem is
-                    grounded in the field, which is the honest foundation a pilot has to be built
-                    on.
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <div className="space-y-3">
-                {/* IMAGE: real, unpolished field photo from the pipeline construction-site visit,
-                    documentary tone, 4:3. Drop into /public/images/field/ and replace this
-                    placeholder - real field photos are a stronger trust signal than any render. */}
-                <ImagePlaceholder
-                  ratio="4 / 3"
-                  label="FIELD PHOTO - pipeline construction site visit · /public/images/field/"
-                />
-                <p className="font-sans text-[0.7rem] text-ink-faint">
-                  Real site photography will replace this placeholder as it clears review.
-                </p>
-              </div>
-            </Reveal>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
@@ -157,30 +210,6 @@ export default function CaseStudiesPage() {
               See the full validation methodology <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </Reveal>
-        </div>
-      </section>
-
-      {/* Template preview for future real case studies */}
-      <section className="border-b border-line bg-base py-section">
-        <div className="container-content">
-          <Reveal>
-            <SectionLabel>Ready for real outcomes</SectionLabel>
-            <h2 className="mt-4 max-w-2xl text-h2 font-bold text-ink">
-              The structure a real case study will drop into
-            </h2>
-          </Reveal>
-          <div className="mt-10 grid grid-cols-1 gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
-            {['Problem', 'Approach', 'Outcome', 'Operator quote'].map((s) => (
-              <div key={s} className="bg-card p-7">
-                <div className="font-sans text-xs text-ink-faint">TEMPLATE SLOT</div>
-                <h3 className="mt-2 text-h3 font-semibold text-ink">{s}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-muted">
-                  {/* SPACE: real case study content will populate this slot once a pilot concludes. */}
-                  Populated with real, attributable content once a pilot concludes.
-                </p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

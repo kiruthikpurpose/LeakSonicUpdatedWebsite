@@ -32,7 +32,7 @@ const TARGETS: Target[] = [
 ];
 
 const SEV_BG: Record<Target['sev'], string> = {
-  high: 'bg-[#E5384A]',
+  high: 'bg-[#C41F2B]',
   med: 'bg-[#E1A23A]',
   low: 'bg-[#5A5A64]',
 };
@@ -73,7 +73,7 @@ function Gauge({ value, reduce }: { value: number; reduce: boolean | null }) {
       <path
         d={arcPath}
         fill="none"
-        stroke="#E5384A"
+        stroke="#C41F2B"
         strokeWidth="9"
         strokeLinecap="round"
         strokeDasharray={circumference}
@@ -124,7 +124,7 @@ export function DashboardPreview({ className }: { className?: string }) {
         {/* Sidebar */}
         <div className="flex flex-col gap-1 border-r border-[#212126] bg-[#0E0E10] p-2 sm:p-3">
           <div className="mb-2 hidden items-center gap-2 px-1 sm:flex">
-            <span className="h-2 w-2 rounded-full bg-[#E5384A]" />
+            <span className="h-2 w-2 rounded-full bg-[#C41F2B]" />
             <span className="text-xs font-semibold text-[#F5F5F4]">Sentrix</span>
           </div>
           {NAV_ITEMS.map((item) => {
@@ -176,7 +176,7 @@ export function DashboardPreview({ className }: { className?: string }) {
                     className={cn(
                       'flex items-center gap-3 rounded-lg border px-3 py-2',
                       t.rank === 1
-                        ? 'border-[#E5384A]/40 bg-[#E5384A]/[0.07]'
+                        ? 'border-[#C41F2B]/40 bg-[#C41F2B]/[0.07]'
                         : 'border-[#212126] bg-[#111113]',
                     )}
                   >
@@ -197,7 +197,7 @@ export function DashboardPreview({ className }: { className?: string }) {
                     <span
                       className={cn(
                         'w-10 text-right text-[0.68rem]',
-                        t.change.startsWith('+') ? 'text-[#E5384A]' : 'text-[#6B6B72]',
+                        t.change.startsWith('+') ? 'text-[#C41F2B]' : 'text-[#6B6B72]',
                       )}
                     >
                       {t.change}
@@ -218,7 +218,7 @@ export function DashboardPreview({ className }: { className?: string }) {
                     <Gauge value={72} reduce={reduce} />
                   </div>
                   <div className="min-w-0 pb-1">
-                    <div className="text-2xl font-semibold text-[#E5384A]">72</div>
+                    <div className="text-2xl font-semibold text-[#C41F2B]">72</div>
                     <div className="truncate text-[0.62rem] text-[#6B6B72]">elevated</div>
                   </div>
                 </div>
@@ -251,7 +251,7 @@ export function DashboardPreview({ className }: { className?: string }) {
                         cy={p.y}
                         r="4"
                         fill={
-                          p.sev === 'high' ? '#E5384A' : p.sev === 'med' ? '#E1A23A' : '#5A5A64'
+                          p.sev === 'high' ? '#C41F2B' : p.sev === 'med' ? '#E1A23A' : '#5A5A64'
                         }
                       />
                       {p.sev === 'high' && !reduce && (
@@ -260,7 +260,7 @@ export function DashboardPreview({ className }: { className?: string }) {
                           cy={p.y}
                           r="4"
                           fill="none"
-                          stroke="#E5384A"
+                          stroke="#C41F2B"
                           strokeWidth="1.2"
                           initial={{ opacity: 0, scale: 1 }}
                           animate={{ opacity: [0, 0.8, 0], scale: [1, 2.6, 2.6] }}
@@ -274,7 +274,7 @@ export function DashboardPreview({ className }: { className?: string }) {
               </div>
 
               <button
-                className="w-full shrink-0 rounded-xl bg-[#E5384A] px-2 py-2.5 text-center text-[0.62rem] font-semibold uppercase leading-tight tracking-wide text-white"
+                className="w-full shrink-0 rounded-xl bg-[#C41F2B] px-2 py-2.5 text-center text-[0.62rem] font-semibold uppercase leading-tight tracking-wide text-white"
                 type="button"
                 tabIndex={-1}
               >

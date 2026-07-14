@@ -26,7 +26,7 @@ export function Hero() {
       <div className="container-content grid min-h-[calc(100svh-4rem)] grid-cols-1 items-center gap-9 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 lg:py-20">
         <div className="max-w-2xl">
           <Badge variant="accent" className="mb-6">
-            Engineering Decision Intelligence · Pipeline inspection
+            Engineering Decision Intelligence · Oil &amp; Gas Inspection
           </Badge>
 
           <h1 className="text-display-lg font-extrabold text-ink">
@@ -36,9 +36,10 @@ export function Hero() {
 
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-secondary sm:text-xl">
             Sentrix reduces the engineering effort required to validate, compare, prioritise, and
-            report pipeline inspection findings - turning raw drone evidence into standardised,
-            decision-ready intelligence inside the workflows operators already use. Comparing today’s
-            inspection to last year’s shouldn’t depend on someone remembering which photo was which.
+            report inspection findings across pipeline corridors, refineries, terminals, and
+            offshore platforms - turning raw drone evidence into standardised, decision-ready
+            intelligence inside the workflows operators already use. Comparing today’s inspection to
+            last year’s shouldn’t depend on someone remembering which photo was which.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
@@ -73,9 +74,21 @@ export function Hero() {
             </Link>
           </div>
 
-          <p className="mt-8 text-xs text-ink-faint">
-            A decision layer, not a flight service - built for gas transmission and distribution
-            networks anywhere.
+          <p className="mt-6 text-sm text-ink-muted">
+            Researcher or investor?{' '}
+            <Link href="/solutions/researchers" className="text-accent hover:text-accent-hover">
+              Explore the research
+            </Link>{' '}
+            or{' '}
+            <Link href="/contact#investor" className="text-accent hover:text-accent-hover">
+              talk to us about funding Sentrix
+            </Link>
+            .
+          </p>
+
+          <p className="mt-4 text-xs text-ink-faint">
+            A decision layer, not a flight service - built across pipeline, refinery, terminal, and
+            offshore inspection, expanding from an India base to a global market.
           </p>
 
           <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-line pt-5">

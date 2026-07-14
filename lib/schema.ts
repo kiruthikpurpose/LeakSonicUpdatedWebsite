@@ -8,7 +8,9 @@ export function organizationSchema() {
     '@type': 'Organization',
     '@id': `${SITE.url}/#organization`,
     name: SITE.legalName,
-    alternateName: SITE.name,
+    // Brand variants people actually search - helps entity resolution for
+    // "Leak Sonic" / product-name queries in search and AI answer engines.
+    alternateName: [SITE.name, 'Leak Sonic', 'LeakSonic Technologies', `Sentrix by ${SITE.name}`],
     url: SITE.url,
     logo: {
       '@type': 'ImageObject',
@@ -25,6 +27,7 @@ export function organizationSchema() {
       jobTitle: SITE.founder.role,
     },
     knowsAbout: SITE.knowsAbout,
+    keywords: SITE.knowsAbout.join(', '),
     // Industry classification helps AI/answer engines place the company.
     naics: '541715',
     address: {

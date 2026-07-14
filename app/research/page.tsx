@@ -10,7 +10,7 @@ import { buildMetadata } from '@/lib/metadata';
 import { breadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Our approach - how Sentrix earns trust',
+  title: 'Approach - how Sentrix earns trust',
   description:
     'Sentrix is built on tested claims, not assumed capability. We validate with practising engineers, attach evidence to every finding, and say plainly what we do not do. Here is how we work, and why an integrity team can trust it.',
   path: '/research',
@@ -81,7 +81,7 @@ export default function ResearchPage() {
     <>
       <JsonLd data={breadcrumbSchema(crumbs)} />
       <PageHero
-        eyebrow="Our approach"
+        eyebrow="Approach"
         title="How we earn a skeptical engineer’s trust."
         lead="Sentrix is built on tested claims, not assumed capability. This page is how we work - with practising engineers, with evidence attached to every finding, and with honesty about what we do and don’t do. It is a genuine differentiator, and we publish it with confidence."
         crumbs={crumbs}
@@ -146,6 +146,13 @@ export default function ResearchPage() {
               />
             </div>
           </Reveal>
+          <Reveal delay={0.08}>
+            <p className="mt-6 flex items-center gap-2 text-sm text-ink-muted">
+              <Badge variant="accent">Active validation</Badge>
+              All five claims below are currently being tested with practising engineers - status
+              updates here as each concludes.
+            </p>
+          </Reveal>
           <div className="mt-6 space-y-4">
             {CLAIMS.map((c, i) => (
               <Reveal key={c.n} delay={i * 0.05}>
@@ -159,10 +166,7 @@ export default function ResearchPage() {
                       </h3>
                     </div>
                     <div>
-                      <div className="flex items-center gap-3">
-                        <span className="mono-label">How we test it</span>
-                        <Badge variant="accent">In progress</Badge>
-                      </div>
+                      <span className="mono-label">How we test it</span>
                       <p className="mt-2 text-sm leading-relaxed text-ink-secondary">{c.test}</p>
                     </div>
                   </div>

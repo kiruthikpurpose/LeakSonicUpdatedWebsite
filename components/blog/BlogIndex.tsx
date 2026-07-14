@@ -38,8 +38,15 @@ export function BlogIndex({ posts }: { posts: BlogMeta[] }) {
       </div>
 
       <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {filtered.map((post) => (
-          <BlogCard key={post.slug} post={post} />
+        {filtered.map((post, i) => (
+          <BlogCard
+            key={post.slug}
+            post={post}
+            // The first card in the default, unfiltered view gets a larger
+            // treatment so the index doesn't read as one undifferentiated
+            // wall of same-size tiles.
+            featured={filter === 'all' && i === 0}
+          />
         ))}
       </div>
     </div>

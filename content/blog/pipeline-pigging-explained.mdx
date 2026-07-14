@@ -1,0 +1,62 @@
+---
+title: 'Pipeline pigging explained: what pigs are, why the name, and what each type does'
+date: '2026-07-13'
+lastUpdated: '2026-07-13'
+author: 'LeakSonic Research'
+category: 'fundamentals'
+summary: 'A pipeline pig is a device inserted into a pipeline and pushed along by the product flow itself, performing work as it travels - cleaning debris, separating product batches, removing liquids, or, in the case of instrumented "smart" pigs, measuring the pipe wall from the inside. Pigging is one of the oldest and most economical pipeline maintenance techniques precisely because the pipeline provides the propulsion: the product already flowing through the line carries the tool.'
+tags:
+  [
+    'pipeline pigging',
+    'what is a pipeline pig',
+    'pig launcher receiver',
+    'cleaning pig',
+    'smart pig',
+  ]
+faqs:
+  - question: 'What is a pipeline pig and why is it called that?'
+    answer: 'A pig is a cylindrical or spherical device inserted into a pipeline through a launcher and pushed along by the pressure of the product flowing behind it, performing work - cleaning, batching, dewatering, or inspection - as it travels to a receiver downstream. The name''s origin is debated; the most repeated stories cite the squealing sound early leather-cupped scrapers made in the line, or a backronym of Pipeline Intervention Gadget. Whatever the origin, the term is universal across the industry.'
+  - question: 'What are the main types of pipeline pigs?'
+    answer: 'Utility pigs do physical work: cleaning pigs scrape wax, scale, and debris from the wall; sealing/batching pigs separate different products travelling in the same line; dewatering pigs push liquids out after hydrotesting. Gauging pigs carry a soft metal plate that dents if the bore is restricted, proving the line''s internal clearance. Inline inspection tools - smart pigs - carry sensors that measure wall thickness and detect corrosion, cracks, and dents as they travel. Each type shares the same propulsion principle and launcher/receiver infrastructure.'
+  - question: 'How does a pig get into and out of a pressurised pipeline?'
+    answer: 'Through pig traps: a launcher upstream and a receiver downstream. Each is an oversized barrel isolated from the main line by valves - the pig is loaded into the depressurised barrel, the barrel is closed and pressurised, and valve sequencing diverts flow behind the pig to push it into the line. At the far end the sequence reverses. Traps allow pigging without interrupting pipeline operation, which is what makes routine pigging economical.'
+  - question: 'Why does regular cleaning pigging matter for pipeline integrity?'
+    answer: 'Debris, wax, water, and sediment that accumulate in a line do more than restrict flow - standing water and deposits create exactly the under-deposit conditions where internal corrosion and microbiologically influenced corrosion establish. Regular cleaning pigging removes these accumulations, and it is also a prerequisite for inspection: a smart pig''s sensors need a clean wall to measure accurately, so inspection runs are always preceded by cleaning runs.'
+---
+
+Pipeline pigging is one of those industry terms that sounds like a joke until you learn it describes one of the oldest, most economical, and most important pipeline maintenance techniques in existence: putting a device inside the line and letting the product flow itself push it from one end to the other, doing useful work the whole way.
+
+## The principle: the pipeline provides the propulsion
+
+A pig is inserted into the line through a launcher, forms a moving seal against the pipe wall with flexible cups or discs, and is pushed along by the pressure differential of product flowing behind it - travelling at roughly the speed of the flow, for tens or hundreds of kilometres, with no motor, no cable, and no external power. That is the entire economic magic of pigging: the energy moving the product moves the tool, so the marginal cost of running a pig through an operating line is remarkably low.
+
+<PiggingFlow />
+
+<Definition term="Pig trap (launcher and receiver)">
+  Pig traps are the fixed facilities that get pigs into and out of a pressurised, operating
+  pipeline: an oversized, valve-isolated barrel at each end of a piggable section. The launcher
+  barrel is depressurised, loaded, resealed, and pressurised, with valve sequencing diverting flow
+  behind the pig to push it into the line; the receiver reverses the process. A pipeline built
+  without traps, or with bends and diameter changes a pig cannot pass, is "unpiggable" - a
+  designation with major consequences for how it can be inspected.
+</Definition>
+
+## Utility pigs: the workhorses
+
+Most pigging is not inspection - it is maintenance. Cleaning pigs carry brushes, scrapers, or urethane discs that strip wax, scale, sand, and debris off the wall and push it to the receiver. Batching pigs form moving seals that separate different products sharing one line - diesel behind petrol behind jet fuel in a products pipeline - keeping interface mixing to a minimum. Dewatering and drying pigs push water out of a line after hydrostatic testing or commissioning. Gauging pigs carry a soft aluminium plate sized just under the bore: if the plate arrives dented, something in the line - a dent, a partially closed valve, an ovality - is intruding into the bore, and the line is not yet safe for an expensive instrumented tool.
+
+## Smart pigs: inspection from the inside
+
+Instrumented pigs - inline inspection (ILI) tools - carry magnetic flux leakage or ultrasonic sensor arrays that measure the pipe wall as they pass, producing the most precise internal-condition data available for a pipeline: metal loss, cracking, dents, each sized and located. We cover what these tools can and cannot see, and how they compare with surface methods, in [inline inspection versus aerial and surface inspection](/blog/smart-pig-inline-inspection-vs-aerial-inspection). The operational point worth repeating here: smart pig runs are always preceded by cleaning runs, because sensors measuring through wax and debris produce data an integrity engineer cannot defend.
+
+## Why cleaning is itself an integrity activity
+
+Deposits are not just a flow problem. Standing water, sediment, and wax create sheltered under-deposit environments where internal corrosion initiates and where the biofilms behind [microbiologically influenced corrosion](/blog/microbiologically-influenced-corrosion-explained) establish and persist. A disciplined cleaning-pigging cadence physically removes those environments on a schedule - one of the few integrity threats an operator can address with maintenance rather than monitoring, which is why cleaning frequency features in [risk-based inspection planning](/blog/risk-based-inspection-pipelines) alongside the inspection methods themselves.
+
+## The limits: unpiggable lines
+
+Pigging requires infrastructure and geometry the pig can survive: traps at both ends, compatible diameters, bend radii the tool can turn. A meaningful fraction of the world's pipelines - older lines, short laterals, complex station piping, and most polyethylene distribution networks - fail one of those tests and are effectively unpiggable, which removes the most precise inspection method from the toolbox entirely. Those segments lean on direct assessment, cathodic protection data, and surface observation instead - the structural data gap discussed in [pipeline data blind spots](/blog/pipeline-data-blind-spots-operators-face), and one of the reasons surface and aerial evidence carries more integrity weight on some networks than others.
+
+## Related reading
+
+For the inspection side of pigging in depth, see [inline inspection vs. aerial and surface inspection](/blog/smart-pig-inline-inspection-vs-aerial-inspection); for what happens on the lines pigs cannot reach, see [pipeline coating inspection methods](/blog/pipeline-coating-inspection-methods).

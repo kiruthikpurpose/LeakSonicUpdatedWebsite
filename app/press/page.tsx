@@ -25,6 +25,7 @@ const FACTS: [string, string][] = [
   ['Legal entity', SITE.legalName],
   ['Product', 'Sentrix - engineering decision intelligence platform for pipeline inspection'],
   ['Stage', 'Actively developing and validating with practising engineers'],
+  ['Market focus', 'Built in India, designed for gas pipeline networks globally'],
   ['Headquarters', `${SITE.address.city}, ${SITE.address.region}, ${SITE.address.country}`],
   [
     'Status',
@@ -37,8 +38,11 @@ const FACTS: [string, string][] = [
   ['Recognition', 'National winner, Smart India Hackathon 2025 (BEL PS-25163)'],
 ];
 
-// TODO: swap for real recognition/partner logos in /public/images/partners/
-// once cleared for use. Text + icon chips are the placeholder for now.
+// Official program marks (Startup India, MeitY, AIC RAISE, etc.) are
+// trademarked assets we cannot recreate or source without permission from
+// each program - using an unofficial recreation would be worse than not
+// showing one. Text + icon chips are the intentional, correct treatment
+// until we have written clearance to display the real marks.
 const RECOGNITIONS: { icon: LucideIcon; label: string }[] = [
   { icon: Award, label: 'Smart India Hackathon' },
   { icon: Rocket, label: 'Startup India' },
@@ -46,6 +50,10 @@ const RECOGNITIONS: { icon: LucideIcon; label: string }[] = [
   { icon: Landmark, label: 'MeitY' },
   { icon: GraduationCap, label: 'AIC RAISE' },
 ];
+
+// Real coverage/releases go here as they happen: { title, outlet, date, href }.
+// The section above only renders when this array is non-empty.
+const COVERAGE: { title: string; outlet: string; date: string; href: string }[] = [];
 
 export default function PressPage() {
   return (
@@ -103,20 +111,18 @@ export default function PressPage() {
         </div>
       </section>
 
-      {/* Coverage - honestly marked coming soon */}
-      <section className="border-b border-line bg-base py-section">
-        <div className="container-content">
-          <Reveal>
-            <SectionHeading eyebrow="In the media" title="Coverage & releases" />
-          </Reveal>
-          {/* SPACE: list press coverage and releases here as they become available. */}
-          <div className="mt-10 rounded-card border border-dashed border-line-strong bg-surface p-10 text-center">
-            <p className="text-ink-secondary">
-              No press coverage or releases to list yet - we’ll add them here as they happen.
-            </p>
+      {/* Coverage & releases - section only renders once COVERAGE has entries,
+          so an empty state is never shown to visitors. Add real coverage here
+          as it happens: { title, outlet, date, href }. */}
+      {COVERAGE.length > 0 && (
+        <section className="border-b border-line bg-base py-section">
+          <div className="container-content">
+            <Reveal>
+              <SectionHeading eyebrow="In the media" title="Coverage & releases" />
+            </Reveal>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Press contact */}
       <section className="bg-base py-section">
