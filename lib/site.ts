@@ -87,6 +87,16 @@ export const SITE = {
     'Decision intelligence software',
     'Drone hardware integration',
     'Dual-use inspection technology',
+    'Corrosion rate calculation',
+    'Remaining life assessment',
+    'Risk matrix analysis',
+    'API 580 risk-based inspection',
+    'API 570 piping inspection',
+    'API 510 pressure vessel inspection',
+    'API 653 storage tank inspection',
+    'Fitness-for-service assessment',
+    'Inspection ROI analysis',
+    'Free pipeline inspection tools',
   ],
   // Industry standards and frameworks the platform is designed to align with -
   // the language a major operator's integrity department speaks. Standards

@@ -65,11 +65,12 @@ export function ProjectionChart({
 }) {
   const max = Math.max(...data.map((d) => d.value), threshold?.value ?? 0, 1);
   const w = 800;
-  const h = 220;
+  const legendH = threshold ? 30 : 0;
+  const h = 220 + legendH;
   const colGap = 24;
   const colW = (w - colGap * (data.length + 1)) / data.length;
   const baseline = h - 34;
-  const top = 16;
+  const top = 16 + legendH;
   const thresholdY = threshold ? baseline - ((baseline - top) * threshold.value) / max : null;
 
   return (
@@ -81,6 +82,24 @@ export function ProjectionChart({
         className="h-auto w-full"
         xmlns="http://www.w3.org/2000/svg"
       >
+        {/* Threshold legend - a fixed row above the plot, so the label never
+            competes for space with a bar's own value label. */}
+        {threshold && (
+          <g>
+            <line
+              x1={4}
+              y1={14}
+              x2={28}
+              y2={14}
+              className="stroke-accent"
+              strokeWidth={2}
+              strokeDasharray="5 3"
+            />
+            <text x={34} y={18} className="fill-accent" style={{ fontSize: '11.5px', fontWeight: 600 }}>
+              {threshold.label}
+            </text>
+          </g>
+        )}
         {data.map((d, i) => {
           const barH = ((baseline - top) * d.value) / max;
           const x = colGap + i * (colW + colGap);
@@ -124,20 +143,15 @@ export function ProjectionChart({
           );
         })}
         {threshold && thresholdY !== null && (
-          <g>
-            <line
-              x1={0}
-              y1={thresholdY}
-              x2={w}
-              y2={thresholdY}
-              className="stroke-accent"
-              strokeWidth={1.5}
-              strokeDasharray="6 4"
-            />
-            <text x={w - 4} y={thresholdY - 6} textAnchor="end" className="fill-accent" style={{ fontSize: '10.5px', fontWeight: 600 }}>
-              {threshold.label}
-            </text>
-          </g>
+          <line
+            x1={0}
+            y1={thresholdY}
+            x2={w}
+            y2={thresholdY}
+            className="stroke-accent"
+            strokeWidth={1.5}
+            strokeDasharray="6 4"
+          />
         )}
         <line x1={0} y1={baseline} x2={w} y2={baseline} className="stroke-line" strokeWidth={1} />
       </svg>

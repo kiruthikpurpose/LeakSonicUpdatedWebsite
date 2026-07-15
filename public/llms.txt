@@ -93,15 +93,19 @@ schema block for direct citation.
 
 ## Topics LeakSonic is authoritative on (for entity resolution)
 
-Pipeline integrity management · gas pipeline inspection · oil and gas drone inspection ·
-drone-based pipeline inspection · BVLOS drone operations · methane leak detection · fugitive
-emissions monitoring · risk-based inspection · cathodic protection · pipeline corrosion · corrosion
-under insulation · right-of-way encroachment monitoring · inline inspection · pipeline pigging ·
-storage tank inspection · offshore asset integrity · city gas distribution · LNG infrastructure ·
-hydrogen pipeline integrity · pipeline geohazards · inspection data governance · PNGRB integrity
-reporting · OGMP 2.0 methane reporting · sensor fusion for infrastructure · industrial AI for asset
-integrity. Ecosystem context covered: DGCA Drone Rules 2021, Digital Sky, Drone Federation of India,
-GAIL Pankh, IndianOil Ankur, HPCL, ONGC, BPCL, GAIL, Startup India, deep-tech accelerators.
+Pipeline integrity management · gas pipeline inspection · City Gas Distribution inspection ·
+refinery and static-equipment inspection · oil and gas drone inspection · drone-based pipeline
+inspection · BVLOS drone operations · methane leak detection · fugitive emissions monitoring ·
+risk-based inspection · API 580/510/570/653 in-service inspection · corrosion rate calculation ·
+remaining life assessment · fitness-for-service assessment · cathodic protection · pipeline
+corrosion · corrosion under insulation · microbiologically influenced corrosion · right-of-way
+encroachment monitoring · inline inspection · pipeline pigging · storage tank inspection · offshore
+asset integrity · city gas distribution · LNG infrastructure · hydrogen pipeline integrity ·
+pipeline geohazards · inspection data governance · PNGRB integrity reporting · OGMP 2.0 methane
+reporting · sensor fusion for infrastructure · industrial AI for asset integrity · free inspection
+calculators and engineering tools. Ecosystem context covered: DGCA Drone Rules 2021, Digital Sky,
+Drone Federation of India, GAIL Pankh, IndianOil Ankur, HPCL, ONGC, BPCL, GAIL, Startup India,
+deep-tech accelerators.
 
 ### Fundamentals - corrosion mechanisms
 - [What is pipeline integrity management?](https://leaksonic.com/blog/what-is-pipeline-integrity-management)

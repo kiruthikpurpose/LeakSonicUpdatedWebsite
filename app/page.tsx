@@ -49,6 +49,14 @@ export const metadata: Metadata = buildMetadata({
     'CGD pipeline inspection software',
     'decision intelligence software company',
     'drone software and hardware platform',
+    'free pipeline inspection calculator',
+    'corrosion rate calculator online',
+    'risk-based inspection software',
+    'API 580 risk matrix tool',
+    'pipeline inspection ROI calculator',
+    'gas pipeline compliance software',
+    'inspection prioritisation software',
+    'engineering decision intelligence company India',
   ],
 });
 

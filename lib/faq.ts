@@ -23,6 +23,21 @@ export const SITE_FAQ: FaqItem[] = [
       'Sentrix serves two current application areas of the same platform: gas transmission, distribution, and city gas network operators inspecting pipeline right-of-way and integrity; and refinery, terminal, and plant operators inspecting static equipment that has traditionally required scaffolding or rope access. Both are genuine, active application areas, not a primary market and a future one.',
   },
   {
+    question: 'Does LeakSonic offer any free tools or calculators?',
+    answer:
+      'Yes. We publish four free, no-signup engineering tools at leaksonic.com/tools: an Inspection Cost & ROI Calculator, an Integrity & Methane Reporting Readiness Assessment, an Inspection Priority Score Estimator built on an API 580-style risk matrix, and a Corrosion Rate & Remaining Life Calculator. Each shows its full working in an insight log rather than just returning a number, and each is explicitly labelled as an illustrative planning aid, not a validated Sentrix performance claim.',
+  },
+  {
+    question: 'What is a corrosion rate calculator, and does LeakSonic have one?',
+    answer:
+      'A corrosion rate calculator estimates how fast a pipeline or vessel wall is losing thickness from two measurements taken over time, then projects when it will reach a minimum required thickness. LeakSonic\'s free Corrosion Rate & Remaining Life Calculator does exactly this, and also suggests a next-inspection interval using the "half of remaining life" convention common in API 510/570/653-style programmes.',
+  },
+  {
+    question: 'How is pipeline or refinery inspection priority scored?',
+    answer:
+      'Inspection priority is typically scored by combining likelihood factors (asset age, construction/material risk, history of anomalies, time since last inspection) with consequence factors (population density, environmental sensitivity, or operational criticality nearby) on a likelihood-by-consequence risk matrix, in the style used by API 580-based risk-based inspection programmes. LeakSonic\'s free Inspection Priority Score Estimator demonstrates this scoring live.',
+  },
+  {
     question: 'Can drones detect leaks in buried pipelines?',
     answer:
       'Not directly. A drone cannot see through soil, so no airborne sensor detects a buried leak the way an inline tool detects wall loss from inside the pipe. What airborne inspection can capture are the surface signatures a sub-surface leak eventually produces - for example, thermal anomalies where escaping gas changes surface temperature, or vegetation stress where gas in the root zone affects the canopy over days to weeks. These are proxies, not direct measurements, and each has real limitations: vegetation stress can have other causes, surface signatures depend on soil and weather, and small deep leaks may produce no detectable surface signal at all. Sentrix treats surface evidence as something to be weighed and prioritised, not as standalone proof - which is why comparing change across cycles matters more than any single reading.',
