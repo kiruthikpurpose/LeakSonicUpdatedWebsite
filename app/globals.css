@@ -191,4 +191,41 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     background-repeat: repeat;
   }
+
+  /* Tool slider - red-filled track (background set inline per-value by the
+     component) with an accent-red thumb, cross-browser. Used across
+     /tools/* calculators so every control reads as one deliberate system. */
+  .tool-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    border-radius: 999px;
+    outline: none;
+  }
+  .tool-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    background: rgb(var(--color-accent));
+    border: 2px solid rgb(var(--color-base));
+    box-shadow: 0 0 0 1px rgb(var(--color-accent) / 0.5);
+    cursor: pointer;
+    margin-top: -6px;
+  }
+  .tool-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 999px;
+    background: rgb(var(--color-accent));
+    border: 2px solid rgb(var(--color-base));
+    box-shadow: 0 0 0 1px rgb(var(--color-accent) / 0.5);
+    cursor: pointer;
+  }
+  .tool-slider::-moz-range-track {
+    height: 6px;
+    border-radius: 999px;
+    background: transparent;
+  }
 }

@@ -21,7 +21,7 @@ const faqs = [
   {
     question: 'What does the Inspection Cost & ROI Calculator actually calculate?',
     answer:
-      'It converts the manual evidence-review and reporting hours you currently spend per inspection cycle into an illustrative time and cost saving, based on a review-effort reduction percentage you set yourself. It is a planning tool, not a benchmark of Sentrix’s actual measured performance.',
+      'It derives your current annual manual-review hour load from your cycle length and per-cycle review hours, applies a review-effort reduction percentage you set yourself, converts that to cost at your stated hourly rate, and projects the cumulative five-year potential. Every step is shown in a line-by-line insight log, not just a final number.',
   },
   {
     question: 'Is this calculator specific to pipelines, or does it work for refineries too?',
@@ -29,9 +29,14 @@ const faqs = [
       'Both. Toggle between a pipeline/City Gas Distribution network and a refinery or industrial site - the underlying calculation is the same because the real driver of cost is engineer review hours, not the specific asset type.',
   },
   {
-    question: 'Where do the savings numbers come from?',
+    question: 'Where do the savings numbers come from, and can I trust them?',
     answer:
-      'From your own inputs. You set the review-effort reduction assumption yourself rather than us asserting a fixed number, because the actual efficiency gain depends on your data quality, network, and workflow - and we don’t present unvalidated performance figures as fact.',
+      'From your own inputs, transparently. You set the review-effort reduction assumption yourself rather than us asserting a fixed number, and the insight log shows the exact arithmetic behind every figure so you can audit it line by line - because the actual efficiency gain depends on your data quality, network, and workflow, and we don’t present unvalidated performance figures as fact.',
+  },
+  {
+    question: 'What does the five-year projection chart show?',
+    answer:
+      'A running cumulative total of your estimated annual cost saving, held constant across five years. It does not account for network growth, changing cycle lengths, or inflation - it is a simple compounding view to help you see the scale of a recurring saving over time, not a financial forecast.',
   },
 ];
 
@@ -40,11 +45,11 @@ export default function Page() {
     <ToolShell
       eyebrow="Free tool"
       title="Inspection Cost & ROI Calculator"
-      lead="See what a prioritised, decision-ready inspection workflow could be worth on your network or site - in engineer-hours and cost, using assumptions you control."
+      lead="A transparent estimation engine: set your cycle, review hours, and cost assumptions, and watch a five-year projection and a full line-by-line breakdown build in real time."
       slug="/tools/inspection-cost-calculator"
       name="Inspection Cost & ROI Calculator"
-      schemaDescription="A free calculator that estimates engineer-hours and cost savings from a prioritised gas pipeline or refinery inspection workflow, based on user-supplied inputs."
-      methodologyNote="This tool multiplies the manual review hours you enter by the review-effort reduction percentage you set, then applies your stated hourly cost. It does not use any data from your organisation, does not connect to Sentrix, and does not represent a validated measurement of Sentrix's actual performance - it is a planning aid to help you reason about where inspection cost currently goes. For a defensible, evidence-backed number specific to your network, talk to us directly."
+      schemaDescription="A free calculator engine that estimates engineer-hours and cost savings from a prioritised gas pipeline or refinery inspection workflow, based on user-supplied inputs, with a five-year projection and a transparent insight log."
+      methodologyNote="This tool derives your current annual review-hour load from your cycle length and per-cycle hours, multiplies by the review-effort reduction percentage you set, applies your stated hourly cost, and projects the result across five years assuming constant inputs. It does not use any data from your organisation, does not connect to Sentrix, and does not represent a validated measurement of Sentrix's actual performance - it is a planning aid to help you reason transparently about where inspection cost currently goes, with every step of the arithmetic shown in the insight log below. For a defensible, evidence-backed number specific to your network, talk to us directly."
       faqs={faqs}
     >
       <InspectionRoiCalculator />
