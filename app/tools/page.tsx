@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Calculator, ClipboardCheck, Gauge, ArrowRight } from 'lucide-react';
+import { Calculator, ClipboardCheck, Gauge, Activity, ArrowRight } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { PageHero } from '@/components/ui/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
@@ -12,7 +12,7 @@ import { breadcrumbSchema, itemListSchema } from '@/lib/schema';
 export const metadata: Metadata = buildMetadata({
   title: 'Free tools for gas pipeline & refinery inspection teams',
   description:
-    'Free, self-serve calculators and assessments for gas pipeline, City Gas Distribution, and refinery inspection teams: estimate inspection ROI, check your reporting readiness, and score inspection priority - no signup required.',
+    'Free, self-serve engineering engines for gas pipeline, City Gas Distribution, and refinery inspection teams: estimate inspection ROI, check reporting readiness, score inspection priority on a live risk matrix, and compute corrosion rate and remaining life - no signup required.',
   path: '/tools',
   keywords: [
     'pipeline inspection tools',
@@ -20,6 +20,7 @@ export const metadata: Metadata = buildMetadata({
     'refinery inspection tools',
     'CGD inspection tools',
     'inspection ROI calculator',
+    'corrosion rate calculator',
   ],
 });
 
@@ -54,9 +55,16 @@ const TOOLS: Tool[] = [
   {
     icon: Gauge,
     title: 'Inspection Priority Score Estimator',
-    body: 'Describe an asset across five risk factors and see an illustrative relative-priority score - a fast, hands-on look at how risk-based prioritisation works.',
+    body: 'Set weighted likelihood and consequence factors and watch the engine plot your asset live on an API 580-style risk matrix, with a full weighted breakdown.',
     href: '/tools/inspection-priority-score',
     cta: 'Estimate a score',
+  },
+  {
+    icon: Activity,
+    title: 'Corrosion Rate & Remaining Life Calculator',
+    body: 'Enter two wall-thickness readings and get a corrosion rate, remaining allowance, projected remaining life, and a suggested next-inspection interval.',
+    href: '/tools/corrosion-remaining-life-calculator',
+    cta: 'Calculate remaining life',
   },
 ];
 
@@ -81,7 +89,7 @@ export default function ToolsPage() {
 
       <section className="border-b border-line bg-base py-section">
         <div className="container-content">
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
             {TOOLS.map((tool, i) => {
               const Icon = tool.icon;
               return (

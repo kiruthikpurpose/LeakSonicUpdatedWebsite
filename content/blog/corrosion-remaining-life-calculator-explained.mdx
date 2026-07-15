@@ -1,0 +1,37 @@
+---
+title: 'From two thickness readings to a suggested inspection interval: a free remaining-life calculator'
+date: '2026-07-15'
+lastUpdated: '2026-07-15'
+author: 'LeakSonic Research'
+category: 'technical'
+summary: 'Two wall-thickness readings and the years between them are enough to compute a corrosion rate, a remaining corrosion allowance, a projected remaining life, and - using the half-life convention common across API 510/570/653-style programmes - a suggested next-inspection interval. We built a free calculator that does all of it transparently, one step at a time.'
+tags:
+  ['corrosion rate', 'remaining life', 'API 570', 'inspection interval', 'free tools']
+faqs:
+  - question: 'What inputs does the Corrosion Rate & Remaining Life Calculator need?'
+    answer: 'Four numbers: the original or nominal wall thickness, the current measured thickness, the number of years between those two readings, and your minimum required (retirement) thickness from your own governing-code calculation. From those, it derives a corrosion rate, remaining allowance, projected remaining life, and a suggested inspection interval.'
+  - question: 'What is the "half-life" convention the tool uses for its interval suggestion?'
+    answer: 'A widely used rule of thumb across API 510, 570, and 653-style in-service inspection programmes is to set the next inspection no later than half of the asset''s projected remaining life, capped at whatever maximum interval your code or company policy allows. The tool applies exactly that arithmetic and shows it in the insight log.'
+  - question: 'Why does the tool distinguish general from localized corrosion?'
+    answer: 'A linear corrosion rate is a reasonable approximation for general, uniform metal loss, but mechanisms like pitting, corrosion under insulation, or microbiologically influenced corrosion can progress far faster at specific points than a uniform average captures - so a linear projection can be dangerously optimistic if one of those is at play.'
+---
+
+Two numbers and a date are, in principle, enough to start reasoning about how much life is left in a piece of pressure equipment: how thick the wall used to be, how thick it measures now, and how long it took to get there. The arithmetic from that point to a suggested inspection interval is not exotic - but it's rarely made visible, because it usually lives inside a spreadsheet or an inspection engineer's head rather than somewhere anyone can see the working.
+
+We built a free [Corrosion Rate & Remaining Life Calculator](/tools/corrosion-remaining-life-calculator) to make that chain of reasoning explicit, from your two readings all the way to a suggested next-inspection interval.
+
+## The chain of arithmetic
+
+Start with metal loss: original thickness minus current thickness. Divide by the years between readings, and you have a linear corrosion rate in millimetres per year. Subtract your minimum required thickness from the current reading, and you have a remaining corrosion allowance. Divide that allowance by the corrosion rate, and you have a projected remaining life in years - the point at which, if the current rate holds, the asset would reach its retirement thickness.
+
+From there, a widely used convention across API 510 (pressure vessels), API 570 (piping), and API 653 (storage tanks) style in-service inspection programmes is to set the next inspection no later than half of that projected remaining life - so a slowly evolving problem still gets caught with margin, not discovered right at the theoretical limit. Our tool applies exactly that arithmetic, capped at whatever maximum interval you set, and shows every step in a line-by-line insight log alongside a chart projecting thickness forward against your minimum-required line.
+
+## Where a linear projection breaks down
+
+A linear rate is a defensible first approximation for general, uniform corrosion. It is a much weaker assumption for localized mechanisms - pitting, [corrosion under insulation](/blog/corrosion-under-insulation-explained), or [microbiologically influenced corrosion](/blog/microbiologically-influenced-corrosion-explained) - which can eat through metal far faster at a specific point than a uniform average suggests. The tool asks you to flag which mechanism you suspect and adjusts its framing accordingly, but it does not - and cannot - detect localized corrosion from two thickness numbers alone.
+
+## What this tool is not
+
+It is not a fitness-for-service assessment. Real retirement-thickness and remaining-life determinations follow a governing code - commonly API 579-1/ASME FFS-1 for fitness-for-service, or the applicable API code for your asset type - and weigh factors this tool doesn't model: flaw geometry, remaining strength, and code-specific safety factors. This tool is a fast, transparent way to reason about a known trend, not a replacement for that formal process.
+
+If the projection raises a real question about your network or site, [talk to us](/contact) about what a full, evidence-backed assessment would look like.

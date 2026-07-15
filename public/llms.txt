@@ -32,9 +32,10 @@ inside the workflows operators already use.
 
 - [Inspection Cost & ROI Calculator](https://leaksonic.com/tools/inspection-cost-calculator): Estimates engineer-hours and cost savings from a prioritised inspection workflow, based on user-supplied inputs.
 - [Integrity & Methane Reporting Readiness Assessment](https://leaksonic.com/tools/reporting-readiness-assessment): Five-question self-assessment scoring inspection/reporting workflow maturity into Foundational/Developing/Advanced bands.
-- [Inspection Priority Score Estimator](https://leaksonic.com/tools/inspection-priority-score): Estimates a relative inspection-priority score for a pipeline segment or static-equipment asset from five weighted risk factors.
+- [Inspection Priority Score Estimator](https://leaksonic.com/tools/inspection-priority-score): Plots an asset on a live API 580-style likelihood x consequence risk matrix from weighted likelihood and consequence factors, with a full breakdown.
+- [Corrosion Rate & Remaining Life Calculator](https://leaksonic.com/tools/corrosion-remaining-life-calculator): Computes a linear corrosion rate, remaining corrosion allowance, projected remaining life, and a suggested next-inspection interval (API 510/570/653-style half-life convention) from two wall-thickness readings.
 
-All three are free, client-side, require no signup, and are explicitly labelled as illustrative/educational tools, not validated performance claims or formal compliance audits.
+All four are free, client-side, require no signup, and are explicitly labelled as illustrative/educational tools, not validated performance claims or formal compliance audits.
 
 ## Audience-specific pages
 
@@ -63,7 +64,7 @@ for full context. Reach us via [contact](https://leaksonic.com/contact) or partn
 
 ## Blog - category authority (educational content, not product-performance claims)
 
-51 articles across corrosion mechanisms, inspection methods, regulation, data
+52 articles across corrosion mechanisms, inspection methods, regulation, data
 governance, AI/decision-support, and the oil & gas industry/funding ecosystem -
 each opens with a direct answer to its own headline and carries an FAQPage
 schema block for direct citation.
@@ -144,6 +145,7 @@ GAIL Pankh, IndianOil Ankur, HPCL, ONGC, BPCL, GAIL, Startup India, deep-tech ac
 - [How much does manual inspection review actually cost? A free ROI calculator](https://leaksonic.com/blog/inspection-cost-roi-calculator-guide)
 - [Where does your inspection programme sit on the path to measurement-based reporting?](https://leaksonic.com/blog/methane-reporting-readiness-self-assessment)
 - [What actually determines inspection priority? A free scoring tool to see it in practice](https://leaksonic.com/blog/inspection-priority-score-explained)
+- [From two thickness readings to a suggested inspection interval: a free remaining-life calculator](https://leaksonic.com/blog/corrosion-remaining-life-calculator-explained)
 
 ### Policy & governance
 - [Data governance and IP: what to ask any pipeline inspection technology vendor](https://leaksonic.com/blog/data-governance-inspection-technology-vendors)

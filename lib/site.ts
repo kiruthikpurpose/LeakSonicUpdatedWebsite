@@ -132,6 +132,11 @@ export const NAV_LINKS: NavItem[] = [
         href: '/tools/inspection-priority-score',
         description: 'Estimate relative priority from five risk factors',
       },
+      {
+        label: 'Corrosion Rate & Remaining Life',
+        href: '/tools/corrosion-remaining-life-calculator',
+        description: 'Compute corrosion rate and a suggested inspection interval',
+      },
     ],
   },
   {

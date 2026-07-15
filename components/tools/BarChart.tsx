@@ -51,21 +51,26 @@ export function BarChart({ data, max, caption }: { data: BarDatum[]; max: number
   );
 }
 
-/** Vertical column chart for year-over-year style projections. */
+/** Vertical column chart for year-over-year style projections. An optional
+ * threshold line (e.g. a minimum required wall thickness) draws as a dashed
+ * red reference line with its own label, independent of the column scale. */
 export function ProjectionChart({
   data,
   caption,
+  threshold,
 }: {
   data: { label: string; value: number; display: string }[];
   caption: string;
+  threshold?: { value: number; label: string };
 }) {
-  const max = Math.max(...data.map((d) => d.value), 1);
+  const max = Math.max(...data.map((d) => d.value), threshold?.value ?? 0, 1);
   const w = 800;
   const h = 220;
   const colGap = 24;
   const colW = (w - colGap * (data.length + 1)) / data.length;
   const baseline = h - 34;
   const top = 16;
+  const thresholdY = threshold ? baseline - ((baseline - top) * threshold.value) / max : null;
 
   return (
     <figure className="overflow-hidden rounded-card border border-line bg-card p-4 sm:p-6">
@@ -80,6 +85,7 @@ export function ProjectionChart({
           const barH = ((baseline - top) * d.value) / max;
           const x = colGap + i * (colW + colGap);
           const y = baseline - barH;
+          const belowThreshold = threshold !== undefined && d.value <= threshold.value;
           return (
             <g key={d.label}>
               <rect
@@ -88,7 +94,13 @@ export function ProjectionChart({
                 width={colW}
                 height={barH}
                 rx={6}
-                className={i === data.length - 1 ? 'fill-accent' : 'fill-accent/50'}
+                className={
+                  belowThreshold
+                    ? 'fill-accent'
+                    : i === data.length - 1
+                      ? 'fill-accent'
+                      : 'fill-accent/50'
+                }
               />
               <text
                 x={x + colW / 2}
@@ -111,6 +123,22 @@ export function ProjectionChart({
             </g>
           );
         })}
+        {threshold && thresholdY !== null && (
+          <g>
+            <line
+              x1={0}
+              y1={thresholdY}
+              x2={w}
+              y2={thresholdY}
+              className="stroke-accent"
+              strokeWidth={1.5}
+              strokeDasharray="6 4"
+            />
+            <text x={w - 4} y={thresholdY - 6} textAnchor="end" className="fill-accent" style={{ fontSize: '10.5px', fontWeight: 600 }}>
+              {threshold.label}
+            </text>
+          </g>
+        )}
         <line x1={0} y1={baseline} x2={w} y2={baseline} className="stroke-line" strokeWidth={1} />
       </svg>
       <figcaption className="mt-3 text-center text-xs text-ink-faint">{caption}</figcaption>
