@@ -39,6 +39,10 @@ module.exports = {
       '/solutions/refinery-operators',
       '/solutions/government-agencies',
       '/solutions/researchers',
+      '/tools',
+      '/tools/inspection-cost-calculator',
+      '/tools/reporting-readiness-assessment',
+      '/tools/inspection-priority-score',
     ];
     const isBlogPost = path.startsWith('/blog/') && path !== '/blog';
     let priority = config.priority;

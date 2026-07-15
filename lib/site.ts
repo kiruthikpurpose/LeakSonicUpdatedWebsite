@@ -114,6 +114,27 @@ export type NavItem = { label: string; href: string; children?: NavChild[] };
 export const NAV_LINKS: NavItem[] = [
   { label: 'Platform', href: '/platform' },
   {
+    label: 'Tools',
+    href: '/tools',
+    children: [
+      {
+        label: 'Inspection Cost & ROI Calculator',
+        href: '/tools/inspection-cost-calculator',
+        description: 'Estimate hours and cost a prioritised workflow could save',
+      },
+      {
+        label: 'Reporting Readiness Assessment',
+        href: '/tools/reporting-readiness-assessment',
+        description: 'Five questions, an instant readiness band',
+      },
+      {
+        label: 'Inspection Priority Score',
+        href: '/tools/inspection-priority-score',
+        description: 'Estimate relative priority from five risk factors',
+      },
+    ],
+  },
+  {
     label: 'Solutions',
     href: '/solutions/pipeline-operators',
     children: [
@@ -177,6 +198,7 @@ export const FOOTER_COLUMNS: { title: string; links: NavChild[] }[] = [
       { label: 'Glossary', href: '/resources/glossary' },
       { label: 'FAQ', href: '/resources/faq' },
       { label: 'Reports', href: '/resources/reports' },
+      { label: 'Free tools', href: '/tools' },
     ],
   },
   {

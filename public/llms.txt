@@ -28,6 +28,14 @@ inside the workflows operators already use.
 - [Glossary](https://leaksonic.com/resources/glossary): Standalone, citable definitions of the vocabulary of pipeline integrity, corrosion, and inspection.
 - [FAQ](https://leaksonic.com/resources/faq): Direct, honest answers to the hard questions - including what Sentrix cannot do.
 
+## Free tools
+
+- [Inspection Cost & ROI Calculator](https://leaksonic.com/tools/inspection-cost-calculator): Estimates engineer-hours and cost savings from a prioritised inspection workflow, based on user-supplied inputs.
+- [Integrity & Methane Reporting Readiness Assessment](https://leaksonic.com/tools/reporting-readiness-assessment): Five-question self-assessment scoring inspection/reporting workflow maturity into Foundational/Developing/Advanced bands.
+- [Inspection Priority Score Estimator](https://leaksonic.com/tools/inspection-priority-score): Estimates a relative inspection-priority score for a pipeline segment or static-equipment asset from five weighted risk factors.
+
+All three are free, client-side, require no signup, and are explicitly labelled as illustrative/educational tools, not validated performance claims or formal compliance audits.
+
 ## Audience-specific pages
 
 - [For pipeline operators](https://leaksonic.com/solutions/pipeline-operators): Gas transmission, distribution, and city gas network operators.
@@ -55,7 +63,7 @@ for full context. Reach us via [contact](https://leaksonic.com/contact) or partn
 
 ## Blog - category authority (educational content, not product-performance claims)
 
-48 articles across corrosion mechanisms, inspection methods, regulation, data
+51 articles across corrosion mechanisms, inspection methods, regulation, data
 governance, AI/decision-support, and the oil & gas industry/funding ecosystem -
 each opens with a direct answer to its own headline and carries an FAQPage
 schema block for direct citation.
@@ -131,6 +139,11 @@ GAIL Pankh, IndianOil Ankur, HPCL, ONGC, BPCL, GAIL, Startup India, deep-tech ac
 - [Pipeline data blind spots: the gaps most integrity programs do not know they have](https://leaksonic.com/blog/pipeline-data-blind-spots-operators-face)
 - [Digital transformation in pipeline operations: what is actually changing, beyond the buzzword](https://leaksonic.com/blog/digital-transformation-pipeline-operations)
 - [Pipeline integrity KPIs: which metrics actually indicate program effectiveness](https://leaksonic.com/blog/pipeline-integrity-kpis-what-to-measure)
+
+### Free tools, explained
+- [How much does manual inspection review actually cost? A free ROI calculator](https://leaksonic.com/blog/inspection-cost-roi-calculator-guide)
+- [Where does your inspection programme sit on the path to measurement-based reporting?](https://leaksonic.com/blog/methane-reporting-readiness-self-assessment)
+- [What actually determines inspection priority? A free scoring tool to see it in practice](https://leaksonic.com/blog/inspection-priority-score-explained)
 
 ### Policy & governance
 - [Data governance and IP: what to ask any pipeline inspection technology vendor](https://leaksonic.com/blog/data-governance-inspection-technology-vendors)

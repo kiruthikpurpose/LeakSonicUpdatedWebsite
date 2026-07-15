@@ -240,6 +240,34 @@ export function softwareApplicationSchema() {
   };
 }
 
+/**
+ * Describes a free, client-side calculator/tool page as a WebApplication -
+ * the schema type answer engines look for when resolving "is there a tool
+ * for X" queries (AEO/GEO). Paired with faqSchema on the same page.
+ */
+export function toolSchema({
+  name,
+  description,
+  path,
+}: {
+  name: string;
+  description: string;
+  path: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name,
+    description,
+    url: new URL(path, SITE.url).toString(),
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web',
+    isAccessibleForFree: true,
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    provider: { '@id': `${SITE.url}/#organization` },
+  };
+}
+
 export type ListedItem = { name: string; path: string; description?: string };
 
 /** Generic ItemList schema for index pages (blog, glossary, resources). */

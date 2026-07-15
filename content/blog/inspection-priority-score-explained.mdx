@@ -1,0 +1,37 @@
+---
+title: 'What actually determines inspection priority? A free scoring tool to see it in practice'
+date: '2026-07-15'
+lastUpdated: '2026-07-15'
+author: 'LeakSonic Research'
+category: 'technical'
+summary: 'Risk-based inspection prioritisation rests on a small number of factors - asset age, construction risk, consequence area, time since last inspection, and history of anomalies - but most engineers outside a formal RBI programme have never seen how those factors combine into a score. We built a free Inspection Priority Score Estimator to make that logic tangible in under a minute.'
+tags:
+  ['risk-based inspection', 'RBI', 'inspection prioritisation', 'pipeline segment scoring', 'free tools']
+faqs:
+  - question: 'What five factors does the Inspection Priority Score Estimator use?'
+    answer: 'Asset age, construction/material risk, consequence area (population or criticality nearby), time since last inspection, and history of anomalies or repairs. History is weighted roughly twice as heavily as the other four because a documented past anomaly is typically the strongest single predictor of future risk.'
+  - question: 'Is this the same methodology used in a formal RBI programme?'
+    answer: 'No - it is deliberately simplified for illustration. A formal risk-based inspection programme uses your actual asset data, applicable codes and standards (such as API 580/581 for process equipment), and a far more rigorous methodology. This tool exists to make the underlying logic tangible, not to generate a defensible inspection plan.'
+  - question: 'Does the tool work for both pipeline segments and refinery equipment?'
+    answer: 'Yes. The same five factors and scoring logic apply whether you are describing a pipeline segment or a piece of refinery static equipment like a fired heater or pressure vessel - the underlying risk-prioritisation reasoning is the same across asset types.'
+---
+
+Risk-based inspection prioritisation sounds like a black box from the outside, but the underlying logic is not actually complicated - it just isn't visible unless you're already running a formal programme. We built a free [Inspection Priority Score Estimator](/tools/inspection-priority-score) so anyone can see how a small number of factors combine into a relative priority score, in under a minute.
+
+## The five factors that do most of the work
+
+Across most risk-based inspection frameworks, five categories of information carry most of the signal: how old the asset is relative to its design life, how susceptible its construction and materials are to known defect classes, how severe the consequences would be if it failed given what's nearby, how long it has been since the last inspection, and whether it has a documented history of anomalies or repairs.
+
+Our tool asks you to rate each of those five factors as low, medium, or high for a hypothetical or real asset, then computes an illustrative combined score.
+
+## Why history counts double
+
+Of the five factors, a documented history of anomalies or repairs is typically the single strongest predictor that an asset deserves closer attention - past behaviour is a more direct signal than proxies like age or consequence area alone. The estimator reflects that by weighting history roughly twice as heavily as the other four factors when it computes the combined score, which maps to one of four illustrative bands from Low to Critical priority.
+
+## Pipeline segment or refinery equipment - same logic
+
+The tool works the same way whether you're describing a stretch of pipeline or a fired heater, pressure vessel, or storage tank on a refinery site. The five-factor structure isn't asset-specific; it reflects how risk-based prioritisation reasoning works in general, which is exactly why it's a useful thing to make tangible rather than leave locked inside a formal RBI system.
+
+## What it isn't
+
+This is an educational demonstration, not a substitute for a formal risk-based inspection programme built on your actual asset data and the applicable codes and standards for your industry. If it helps clarify how prioritisation should work, but you need the real, defensible version for your network or site, [talk to us](/contact) about what that would look like.
