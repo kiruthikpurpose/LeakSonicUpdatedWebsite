@@ -12,6 +12,9 @@ export const metadata: Metadata = buildMetadata({
     'pipeline integrity research',
     'inspection decision support research',
     'pipeline inspection validation',
+    'industrial AI research collaboration',
+    'refinery inspection research',
+    'infrastructure change detection research',
   ],
 });
 
@@ -26,6 +29,21 @@ const content: AudienceContent = {
     { value: 'Real data', label: 'grounded in field engagement', icon: Microscope },
     { value: 'Honest', label: 'we publish outcomes either way', icon: Scale },
   ],
+  context: {
+    heading: 'Where our open questions actually sit',
+    paragraphs: [
+      'Sentrix spans two current application areas - gas pipeline integrity inspection, including City Gas Distribution networks, and refinery/industrial static-equipment inspection - built on one proprietary decision-intelligence software layer. That breadth is deliberate: comparison, prioritisation, and evidence-defensibility are general problems that show up wherever inspection evidence needs to become a decision, and we think the research is stronger for being tested across more than one asset class.',
+      'We are not asking for validation of a finished product. The open questions we publish on our approach page are real gaps in our own thinking - how to validate findings against ground truth without a large labelled dataset, what confidence threshold an engineer will actually act on, how change detection holds up across very different asset types. A research partner who disagrees with our framing is exactly who we want to hear from.',
+    ],
+  },
+  flowStages: [
+    { label: 'Open question', sub: 'A named, published gap in our approach' },
+    { label: 'Sentrix context', sub: 'Real field data and engagement, not synthetic' },
+    { label: 'Collaboration', sub: 'Jointly scoped, honestly attributed' },
+    { label: 'Published outcome', sub: 'Reported either way, cited accurately' },
+  ],
+  flowAccentIndex: 1,
+  flowCaption: 'How a research collaboration typically moves from an open question to a published outcome.',
   concernsHeading: 'What makes a collaboration worth your time',
   concernsLead:
     'Researchers want problems that are genuinely open, data that is real, and a partner who won’t overclaim. We try to offer all three.',
@@ -45,6 +63,10 @@ const content: AudienceContent = {
     {
       title: 'Is there a path to impact?',
       body: 'These questions sit on the critical path of a real deployment aimed at a real, large-scale problem - so good answers have somewhere concrete to go.',
+    },
+    {
+      title: 'Does the research generalise beyond gas pipelines?',
+      body: 'We think so, and it is part of what we want tested. The same evidence-comparison and prioritisation questions recur on refinery static equipment, and we are genuinely curious - not just optimistic - about how far the underlying approach generalises across asset types.',
     },
   ],
   valueHeading: 'What we can offer a research partner',

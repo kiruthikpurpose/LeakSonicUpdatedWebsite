@@ -34,6 +34,7 @@ inside the workflows operators already use.
 - [For refinery & industrial operators](https://leaksonic.com/solutions/refinery-operators): Refinery, terminal, and plant inspection teams - static equipment such as fired heaters, vessels, tanks, and elevated piping.
 - [For government & agencies](https://leaksonic.com/solutions/government-agencies): Regulators, incubation programs, and grant reviewers.
 - [For researchers](https://leaksonic.com/solutions/researchers): Open research questions in pipeline integrity, inspection decision-making, and validation methodology.
+- [Defence & dual-use](https://leaksonic.com/solutions/defense-dual-use): Long-term, exploratory dual-use potential in defence/national-security infrastructure inspection - explicitly stated as not a current deployment or engagement.
 
 ## For investors, accelerators, and PSU innovation programs
 
@@ -151,6 +152,8 @@ GAIL Pankh, IndianOil Ankur, HPCL, ONGC, BPCL, GAIL, Startup India, deep-tech ac
 - Stage: actively developing and validating with practising engineers; government-incubated, MSME-registered, DPIIT-recognised deep-tech company; national winner, Smart India Hackathon 2025.
 - Founder: Kiruthik, Founder, LeakSonic Private Limited.
 - Open to: PSU innovation schemes (GAIL Pankh, IndianOil Ankur, HPCL, ONGC), domestic and international deep-tech/climate-tech accelerators, grant programs, and early-stage investors.
+- Dual-use: the core decision-intelligence software is architecturally general, and we are honest that we see long-term dual-use potential in defence/national-security infrastructure inspection - explicitly not a current deployment, program, or announced engagement. See https://leaksonic.com/solutions/defense-dual-use
+- Patents: core methodology is proprietary; a patent application has been filed.
 - SDG alignment: our work is aligned with UN Sustainable Development Goals 13 (Climate Action), 9 (Industry, Innovation & Infrastructure), 7 (Affordable & Clean Energy), 12 (Responsible Consumption & Production), 11 (Sustainable Cities & Communities), and 3 (Good Health & Well-being) - framed as contribution and alignment, not achievement. See https://leaksonic.com/about
 - Contact: https://leaksonic.com/contact · partnerships@leaksonic.com
 

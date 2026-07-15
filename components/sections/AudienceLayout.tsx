@@ -3,10 +3,10 @@ import type { LucideIcon } from 'lucide-react';
 import { PageHero } from '@/components/ui/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
+import { SectionLabel } from '@/components/ui/SectionLabel';
 import { Card } from '@/components/ui/Card';
 import { CtaBand } from '@/components/sections/CtaBand';
-import { FlowDiagram } from '@/components/diagrams/FlowDiagram';
-import { SectionLabel } from '@/components/ui/SectionLabel';
+import { AudienceFlowSvg, type FlowStage } from '@/components/diagrams/AudienceFlowSvg';
 import JsonLd from '@/components/JsonLd';
 import { breadcrumbSchema, faqSchema, type Crumb } from '@/lib/schema';
 
@@ -22,6 +22,13 @@ export type AudienceContent = {
   name: string;
   /** A short strip of distinguishing signals unique to this audience. */
   stats: AudienceStat[];
+  /** Deeper context paragraphs, rendered directly under the hero - gives each
+   * page more substantive, citable body content beyond the Q&A cards. */
+  context?: { heading: string; paragraphs: string[] };
+  /** Audience-tailored SVG flow diagram stages for "where it fits". */
+  flowStages: FlowStage[];
+  flowAccentIndex?: number;
+  flowCaption: string;
   /** What this audience actually cares about - addressed directly. */
   concernsHeading: string;
   concernsLead: string;
@@ -77,7 +84,22 @@ export function AudienceLayout({ content }: { content: AudienceContent }) {
         </div>
       </PageHero>
 
-      <section className="border-b border-line bg-base py-section">
+      {content.context && (
+        <section className="border-b border-line bg-base py-section">
+          <div className="container-content max-w-3xl">
+            <Reveal>
+              <SectionLabel>{content.context.heading}</SectionLabel>
+              <div className="mt-6 space-y-5 text-lg leading-relaxed text-ink-secondary">
+                {content.context.paragraphs.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+        </section>
+      )}
+
+      <section className="border-b border-line bg-surface py-section">
         <div className="container-content">
           <Reveal>
             <SectionHeading
@@ -108,7 +130,12 @@ export function AudienceLayout({ content }: { content: AudienceContent }) {
             </h2>
           </Reveal>
           <Reveal delay={0.08}>
-            <FlowDiagram className="mt-8" />
+            <AudienceFlowSvg
+              className="mt-8"
+              stages={content.flowStages}
+              accentIndex={content.flowAccentIndex}
+              caption={content.flowCaption}
+            />
           </Reveal>
         </div>
       </section>

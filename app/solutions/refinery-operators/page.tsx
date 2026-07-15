@@ -16,6 +16,9 @@ export const metadata: Metadata = buildMetadata({
     'industrial asset inspection drone',
     'fired heater inspection',
     'pressure vessel inspection drone',
+    'refinery turnaround inspection software',
+    'RBI inspection technology',
+    'storage tank drone inspection',
   ],
 });
 
@@ -30,6 +33,23 @@ const content: AudienceContent = {
     { value: 'Rope-access', label: 'alternative for evidence gathering', icon: Flame },
     { value: 'RBI-format', label: 'output, not rework', icon: FileCheck2 },
   ],
+  context: {
+    heading: 'Built around the turnaround, not against it',
+    paragraphs: [
+      'Refinery and industrial static equipment - fired heaters, pressure vessels, storage tanks, elevated piping - has traditionally been inspected by putting a person at height: scaffolding erected for a shell survey, a rope-access technician descending a stack. That is expensive, slow to schedule, and exposes people to real risk. Sentrix is proprietary software built to turn drone-captured evidence of that same equipment into the same defensible inspection record, so scaffolding and rope access get reserved for the locations that genuinely need close-contact work.',
+      'This is a genuine, current application area of the same platform we build for gas pipeline inspection - not a side project. The underlying problem is identical in shape: too much static equipment, too little inspection throughput, and a decision about what to prioritise that currently rests on institutional memory more than evidence.',
+      'Output is structured to slot into your existing risk-based inspection (RBI) and turnaround planning process, and Sentrix is explicit about what it does not replace - ultrasonic thickness gauging, weld examination, and other contact-based NDT still do the job only contact measurement can do.',
+    ],
+  },
+  flowStages: [
+    { label: 'Drone evidence', sub: 'Visual and thermal capture of static equipment' },
+    { label: 'Sentrix', sub: 'Standardise, compare cycles, rank by risk' },
+    { label: 'Inspection lead', sub: 'Reviews findings, scopes close-contact work' },
+    { label: 'RBI-format record', sub: 'Feeds your turnaround and RBI programme' },
+  ],
+  flowAccentIndex: 1,
+  flowCaption:
+    'How a Sentrix-assisted screening pass reduces unnecessary scaffolding and rope-access mobilisation.',
   concernsHeading: 'The questions a plant inspection lead actually asks',
   concernsLead:
     'You don’t need another flight vendor. You need less scaffolding time, less rope-access mobilisation, and a record your RBI programme can actually use. That’s what we optimise for.',
@@ -49,6 +69,10 @@ const content: AudienceContent = {
     {
       title: 'Can I trust a software-flagged finding?',
       body: 'Every flagged item carries its evidence - what was observed and why it was flagged - so your inspection engineers audit the reasoning instead of trusting an opaque score.',
+    },
+    {
+      title: 'Is this the same platform you use for pipelines, or a different product?',
+      body: 'The same platform. Sentrix is built as one decision layer that generalises across oil and gas infrastructure - the underlying comparison and prioritisation approach applies whether the asset is a pipeline corridor or a fired heater, with the specifics tailored to each.',
     },
   ],
   valueHeading: 'What lands on your inspection team’s desk',

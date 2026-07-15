@@ -12,6 +12,9 @@ export const metadata: Metadata = buildMetadata({
     'PNGRB compliance technology',
     'methane emissions reporting',
     'pipeline integrity policy',
+    'deep-tech grant technology oil and gas',
+    'City Gas Distribution regulation technology',
+    'industrial asset inspection policy',
   ],
 });
 
@@ -26,6 +29,22 @@ const content: AudienceContent = {
     { value: 'Regulator-aligned', label: 'compliance output', icon: ShieldCheck },
     { value: 'Testable', label: 'claims, stated openly', icon: FlaskConical },
   ],
+  context: {
+    heading: 'What we actually build, for a technical reviewer',
+    paragraphs: [
+      'LeakSonic builds Sentrix, a proprietary software and hardware engineering decision intelligence platform. Our core focus today is gas pipeline integrity inspection, including City Gas Distribution networks, with refinery and industrial static-equipment inspection as a second genuine, current application area of the same platform - not a future roadmap item.',
+      'For a program or agency evaluating us, the relevant facts are: government-incubated at AIC RAISE, DPIIT-recognised under Startup India, MSME-registered, a national win at Smart India Hackathon 2025, and a patent application filed on our core methodology. We are actively validating the platform with practising engineers rather than presenting unproven claims as fact, and we publish exactly what we are testing on our approach page.',
+      'The structural case for funding is straightforward: gas network and refinery inspection capacity is not scaling with the growth and ageing of the underlying asset base, and methane reporting is shifting from estimated to measured under frameworks like OGMP 2.0 - a policy-relevant, multi-decade problem, not a one-time pitch.',
+    ],
+  },
+  flowStages: [
+    { label: 'Field evidence', sub: 'Inspection data from pipeline or plant assets' },
+    { label: 'Sentrix', sub: 'Proprietary decision-intelligence software' },
+    { label: 'Operator engineer', sub: 'Reviews findings, retains judgement' },
+    { label: 'Regulator-aligned record', sub: 'PNGRB-format and OGMP 2.0-aligned output' },
+  ],
+  flowAccentIndex: 1,
+  flowCaption: 'How Sentrix output is designed to align with the reporting frameworks a program already tracks.',
   concernsHeading: 'What a program reviewer is really assessing',
   concernsLead:
     'Not polish - seriousness. Whether the team understands the domain and the regulations, whether the technical claims are grounded, and whether the stage is represented honestly.',
@@ -45,6 +64,10 @@ const content: AudienceContent = {
     {
       title: 'Does it fit your priorities?',
       body: 'Gas-focused, aligned with the methane-measurement agenda and the structural gap between pipeline network growth and inspection capacity that most gas-producing and gas-importing regions are facing.',
+    },
+    {
+      title: 'Is the underlying technology protected?',
+      body: 'Yes - the core methodology is proprietary and a patent application has been filed. We do not publish the specific technical implementation, which is a deliberate posture for a deep-tech evaluation, not a gap in the underlying work.',
     },
   ],
   valueHeading: 'What we bring to a program or evaluation',

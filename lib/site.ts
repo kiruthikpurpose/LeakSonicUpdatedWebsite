@@ -137,6 +137,11 @@ export const NAV_LINKS: NavItem[] = [
         href: '/solutions/researchers',
         description: 'For academic and industrial collaborators',
       },
+      {
+        label: 'Defence & Dual-Use',
+        href: '/solutions/defense-dual-use',
+        description: 'Long-term exploratory direction, not a current engagement',
+      },
     ],
   },
   { label: 'Approach', href: '/research' },
@@ -162,6 +167,7 @@ export const FOOTER_COLUMNS: { title: string; links: NavChild[] }[] = [
       { label: 'Refinery & industrial', href: '/solutions/refinery-operators' },
       { label: 'Government & agencies', href: '/solutions/government-agencies' },
       { label: 'Researchers', href: '/solutions/researchers' },
+      { label: 'Defence & dual-use', href: '/solutions/defense-dual-use' },
     ],
   },
   {
