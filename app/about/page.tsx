@@ -14,7 +14,7 @@ import { SITE } from '@/lib/site';
 export const metadata: Metadata = buildMetadata({
   title: 'About LeakSonic - mission & founder',
   description:
-    'LeakSonic builds Sentrix, an engineering decision intelligence platform covering pipeline, refinery, terminal, and offshore inspection - a government-incubated, MSME-registered deep-tech company expanding from an India base to a global market.',
+    'LeakSonic builds Sentrix, a proprietary engineering decision intelligence software and hardware platform covering gas pipeline (including City Gas Distribution), refinery, terminal, and offshore inspection - a government-incubated, MSME-registered deep-tech company expanding from an India base to a global market.',
   path: '/about',
   keywords: [
     'LeakSonic',
@@ -24,6 +24,7 @@ export const metadata: Metadata = buildMetadata({
     'deep-tech startup India',
     'pipeline integrity company',
     'oil and gas inspection technology',
+    'City Gas Distribution inspection technology',
     'Smart India Hackathon startup',
     'AIC RAISE incubated startup',
     'DPIIT recognised startup',
@@ -33,6 +34,8 @@ export const metadata: Metadata = buildMetadata({
     'SDG aligned startup',
     'climate action methane reduction',
     'sustainable infrastructure technology',
+    'decision intelligence software company',
+    'drone software and hardware company',
   ],
 });
 
@@ -48,7 +51,7 @@ const WHY = [
   },
   {
     title: 'Why this company',
-    body: 'We’re building the engineering decision layer, not another flight service. That means going deep on making evidence comparable, findings defensible, and output that fits existing workflows - rather than competing on flight logistics. A narrower, harder, more defensible focus.',
+    body: 'We’re building the engineering decision layer - proprietary software paired with the hardware that captures evidence - not another flight service. That means going deep on making evidence comparable, findings defensible, and output that fits existing workflows - rather than competing on flight logistics alone. A narrower, harder, more defensible focus.',
   },
   {
     title: 'Why now',
@@ -162,6 +165,14 @@ export default function AboutPage() {
                 ground-based cathodic-protection monitoring concept - a complementary line of work,
                 not a separate product launch, and not yet a priority next to getting Sentrix right.
               </p>
+              <p className="text-sm text-ink-muted">
+                The underlying decision-intelligence software is deliberately built to generalise
+                beyond oil and gas. We see long-term, dual-use potential in domains like defence and
+                national-security infrastructure inspection, and it’s a direction we may pursue as
+                the platform and our funding position mature - early, exploratory thinking today, not
+                a current engagement or a near-term priority next to getting pipeline and refinery
+                inspection right.
+              </p>
             </div>
           </Reveal>
         </div>
@@ -174,7 +185,7 @@ export default function AboutPage() {
             <div className="relative aspect-square w-full max-w-sm overflow-hidden rounded-squircle border border-line bg-surface">
               <Image
                 src="/KiruthikProfilePictureSquare.jpg"
-                alt="Kiruthik, founder of LeakSonic - the pipeline inspection technology company building Sentrix"
+                alt="Kiruthik, founder of LeakSonic - the decision intelligence software and hardware company building Sentrix"
                 fill
                 sizes="(max-width: 1024px) 100vw, 384px"
                 className="object-cover"
@@ -202,7 +213,8 @@ export default function AboutPage() {
                 LeakSonic’s founding team has a track record in applied engineering competitions,
                 including a national win at India’s Smart India Hackathon 2025 - one early signal
                 among several, not the headline. LeakSonic Private Limited is a government-incubated,
-                MSME-registered deep-tech company.
+                MSME-registered deep-tech company, and our core methodology is proprietary, with a
+                patent application filed.
               </p>
             </div>
           </Reveal>
@@ -255,10 +267,12 @@ export default function AboutPage() {
             <div className="rounded-card border border-line bg-card p-7">
               <h3 className="text-h3 font-semibold text-ink">Why defensible</h3>
               <p className="mt-3 text-sm leading-relaxed text-ink-secondary">
-                Drone hardware is increasingly commoditised; the decision layer that turns raw
-                inspection evidence into comparable, defensible findings is not. That is a data and
-                domain-trust problem, not a flight-logistics one - harder to replicate and harder to
-                dislodge once an operator’s workflow depends on it.
+                Flight hardware alone is increasingly commoditised; the proprietary decision layer
+                that turns raw inspection evidence into comparable, defensible findings is not - and
+                we build the software and the hardware integration around it as one system, with a
+                patent application filed on our core methodology. That is a data and domain-trust
+                problem, not a flight-logistics one - harder to replicate and harder to dislodge once
+                an operator’s workflow depends on it.
               </p>
             </div>
             <div className="rounded-card border border-line bg-card p-7">

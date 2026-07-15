@@ -45,6 +45,10 @@ export const metadata: Metadata = buildMetadata({
     'rope access alternative',
     'scaffolding inspection alternative',
     'industrial asset inspection drone',
+    'City Gas Distribution inspection',
+    'CGD pipeline inspection software',
+    'decision intelligence software company',
+    'drone software and hardware platform',
   ],
 });
 
@@ -141,7 +145,7 @@ export default function HomePage() {
             <SectionHeading
               eyebrow="What you get"
               title="Three outcomes, not fifty features"
-              lead="Sentrix is the engineering decision layer between raw drone evidence and an auditable decision. It does three things, and it does them well."
+              lead="Sentrix is a proprietary software and hardware decision layer between raw evidence and an auditable decision. It does three things, and it does them well."
             />
           </Reveal>
           <div className="mt-9 grid grid-cols-1 gap-5 md:grid-cols-3">
@@ -246,7 +250,8 @@ export default function HomePage() {
           <Reveal>
             <SectionLabel>Why now</SectionLabel>
             <h2 className="mt-5 text-h2 font-bold text-ink">
-              A structural mismatch between asset growth and inspection capacity
+              Gas pipeline and City Gas Distribution networks are our core focus - and the same gap
+              shows up on refinery equipment
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
@@ -254,9 +259,9 @@ export default function HomePage() {
                 available - each stat is written to remain quotable if the numbers move. */}
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
               {[
+                ['300+', 'authorised City Gas Distribution areas in India alone'],
                 ['Expanding', 'gas networks and refinery capacity, faster than inspection can scale'],
                 ['Estimated → measured', 'methane reporting shifting under regimes like OGMP 2.0'],
-                ['300+', 'authorised City Gas Distribution areas in India alone'],
               ].map(([v, l]) => (
                 <div key={l} className="rounded-card border border-line bg-card p-5">
                   <div className="font-sans text-xl font-semibold text-accent">{v}</div>

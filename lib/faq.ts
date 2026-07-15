@@ -3,9 +3,19 @@ import type { FaqItem } from './schema';
 /** Structured FAQ content, reused for both the page and FAQPage JSON-LD. */
 export const SITE_FAQ: FaqItem[] = [
   {
+    question: 'Is Sentrix’s technology proprietary or patented?',
+    answer:
+      'Yes. The core methodology behind how Sentrix makes inspection evidence comparable and findings defensible is proprietary, and a patent application has been filed to protect it. We are deliberately not publishing the specific technical implementation publicly - that restraint is intentional, not a gap in what we know.',
+  },
+  {
+    question: 'Does Sentrix work outside oil and gas, for example in defence?',
+    answer:
+      'Not today. Sentrix is built and validated specifically for gas pipeline (including City Gas Distribution) and refinery/industrial static-equipment inspection, and that is where our near-term focus stays. The underlying decision-intelligence software is designed to generalise, and we see long-term dual-use potential in domains like defence and national-security infrastructure inspection - but that is an early, exploratory direction we may pursue later, not a current product or engagement.',
+  },
+  {
     question: 'What does Sentrix do?',
     answer:
-      'Sentrix is an engineering decision layer that turns raw drone inspection evidence into a standardised, comparable, defensible answer to where an integrity team should look next and why - across gas pipeline networks and refinery or industrial static equipment such as fired heaters, vessels, tanks, and elevated piping.',
+      'Sentrix is a proprietary software and hardware engineering decision layer that turns raw inspection evidence into a standardised, comparable, defensible answer to where an integrity team should look next and why - built around gas pipeline networks, including City Gas Distribution, as our core focus today, and refinery or industrial static equipment such as fired heaters, vessels, tanks, and elevated piping.',
   },
   {
     question: 'What industries does Sentrix serve?',

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { ShieldCheck, Lock } from 'lucide-react';
+import { ShieldCheck, Lock, BadgeCheck } from 'lucide-react';
 import { PageHero } from '@/components/ui/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
@@ -30,6 +30,9 @@ export const metadata: Metadata = buildMetadata({
     'rope access alternative',
     'scaffolding inspection alternative',
     'industrial asset inspection drone',
+    'City Gas Distribution inspection software',
+    'proprietary inspection software',
+    'drone software and hardware platform',
   ],
 });
 
@@ -96,7 +99,7 @@ export default function PlatformPage() {
       <JsonLd data={[breadcrumbSchema(crumbs), softwareApplicationSchema(), serviceSchema()]} />
       <PageHero
         eyebrow="The platform"
-        title="Sentrix is the engineering decision layer between drone evidence and an auditable decision."
+        title="Sentrix is a proprietary software and hardware decision layer between inspection evidence and an auditable decision."
         lead="Built to help integrity teams validate, compare, prioritise, and report inspection findings with far less manual effort. Written for the people who have to trust it - integrity engineers, chief engineers, and program managers. Here is what the platform does, and what you get out of it."
         crumbs={crumbs}
       />
@@ -261,6 +264,22 @@ export default function PlatformPage() {
                     Asset coordinates, inspection findings, and site detail are commercially and
                     security-sensitive. Data residency, access control, and retention are agreed with
                     the operator up front - we treat your data as yours, not ours to publicise.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+            <Reveal delay={0.15}>
+              <div className="flex h-full gap-4 rounded-card border border-line bg-card p-6 lg:col-span-2">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-tile border border-line bg-surface text-accent">
+                  <BadgeCheck className="h-5 w-5" aria-hidden />
+                </span>
+                <div>
+                  <h3 className="text-h3 font-semibold text-ink">Proprietary, patent-pending technology</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-ink-secondary">
+                    The methodology behind how Sentrix makes evidence comparable and findings
+                    defensible is proprietary, and a patent application has been filed to protect it.
+                    We don’t publish the specific technical implementation - that restraint is
+                    deliberate, not a gap.
                   </p>
                 </div>
               </div>
