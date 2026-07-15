@@ -25,6 +25,11 @@ export const metadata: Metadata = buildMetadata({
     'pipeline integrity management',
     'inspection decision intelligence',
     'drone pipeline inspection',
+    'refinery inspection',
+    'static equipment inspection',
+    'rope access alternative',
+    'scaffolding inspection alternative',
+    'industrial asset inspection drone',
   ],
 });
 
@@ -35,12 +40,12 @@ const crumbs = [
 
 const PROBLEMS = [
   {
-    title: 'Which segment to inspect is a judgement call',
-    body: 'Deciding which parts of hundreds of kilometres to prioritise often rests on institutional memory and spreadsheets rather than a defensible, evidence-based ranking - so the same effort does not always land where it matters most.',
+    title: 'Which asset to inspect first is a judgement call',
+    body: 'Deciding which segment of a long pipeline corridor, or which vessel and heater in a turnaround queue, to prioritise often rests on institutional memory and spreadsheets rather than a defensible, evidence-based ranking - so the same effort does not always land where it matters most.',
   },
   {
     title: 'Evidence review is slow and manual',
-    body: 'Inspection evidence is reviewed piece by piece by experienced engineers, a process that scales with pipeline length and depends heavily on who happens to be looking on a given day.',
+    body: 'Inspection evidence is reviewed piece by piece by experienced engineers, a process that scales with asset footprint and depends heavily on who happens to be looking on a given day.',
   },
   {
     title: 'Comparing to last time is done from memory',
@@ -56,7 +61,7 @@ const DELIVERABLES = [
   {
     n: '01',
     title: 'Prioritised inspection target list',
-    body: 'A ranked list of pipeline segments ordered by risk and change, so scarce inspection effort points at the highest-value locations first instead of walking the line uniformly.',
+    body: 'A ranked list of segments or assets ordered by risk and change, so scarce inspection effort points at the highest-value locations first instead of being spread uniformly.',
   },
   {
     n: '02',
@@ -251,12 +256,11 @@ export default function PlatformPage() {
                   <Lock className="h-5 w-5" aria-hidden />
                 </span>
                 <div>
-                  <h3 className="text-h3 font-semibold text-ink">Your network data stays yours</h3>
+                  <h3 className="text-h3 font-semibold text-ink">Your asset data stays yours</h3>
                   <p className="mt-2 text-sm leading-relaxed text-ink-secondary">
-                    Pipeline coordinates, inspection findings, and network detail are commercially
-                    and security-sensitive. Data residency, access control, and retention are agreed
-                    with the operator up front - we treat your network as your data, not ours to
-                    publicise.
+                    Asset coordinates, inspection findings, and site detail are commercially and
+                    security-sensitive. Data residency, access control, and retention are agreed with
+                    the operator up front - we treat your data as yours, not ours to publicise.
                   </p>
                 </div>
               </div>
@@ -267,11 +271,11 @@ export default function PlatformPage() {
 
       <CtaBand
         title="Let's find out how much time your decisions could get back."
-        body="Tell us about your pipeline network and inspection cycle. We’ll walk you through how Sentrix would prioritise it, where it could reduce manual effort and turnaround time, and be honest about what we can and can’t yet prove."
+        body="Tell us about your pipeline network or your refinery site and inspection cycle. We’ll walk you through how Sentrix would prioritise it, where it could reduce manual effort and turnaround time, and be honest about what we can and can’t yet prove."
         primaryHref="/solutions/pipeline-operators"
         primaryLabel="For pipeline operators"
-        secondaryHref="/contact"
-        secondaryLabel="Contact us"
+        secondaryHref="/solutions/refinery-operators"
+        secondaryLabel="For refinery operators"
       />
     </>
   );

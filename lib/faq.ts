@@ -3,6 +3,16 @@ import type { FaqItem } from './schema';
 /** Structured FAQ content, reused for both the page and FAQPage JSON-LD. */
 export const SITE_FAQ: FaqItem[] = [
   {
+    question: 'What does Sentrix do?',
+    answer:
+      'Sentrix is an engineering decision layer that turns raw drone inspection evidence into a standardised, comparable, defensible answer to where an integrity team should look next and why - across gas pipeline networks and refinery or industrial static equipment such as fired heaters, vessels, tanks, and elevated piping.',
+  },
+  {
+    question: 'What industries does Sentrix serve?',
+    answer:
+      'Sentrix serves two current application areas of the same platform: gas transmission, distribution, and city gas network operators inspecting pipeline right-of-way and integrity; and refinery, terminal, and plant operators inspecting static equipment that has traditionally required scaffolding or rope access. Both are genuine, active application areas, not a primary market and a future one.',
+  },
+  {
     question: 'Can drones detect leaks in buried pipelines?',
     answer:
       'Not directly. A drone cannot see through soil, so no airborne sensor detects a buried leak the way an inline tool detects wall loss from inside the pipe. What airborne inspection can capture are the surface signatures a sub-surface leak eventually produces - for example, thermal anomalies where escaping gas changes surface temperature, or vegetation stress where gas in the root zone affects the canopy over days to weeks. These are proxies, not direct measurements, and each has real limitations: vegetation stress can have other causes, surface signatures depend on soil and weather, and small deep leaks may produce no detectable surface signal at all. Sentrix treats surface evidence as something to be weighed and prioritised, not as standalone proof - which is why comparing change across cycles matters more than any single reading.',
@@ -18,9 +28,9 @@ export const SITE_FAQ: FaqItem[] = [
       'Most drone inspection offerings are flight-and-imagery services: they fly an asset and hand back photographs, video, or an orthomosaic, leaving a person to decide what it means. Sentrix is an engineering decision layer, not a flight service. The drone is one input; the product is the software that turns that evidence into a comparable, defensible, prioritised answer to the operator’s real question - where to inspect next, and why. We are deliberately not competing on flight logistics or camera specifications; we are focused on the decision layer that turns inspection evidence into decisions.',
   },
   {
-    question: 'Why gas pipelines specifically?',
+    question: 'Why gas pipelines and refinery static equipment specifically?',
     answer:
-      'Gas infrastructure concentrates two pressures at once: methane is both a safety hazard and a potent greenhouse gas under tightening measurement-based reporting regimes such as OGMP 2.0, and gas transmission and distribution networks are expanding across many regions faster than conventional inspection capacity can scale. That combination - a regulatory push toward measured emissions and a structural shortage of inspection throughput - is what makes a prioritisation-and-evidence layer valuable wherever gas infrastructure is growing, from mature networks undergoing renewal to new City Gas Distribution build-outs.',
+      'Both concentrate the same pressures: methane and other losses are safety hazards and, on the pipeline side, a potent greenhouse gas under tightening measurement-based reporting regimes such as OGMP 2.0; and both face a structural shortage of inspection throughput relative to the scale of the asset base - expanding gas networks on one side, ageing static equipment traditionally inspected via scaffolding or rope access on the other. That combination is what makes a prioritisation-and-evidence layer valuable in both settings.',
   },
   {
     question: 'Does Sentrix replace inline inspection or cathodic protection monitoring?',

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ArrowRight, Award, Landmark, BadgeCheck } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
 import { DroneScan } from '@/components/diagrams/DroneScan';
+import { SITE } from '@/lib/site';
 
 /**
  * Full-viewport dark hero. Leads with the decision-intelligence positioning -
@@ -35,11 +36,11 @@ export function Hero() {
           </h1>
 
           <p className="mt-7 max-w-2xl text-lg leading-relaxed text-ink-secondary sm:text-xl">
-            Sentrix reduces the engineering effort required to validate, compare, prioritise, and
-            report inspection findings across pipeline corridors, refineries, terminals, and
-            offshore platforms - turning raw drone evidence into standardised, decision-ready
-            intelligence inside the workflows operators already use. Comparing today’s inspection to
-            last year’s shouldn’t depend on someone remembering which photo was which.
+            {SITE.positioning}
+          </p>
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-ink-secondary">
+            Comparing today’s inspection to last year’s shouldn’t depend on someone remembering
+            which photo was which.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
@@ -59,15 +60,15 @@ export function Hero() {
             </Link>
 
             <Link
-              href="/solutions/government-agencies"
+              href="/solutions/refinery-operators"
               className="group inline-flex items-center justify-between gap-4 rounded-xl border border-line-strong bg-card px-6 py-4 text-left transition-colors duration-150 hover:border-line-strong hover:bg-elevated"
             >
               <span>
                 <span className="block text-[0.7rem] font-medium uppercase tracking-[0.14em] text-ink-muted">
-                  For research &amp; government partners
+                  For refinery &amp; industrial operators
                 </span>
                 <span className="block text-[0.95rem] font-semibold text-ink">
-                  Evaluate Sentrix
+                  Reduce scaffolding &amp; rope-access cost
                 </span>
               </span>
               <ArrowRight className="h-4 w-4 shrink-0 text-ink transition-transform duration-150 group-hover:translate-x-0.5" />
@@ -75,13 +76,16 @@ export function Hero() {
           </div>
 
           <p className="mt-6 text-sm text-ink-muted">
-            Researcher or investor?{' '}
-            <Link href="/solutions/researchers" className="text-accent hover:text-accent-hover">
-              Explore the research
+            Government, research, or investor partner?{' '}
+            <Link
+              href="/solutions/government-agencies"
+              className="text-accent hover:text-accent-hover"
+            >
+              See how we work with agencies
             </Link>{' '}
             or{' '}
-            <Link href="/contact#investor" className="text-accent hover:text-accent-hover">
-              talk to us about funding Sentrix
+            <Link href="/solutions/researchers" className="text-accent hover:text-accent-hover">
+              explore the research
             </Link>
             .
           </p>

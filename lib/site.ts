@@ -54,6 +54,13 @@ export const SITE = {
     'Engineering decision intelligence',
     'Drone-based pipeline inspection',
     'Drone inspection for oil and gas',
+    'Refinery inspection',
+    'Static equipment inspection',
+    'Rope access alternative',
+    'Scaffolding inspection alternative',
+    'Industrial asset inspection drone',
+    'Fired heater inspection',
+    'Pressure vessel inspection',
     'BVLOS drone operations',
     'Methane leak detection',
     'Fugitive emissions monitoring',
@@ -112,6 +119,11 @@ export const NAV_LINKS: NavItem[] = [
         description: 'For gas transmission and distribution operators',
       },
       {
+        label: 'Refinery & Industrial',
+        href: '/solutions/refinery-operators',
+        description: 'For refinery, terminal, and plant inspection teams',
+      },
+      {
         label: 'Government & Agencies',
         href: '/solutions/government-agencies',
         description: 'For regulators, incubators and grant programs',
@@ -143,6 +155,7 @@ export const FOOTER_COLUMNS: { title: string; links: NavChild[] }[] = [
     title: 'Solutions',
     links: [
       { label: 'Pipeline operators', href: '/solutions/pipeline-operators' },
+      { label: 'Refinery & industrial', href: '/solutions/refinery-operators' },
       { label: 'Government & agencies', href: '/solutions/government-agencies' },
       { label: 'Researchers', href: '/solutions/researchers' },
     ],

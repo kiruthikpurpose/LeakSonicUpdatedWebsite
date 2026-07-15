@@ -40,7 +40,7 @@ export function organizationSchema() {
     },
     areaServed: [
       { '@type': 'Country', name: 'India' },
-      { '@type': 'Place', name: 'Global gas transmission and distribution networks' },
+      { '@type': 'Place', name: 'Global oil and gas infrastructure' },
     ],
     email: SITE.email,
     contactPoint: [
@@ -85,17 +85,18 @@ export function serviceSchema() {
     '@context': 'https://schema.org',
     '@type': 'Service',
     '@id': `${SITE.url}/#service`,
-    name: 'Pipeline inspection decision intelligence',
-    serviceType: 'Engineering decision intelligence for pipeline inspection',
+    name: 'Oil and gas inspection decision intelligence',
+    serviceType: 'Engineering decision intelligence for pipeline and refinery inspection',
     description: SITE.shortPositioning,
     provider: { '@id': `${SITE.url}/#organization` },
     areaServed: [
       { '@type': 'Country', name: 'India' },
-      { '@type': 'Place', name: 'Global gas transmission and distribution networks' },
+      { '@type': 'Place', name: 'Global oil and gas infrastructure' },
     ],
     audience: {
       '@type': 'Audience',
-      audienceType: 'Gas pipeline operators, integrity engineers, regulators',
+      audienceType:
+        'Gas pipeline operators, refinery and industrial plant operators, integrity engineers, regulators',
     },
     url: `${SITE.url}/platform`,
   };
@@ -225,14 +226,16 @@ export function softwareApplicationSchema() {
     '@id': `${SITE.url}/#sentrix`,
     name: SITE.product,
     applicationCategory: 'BusinessApplication',
-    applicationSubCategory: 'Engineering Decision Intelligence Platform for Pipeline Inspection',
+    applicationSubCategory:
+      'Engineering Decision Intelligence Platform for Pipeline and Refinery Inspection',
     operatingSystem: 'Web',
     description: SITE.positioning,
     url: `${SITE.url}/platform`,
     provider: { '@id': `${SITE.url}/#organization` },
     audience: {
       '@type': 'Audience',
-      audienceType: 'Gas pipeline operators, integrity engineers, regulators',
+      audienceType:
+        'Gas pipeline operators, refinery and industrial plant operators, integrity engineers, regulators',
     },
   };
 }

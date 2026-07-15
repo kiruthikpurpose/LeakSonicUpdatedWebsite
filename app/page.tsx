@@ -18,9 +18,9 @@ import { softwareApplicationSchema, serviceSchema } from '@/lib/schema';
 import { SITE } from '@/lib/site';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'LeakSonic - Engineering decision intelligence for pipeline inspection',
+  title: 'LeakSonic - Engineering decision intelligence for oil & gas inspection',
   description:
-    'Sentrix turns raw drone inspection evidence into standardised, decision-ready engineering intelligence - so pipeline integrity teams validate, compare, prioritise, and report findings with far less manual effort, inside the workflows they already use.',
+    'Sentrix turns raw drone inspection evidence into standardised, decision-ready engineering intelligence - so pipeline and refinery integrity teams validate, compare, prioritise, and report findings with far less manual effort, inside the workflows they already use.',
   path: '/',
   keywords: [
     'LeakSonic',
@@ -40,6 +40,11 @@ export const metadata: Metadata = buildMetadata({
     'drone inspection startup India',
     'methane leak detection company',
     'pipeline inspection company India',
+    'refinery inspection',
+    'static equipment inspection',
+    'rope access alternative',
+    'scaffolding inspection alternative',
+    'industrial asset inspection drone',
   ],
 });
 
@@ -241,7 +246,7 @@ export default function HomePage() {
           <Reveal>
             <SectionLabel>Why now</SectionLabel>
             <h2 className="mt-5 text-h2 font-bold text-ink">
-              A structural mismatch between network growth and inspection capacity
+              A structural mismatch between asset growth and inspection capacity
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
@@ -249,7 +254,7 @@ export default function HomePage() {
                 available - each stat is written to remain quotable if the numbers move. */}
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
               {[
-                ['Expanding', 'gas networks worldwide, faster than inspection capacity can scale'],
+                ['Expanding', 'gas networks and refinery capacity, faster than inspection can scale'],
                 ['Estimated → measured', 'methane reporting shifting under regimes like OGMP 2.0'],
                 ['300+', 'authorised City Gas Distribution areas in India alone'],
               ].map(([v, l]) => (
@@ -260,9 +265,11 @@ export default function HomePage() {
               ))}
             </div>
             <p className="mt-5 text-base leading-relaxed text-ink-secondary">
-              The same gap between pipeline length and inspection throughput exists on gas networks
-              everywhere - the gap Sentrix is built to close by prioritising where scarce inspection
-              effort goes.
+              The same gap between asset footprint and inspection throughput shows up on gas
+              pipeline networks and on refinery static equipment alike - the gap Sentrix is built to
+              close by prioritising where scarce inspection effort goes. Deferred inspection tends to
+              turn into unplanned, reactive maintenance, and reactive work is consistently more
+              disruptive and more costly than a finding caught on a planned cycle.
             </p>
           </Reveal>
         </div>
@@ -353,7 +360,10 @@ export default function HomePage() {
                 </div>
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-1">
                   <ButtonLink href="/solutions/pipeline-operators" variant="primary" size="lg">
-                    I’m an operator <ArrowRight className="h-4 w-4" />
+                    Pipeline operator <ArrowRight className="h-4 w-4" />
+                  </ButtonLink>
+                  <ButtonLink href="/solutions/refinery-operators" variant="primary" size="lg">
+                    Refinery operator <ArrowRight className="h-4 w-4" />
                   </ButtonLink>
                   <ButtonLink href="/contact" variant="secondary" size="lg">
                     Government · research · invest

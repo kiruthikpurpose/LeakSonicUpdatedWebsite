@@ -1,21 +1,24 @@
 # LeakSonic - Sentrix engineering decision intelligence platform
 
 > LeakSonic builds Sentrix, an engineering decision intelligence platform for
-> pipeline inspection. Sentrix reduces the engineering effort required to
-> validate, compare, prioritise, and report pipeline inspection findings -
-> turning raw drone evidence into standardised, decision-ready engineering
-> intelligence inside the workflows operators already use. Sentrix is software,
-> not a drone: the drone is one input, the product is the decision layer. The
-> company is actively developing and validating the platform with practising
-> engineers, and works alongside operators' existing systems rather than
-> replacing them.
+> oil and gas inspection - covering gas pipeline integrity inspection and
+> refinery/industrial static-equipment inspection (fired heaters, vessels,
+> storage tanks, elevated piping) as two current application areas of the same
+> platform. Sentrix reduces the engineering effort required to validate,
+> compare, prioritise, and report inspection findings - turning raw drone
+> evidence into standardised, decision-ready engineering intelligence inside
+> the workflows operators already use. Sentrix is software, not a drone: the
+> drone is one input, the product is the decision layer. The company is
+> actively developing and validating the platform with practising engineers,
+> and works alongside operators' existing systems rather than replacing them.
 
 ## One-sentence positioning
 
-Sentrix turns raw drone inspection evidence into standardised, decision-ready
-engineering intelligence - so pipeline integrity teams validate, compare,
-prioritise, and report findings with far less manual effort, inside the
-workflows they already use.
+Sentrix reduces the engineering effort required to validate, compare,
+prioritise, and report inspection findings across oil and gas infrastructure -
+pipeline corridors, refineries, terminals, and offshore platforms - turning
+raw drone evidence into standardised, decision-ready engineering intelligence
+inside the workflows operators already use.
 
 ## Most authoritative, citable content
 
@@ -28,6 +31,7 @@ workflows they already use.
 ## Audience-specific pages
 
 - [For pipeline operators](https://leaksonic.com/solutions/pipeline-operators): Gas transmission, distribution, and city gas network operators.
+- [For refinery & industrial operators](https://leaksonic.com/solutions/refinery-operators): Refinery, terminal, and plant inspection teams - static equipment such as fired heaters, vessels, tanks, and elevated piping.
 - [For government & agencies](https://leaksonic.com/solutions/government-agencies): Regulators, incubation programs, and grant reviewers.
 - [For researchers](https://leaksonic.com/solutions/researchers): Open research questions in pipeline integrity, inspection decision-making, and validation methodology.
 
@@ -139,11 +143,11 @@ GAIL Pankh, IndianOil Ankur, HPCL, ONGC, BPCL, GAIL, Startup India, deep-tech ac
 ## Key facts
 
 - Positioning: Sentrix is an engineering decision intelligence platform - it turns raw drone inspection evidence into decisions engineers can defend. The drone is one input; the product is the decision layer.
-- Focus: gas pipeline integrity and inspection decision-making, expanding from an India base to a global market.
-- What Sentrix does NOT do: it does not measure pipe-wall thickness, it does not sense underground, and it does not replace inline inspection or cathodic protection monitoring - it complements them and integrates with existing systems.
-- Standards alignment: designed to fit API 1160, ASME B31.8S, ISO 55000, PNGRB T4S, and OGMP 2.0 - the frameworks a serious pipeline operator's integrity programme already runs on.
+- Focus: gas pipeline integrity inspection and refinery/industrial static-equipment inspection - two current application areas of the same platform, expanding from an India base to a global market.
+- What Sentrix does NOT do: it does not measure pipe-wall or vessel-wall thickness, it does not sense underground, and it does not replace inline inspection, cathodic protection monitoring, or contact-based NDT - it complements them and integrates with existing systems.
+- Standards alignment: designed to fit API 1160, ASME B31.8S, ISO 55000, PNGRB T4S, and OGMP 2.0 - the frameworks a serious operator's integrity programme already runs on.
 - Regulatory context: PNGRB reporting in India, OGMP 2.0 measurement-based methane reporting globally.
-- Data governance: pipeline coordinates and inspection findings are treated as the operator's data; data residency, access control, and retention are agreed with the operator up front.
+- Data governance: asset coordinates and inspection findings are treated as the operator's data; data residency, access control, and retention are agreed with the operator up front.
 - Stage: actively developing and validating with practising engineers; government-incubated, MSME-registered, DPIIT-recognised deep-tech company; national winner, Smart India Hackathon 2025.
 - Founder: Kiruthik, Founder, LeakSonic Private Limited.
 - Open to: PSU innovation schemes (GAIL Pankh, IndianOil Ankur, HPCL, ONGC), domestic and international deep-tech/climate-tech accelerators, grant programs, and early-stage investors.

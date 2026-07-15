@@ -9,6 +9,7 @@ import { CtaBand } from '@/components/sections/CtaBand';
 import JsonLd from '@/components/JsonLd';
 import { buildMetadata } from '@/lib/metadata';
 import { breadcrumbSchema, founderSchema } from '@/lib/schema';
+import { SITE } from '@/lib/site';
 
 export const metadata: Metadata = buildMetadata({
   title: 'About LeakSonic - mission & founder',
@@ -43,7 +44,7 @@ const crumbs = [
 const WHY = [
   {
     title: 'Why this problem',
-    body: 'Energy loss from pipeline infrastructure is largely invisible until it fails - expensive, hazardous, and climate-damaging when it does. The tools to see it exist but sit disconnected from the decisions that matter. That gap is a real, unglamorous, high-consequence engineering problem worth a company.',
+    body: 'Energy loss and integrity risk on critical infrastructure - gas pipelines and refinery static equipment alike - are largely invisible until something fails: expensive, hazardous, and climate-damaging when it does. The tools to see it exist but sit disconnected from the decisions that matter. That gap is a real, unglamorous, high-consequence engineering problem worth a company.',
   },
   {
     title: 'Why this company',
@@ -51,11 +52,11 @@ const WHY = [
   },
   {
     title: 'Why now',
-    body: 'Gas networks worldwide are expanding faster than inspection can scale, and methane is shifting from an estimated to a measured quantity. Operators need to make more inspection decisions, faster, from evidence they can stand behind - and the manual workflow that used to be good enough no longer is. The timing is not incidental; it’s the thesis.',
+    body: 'Gas networks and refinery capacity are expanding worldwide faster than inspection can scale, and methane is shifting from an estimated to a measured quantity under frameworks like OGMP 2.0. Operators need to make more inspection decisions, faster, from evidence they can stand behind - and the manual workflow that used to be good enough no longer is. The timing is not incidental; it’s the thesis.',
   },
   {
     title: 'Where we’re headed',
-    body: 'We started with pipeline corridors because that’s where the inspection-capacity gap is sharpest, and we’re widening deliberately from there - refineries, terminals, and offshore platforms carry the same evidence-to-decision problem in different settings. Built in India, with the deliberate intent to expand into a global market as the platform and the evidence behind it mature - one validated claim at a time, not a launch announcement.',
+    body: 'Pipeline corridors and refinery static equipment - fired heaters, vessels, tanks, elevated piping - carry the same evidence-to-decision problem in different settings, and we’re building for both as genuine, current application areas of the same platform. Built in India, with the deliberate intent to expand into a global market as the platform and the evidence behind it mature - one validated claim at a time, not a launch announcement.',
   },
 ];
 
@@ -102,7 +103,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="About"
         title="No engineer should decide from evidence that’s months out of date."
-        lead="That’s the mission, stated plainly. We started with gas pipelines because that’s where the problem is most acute and the timing is right - but the underlying idea, turning raw inspection evidence into decisions an engineer can defend, generalises across critical infrastructure."
+        lead="That’s the mission, stated plainly. Turning raw inspection evidence into decisions an engineer can defend applies equally to gas pipelines and to refinery static equipment - fired heaters, vessels, tanks, elevated piping - not to one first and the other later."
         crumbs={crumbs}
       />
 
@@ -115,14 +116,13 @@ export default function AboutPage() {
               <p>
                 Critical infrastructure leaks - energy, integrity, and attention - in ways that stay
                 invisible until something breaks. LeakSonic exists to make that loss visible early
-                enough to act on, starting with the gas pipelines where the stakes are highest.
+                enough to act on, across gas pipelines and refinery static equipment alike.
               </p>
+              <p>{SITE.positioning}</p>
               <p>
-                Sentrix is the engineering decision layer that turns raw drone inspection evidence
-                into a validated, comparable, auditable answer to a single question: where should
-                you look next, and why? Everything we build is measured against one standard - does
-                it help an integrity team make a faster, better-evidenced decision, with less manual
-                effort, than the workflow it replaces?
+                Everything we build is measured against one standard - does it help an integrity
+                team make a faster, better-evidenced decision, with less manual effort, than the
+                workflow it replaces?
               </p>
             </div>
           </Reveal>
@@ -192,7 +192,8 @@ export default function AboutPage() {
             <div className="mt-6 space-y-5 text-base leading-relaxed text-ink-secondary">
               <p>
                 The founding conviction is simple and slightly unfashionable: the hard part of
-                pipeline integrity isn’t collecting more data, it’s deciding what the data means.
+                asset integrity - on a pipeline or on a refinery floor - isn’t collecting more data,
+                it’s deciding what the data means.
                 That conviction came from the field - from standing on a live construction site and
                 seeing where the real bottlenecks are - not from a slide deck, and it shapes every
                 technical choice the company makes.
@@ -230,7 +231,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* For investors - market, moat, team, in one focused block */}
+      {/* For investors - market, defensibility, team, in one focused block */}
       <section className="border-b border-line bg-surface py-section">
         <div className="container-content">
           <Reveal>
@@ -244,10 +245,11 @@ export default function AboutPage() {
             <div className="rounded-card border border-line bg-card p-7">
               <h3 className="text-h3 font-semibold text-ink">Market</h3>
               <p className="mt-3 text-sm leading-relaxed text-ink-secondary">
-                Gas transmission and distribution networks are expanding worldwide faster than
-                inspection capacity can scale, and methane reporting is shifting from estimated to
-                measured under frameworks like OGMP 2.0 - a structural, multi-decade demand curve,
-                not a one-time opportunity.
+                Gas transmission and distribution networks, and refinery and industrial static
+                equipment, are both expanding and ageing worldwide faster than inspection capacity
+                can scale, and methane reporting is shifting from estimated to measured under
+                frameworks like OGMP 2.0 - a structural, multi-decade demand curve, not a one-time
+                opportunity.
               </p>
             </div>
             <div className="rounded-card border border-line bg-card p-7">

@@ -36,6 +36,7 @@ module.exports = {
       '/resources/glossary',
       '/resources/faq',
       '/solutions/pipeline-operators',
+      '/solutions/refinery-operators',
       '/solutions/government-agencies',
       '/solutions/researchers',
     ];
