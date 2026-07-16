@@ -198,13 +198,23 @@
   .tool-slider {
     -webkit-appearance: none;
     appearance: none;
+    display: block;
     height: 6px;
     border-radius: 999px;
     outline: none;
   }
+  /* Explicit track pseudo-element (instead of relying on the input's own
+     box) so the thumb's centering math below has a guaranteed 6px
+     reference height in every WebKit/Blink browser. */
+  .tool-slider::-webkit-slider-runnable-track {
+    height: 6px;
+    border-radius: 999px;
+    background: transparent;
+  }
   .tool-slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
+    box-sizing: border-box;
     width: 18px;
     height: 18px;
     border-radius: 999px;
@@ -212,9 +222,13 @@
     border: 2px solid rgb(var(--color-base));
     box-shadow: 0 0 0 1px rgb(var(--color-accent) / 0.5);
     cursor: pointer;
+    /* Centers the 18px thumb on the 6px track: (6 - 18) / 2. Requires
+       box-sizing: border-box above so the 2px border doesn't inflate the
+       thumb past 18px and throw this off. */
     margin-top: -6px;
   }
   .tool-slider::-moz-range-thumb {
+    box-sizing: border-box;
     width: 18px;
     height: 18px;
     border-radius: 999px;
