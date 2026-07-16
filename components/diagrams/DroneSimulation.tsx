@@ -29,25 +29,25 @@ const STEPS: StepConfig[] = [
     label: 'Mapping the ROW',
     caption:
       'The right-of-way is more than the pipe - vegetation, crops, and roads nearby all matter to what the drone is looking at and why. Evidence is logged against the actual corridor, not a generic flight path.',
-    durationMs: 4200,
+    durationMs: 4600,
   },
   {
-    label: 'Anomaly detected',
+    label: 'Anomalies flagged',
     caption:
-      'A thermal and visual signature consistent with a leak is flagged as a candidate, not a conclusion - exactly the kind of surface signal a foot patrol could easily miss or reach hours later.',
-    durationMs: 3600,
+      'Two different kinds of finding, flagged as candidates, not conclusions: equipment working close to the right-of-way, and a thermal signature consistent with a leak - exactly the surface signals a foot patrol could miss or reach hours later.',
+    durationMs: 4200,
   },
   {
     label: 'Sentrix: evidence to decision',
     caption:
-      'Evidence is standardised, compared against the last cycle, and routed to the decision layer - the same evidence an engineer will review, not a black-box score.',
+      'Both findings are standardised, compared against the last cycle, and routed to the decision layer - the same evidence an engineer will review, not a black-box score.',
     durationMs: 3600,
   },
   {
     label: 'The decision',
     caption:
-      'One prioritised finding, with its evidence attached, reaches an engineer’s desk - GPS-located, timestamped, ready to act on.',
-    durationMs: 6000,
+      'Findings reach an engineer’s desk ranked by priority, with evidence attached and synced to the systems they already use - GPS-located, timestamped, ready to act on.',
+    durationMs: 7000,
   },
 ];
 
@@ -55,6 +55,7 @@ const CORRIDOR_KM = 12.4;
 const MANUAL_HOURS = 6.5;
 const MANUAL_KM = 1.2;
 const DRONE_MINUTES = 9;
+const FLIGHT_STEP_COUNT = STEPS.length - 1;
 
 function lerp(a: number, b: number, t: number) {
   return a + (b - a) * Math.min(1, Math.max(0, t));
@@ -63,10 +64,10 @@ function lerp(a: number, b: number, t: number) {
 /** Interactive 3D explainer for the evidence-to-decision flow described
  * elsewhere on the site as text and a 2D flow diagram - built around a
  * deliberate before/after contrast: today's manual foot patrol, then the
- * same corridor flown, mapped, and resolved into a decision. Deliberately
- * low-poly and unlit so it stays smooth on a mid-range phone: no shadows,
- * no textures, capped device-pixel-ratio, and the whole thing only mounts
- * once it scrolls into view and the underlying 3D library has loaded. */
+ * same corridor flown, mapped, and resolved into a prioritised decision.
+ * Deliberately low-poly and unlit so it stays smooth on a mid-range phone:
+ * no shadows, no textures, capped device-pixel-ratio, and the whole thing
+ * only mounts once it scrolls into view and the 3D library has loaded. */
 export function DroneSimulation() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
@@ -105,9 +106,6 @@ export function DroneSimulation() {
   // Drives the within-step progress bar/counters. This always ticks, even
   // while paused or after jumping to a step via the chips below - only
   // whether it auto-*advances* to the next step depends on `playing`.
-  // (An earlier version gated the tick itself on `playing`, which froze
-  // every HUD counter - including "distance covered" - at its step-start
-  // value the moment someone paused or clicked a step chip.)
   useEffect(() => {
     const duration = STEPS[step]!.durationMs;
     const id = setInterval(() => {
@@ -138,19 +136,22 @@ export function DroneSimulation() {
 
   const manualHours = lerp(0, MANUAL_HOURS, stepProgress);
   const manualKm = lerp(0, MANUAL_KM, stepProgress);
-  // Distance covered is deterministic on narrative position (which flight
-  // step we're in, and how far through it), not a wall-clock timer - so it
-  // always reads correctly whether the demo auto-played here or someone
-  // jumped straight to a later step chip. Flight spans steps 1-5.
-  const flightStepCount = STEPS.length - 1;
-  const overallFlightProgress = step >= 1 ? ((step - 1) + stepProgress) / flightStepCount : 0;
-  const droneKm = overallFlightProgress * CORRIDOR_KM;
+  // Single source of truth for "how far along the corridor has the drone
+  // actually gotten" - drives the HUD counter, the 3D drone's position, and
+  // when each finding is revealed, so all three always agree.
+  const flightProgress = step >= 1 ? ((step - 1) + stepProgress) / FLIGHT_STEP_COUNT : 0;
+  const droneKm = flightProgress * CORRIDOR_KM;
 
   return (
     <div ref={containerRef} className="overflow-hidden rounded-squircle border border-line bg-card">
-      <div className="relative aspect-[4/3] w-full sm:aspect-video">
+      <div className="relative aspect-square w-full sm:aspect-video">
         {inView ? (
-          <DroneSimScene step={step} reducedMotion={reducedMotion} onTelemetry={setTelemetry} />
+          <DroneSimScene
+            step={step}
+            flightProgress={flightProgress}
+            reducedMotion={reducedMotion}
+            onTelemetry={setTelemetry}
+          />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-base">
             <span className="font-sans text-xs uppercase tracking-[0.14em] text-ink-faint">
@@ -160,74 +161,68 @@ export function DroneSimulation() {
         )}
 
         {/* Telemetry HUD - top-left, plain HTML so it stays sharp at any
-            zoom and never competes with the WebGL canvas for layout. */}
-        <div className="pointer-events-none absolute left-3 top-3 flex max-w-[13rem] flex-col gap-1 rounded-tile border border-line bg-base/85 p-2.5 backdrop-blur-sm sm:left-4 sm:top-4 sm:max-w-[15rem]">
+            zoom and never competes with the WebGL canvas for layout. Small
+            and fixed-width even on mobile, so it never eats much of the
+            3D view. */}
+        <div className="pointer-events-none absolute left-2 top-2 w-32 rounded-squircle border border-line bg-base/90 p-2 backdrop-blur-sm sm:left-4 sm:top-4 sm:w-44 sm:p-2.5">
           {step === 0 ? (
             <>
               <HudRow icon={Gauge} label="Elapsed" value={`${manualHours.toFixed(1)} hrs`} />
               <HudRow icon={Satellite} label="Covered" value={`${manualKm.toFixed(2)} km`} />
-              <HudRow icon={Thermometer} label="Crew" value="1 technician, on foot" />
+              <HudRow icon={Thermometer} label="Crew" value="1, on foot" />
             </>
           ) : (
             <>
               <HudRow
                 icon={Satellite}
-                label="GPS · RTK"
-                value={telemetry ? `${telemetry.lat.toFixed(4)}°, ${telemetry.lon.toFixed(4)}°` : '—'}
+                label="GPS"
+                value={telemetry ? `${telemetry.lat.toFixed(3)}°N ${telemetry.lon.toFixed(3)}°E` : '—'}
               />
               <HudRow
                 icon={Gauge}
-                label="Alt · speed"
-                value={telemetry ? `${telemetry.altitudeM.toFixed(0)} m · ${telemetry.speedKmh.toFixed(0)} km/h` : '—'}
+                label="Alt / speed"
+                value={telemetry ? `${telemetry.altitudeM.toFixed(0)}m · ${telemetry.speedKmh.toFixed(0)}km/h` : '—'}
               />
               <HudRow
                 icon={Thermometer}
-                label="Temp · humidity"
+                label="Temp / RH"
                 value={telemetry ? `${telemetry.tempC.toFixed(1)}°C · ${telemetry.humidityPct.toFixed(0)}%` : '—'}
               />
-              <HudRow icon={Droplets} label="Covered" value={`${droneKm.toFixed(1)} / ${CORRIDOR_KM} km`} />
+              <HudRow icon={Droplets} label="Covered" value={`${droneKm.toFixed(1)}/${CORRIDOR_KM}km`} />
             </>
           )}
         </div>
 
         {/* Step caption, overlaid bottom-left. */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-base/95 via-base/60 to-transparent p-4 sm:p-6">
-          <span className="font-sans text-[0.68rem] uppercase tracking-[0.14em] text-accent">
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-base/95 via-base/60 to-transparent p-3 sm:p-6">
+          <span className="font-sans text-[0.64rem] uppercase tracking-[0.14em] text-accent sm:text-[0.68rem]">
             Step {step + 1} of {STEPS.length} · {STEPS[step]!.label}
           </span>
-          <p className="mt-1.5 max-w-md text-sm leading-snug text-ink-secondary">
+          <p className="mt-1.5 max-w-md text-xs leading-snug text-ink-secondary sm:text-sm">
             {STEPS[step]!.caption}
           </p>
         </div>
 
-        {/* Dashboard payoff card - final step only. */}
+        {/* Dashboard payoff card - final step only, desktop/tablet: an
+            overlay in the top-right corner, out of the HUD's way. */}
         {step === 5 && (
-          <div className="absolute right-3 top-3 w-[13.5rem] rounded-tile border border-accent/40 bg-card/95 p-3 shadow-xl backdrop-blur-sm sm:right-4 sm:top-4 sm:w-60">
-            <div className="flex items-center justify-between">
-              <span className="font-sans text-[0.62rem] uppercase tracking-[0.12em] text-accent">
-                Finding · #A-104
-              </span>
-              <span className="rounded-full bg-accent/15 px-2 py-0.5 font-sans text-[0.6rem] font-semibold text-accent">
-                High
-              </span>
-            </div>
-            <p className="mt-2 text-xs leading-snug text-ink-secondary">
-              Thermal + visual anomaly, confidence 94%. Located at{' '}
-              {telemetry ? `${telemetry.lat.toFixed(4)}°, ${telemetry.lon.toFixed(4)}°` : 'flagged GPS point'}.
-            </p>
-            <p className="mt-2 font-sans text-[0.65rem] font-medium text-ink">
-              Recommended: schedule excavation crew
-            </p>
-            <div className="mt-3 border-t border-line pt-2 text-[0.62rem] leading-relaxed text-ink-faint">
-              Manual: ~{MANUAL_HOURS} hrs for {MANUAL_KM} km. Sentrix: ~{DRONE_MINUTES} min for the full{' '}
-              {CORRIDOR_KM} km corridor.
-            </div>
+          <div className="absolute right-4 top-4 hidden w-64 sm:block">
+            <FindingsCard />
           </div>
         )}
       </div>
 
+      {/* Dashboard payoff card - final step only, mobile: a normal block
+          under the canvas instead of an overlay, so it never competes with
+          the HUD or covers most of the 3D view on a small screen. */}
+      {step === 5 && (
+        <div className="border-t border-line bg-surface p-3 sm:hidden">
+          <FindingsCard />
+        </div>
+      )}
+
       {/* Controls */}
-      <div className="flex flex-wrap items-center gap-3 border-t border-line bg-surface p-3">
+      <div className="flex flex-wrap items-center gap-2 border-t border-line bg-surface p-2.5 sm:gap-3 sm:p-3">
         <button
           type="button"
           onClick={() => setPlaying((p) => !p)}
@@ -250,7 +245,7 @@ export function DroneSimulation() {
               key={s.label}
               type="button"
               onClick={() => goToStep(i)}
-              className={`rounded-full border px-3 py-1 font-sans text-[0.7rem] font-medium transition-colors ${
+              className={`rounded-full border px-2.5 py-1 font-sans text-[0.64rem] font-medium transition-colors sm:px-3 sm:text-[0.7rem] ${
                 step === i
                   ? 'border-accent/50 bg-accent/10 text-accent'
                   : 'border-line text-ink-muted hover:border-line-strong hover:text-ink-secondary'
@@ -261,9 +256,9 @@ export function DroneSimulation() {
           ))}
         </div>
       </div>
-      <p className="border-t border-line bg-surface px-4 py-2.5 text-center font-sans text-[0.68rem] text-ink-faint sm:px-6">
+      <p className="border-t border-line bg-surface px-3 py-2.5 text-center font-sans text-[0.64rem] text-ink-faint sm:px-6 sm:text-[0.68rem]">
         Illustrative, time-lapsed simulation - drag to orbit, tap a step to jump to it. Coordinates,
-        timings, and the finding shown are for demonstration only, not a real network or engagement.
+        timings, and the findings shown are for demonstration only, not a real network or engagement.
       </p>
     </div>
   );
@@ -279,14 +274,70 @@ function HudRow({
   value: string;
 }) {
   return (
-    <div className="flex items-center gap-1.5">
-      <Icon className="h-3 w-3 shrink-0 text-accent" aria-hidden />
-      <span className="font-sans text-[0.6rem] uppercase tracking-[0.08em] text-ink-faint">
-        {label}
+    <div className="flex items-start gap-1.5 py-0.5">
+      <Icon className="mt-0.5 h-2.5 w-2.5 shrink-0 text-accent" aria-hidden />
+      <div className="min-w-0 flex-1">
+        <div className="font-sans text-[0.52rem] uppercase leading-tight tracking-[0.06em] text-ink-faint">
+          {label}
+        </div>
+        <div className="truncate font-sans text-[0.62rem] font-medium leading-tight text-ink-secondary">
+          {value}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/** The "prioritised findings" payoff content, shared between the desktop
+ * overlay placement and the mobile in-flow placement so the two never
+ * drift out of sync. */
+function FindingsCard() {
+  return (
+    <div className="rounded-squircle border border-accent/40 bg-card/95 p-3 shadow-xl backdrop-blur-sm sm:p-3.5">
+      <span className="font-sans text-[0.62rem] uppercase tracking-[0.1em] text-accent">
+        Prioritised findings
       </span>
-      <span className="ml-auto whitespace-nowrap font-sans text-[0.66rem] font-medium text-ink-secondary">
-        {value}
-      </span>
+      <div className="mt-2 space-y-2">
+        <FindingRow title="Leak signature" severity="High" action="Schedule excavation crew" accent />
+        <FindingRow title="ROW encroachment" severity="Medium" action="Site visit within 48 hrs" />
+      </div>
+      <div className="mt-2.5 border-t border-line pt-2 text-[0.62rem] leading-relaxed text-ink-faint">
+        Manual: ~{MANUAL_HOURS}hrs / {MANUAL_KM}km. Sentrix: ~{DRONE_MINUTES}min / full {CORRIDOR_KM}km.
+      </div>
+      <div className="mt-2 flex items-center gap-1.5 border-t border-line pt-2 text-[0.62rem] font-medium text-ink-secondary">
+        <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+        Synced to your GIS / asset-management system
+      </div>
+    </div>
+  );
+}
+
+function FindingRow({
+  title,
+  severity,
+  action,
+  accent,
+}: {
+  title: string;
+  severity: string;
+  action: string;
+  accent?: boolean;
+}) {
+  return (
+    <div className="rounded-tile border border-line bg-base/60 p-1.5 sm:p-2">
+      <div className="flex items-center justify-between gap-1.5">
+        <span className="font-sans text-[0.6rem] font-semibold text-ink sm:text-[0.68rem]">
+          {title}
+        </span>
+        <span
+          className={`shrink-0 rounded-full px-1.5 py-0.5 font-sans text-[0.5rem] font-semibold sm:text-[0.56rem] ${
+            accent ? 'bg-accent/15 text-accent' : 'bg-amber-500/15 text-amber-400'
+          }`}
+        >
+          {severity}
+        </span>
+      </div>
+      <p className="mt-0.5 text-[0.56rem] leading-snug text-ink-muted sm:text-[0.62rem]">{action}</p>
     </div>
   );
 }
