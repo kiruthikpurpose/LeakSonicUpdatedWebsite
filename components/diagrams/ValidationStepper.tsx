@@ -15,15 +15,16 @@ export function ValidationStepper({ items }: { items: StepperItem[] }) {
   const reduce = useReducedMotion();
   const n = items.length;
   const w = 900;
-  const pad = 60;
+  const pad = 100;
   const usable = w - pad * 2;
   const stepX = (i: number) => pad + (usable * i) / (n - 1);
   const y = 46;
+  const labelW = 168;
 
   return (
     <figure className="overflow-hidden rounded-squircle border border-line bg-card p-6 sm:p-10">
       <svg
-        viewBox={`0 0 ${w} 120`}
+        viewBox={`0 0 ${w} 150`}
         className="w-full"
         role="img"
         aria-label="Validation progress across five assumptions, all currently in progress"
@@ -92,7 +93,7 @@ export function ValidationStepper({ items }: { items: StepperItem[] }) {
             >
               {item.n}
             </text>
-            <foreignObject x={stepX(i) - 70} y={y + 28} width="140" height="60">
+            <foreignObject x={stepX(i) - labelW / 2} y={y + 28} width={labelW} height="72">
               <div className="text-center text-[10.5px] leading-tight text-ink-muted">
                 {item.label}
               </div>
