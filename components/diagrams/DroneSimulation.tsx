@@ -324,7 +324,7 @@ function FindingRow({
   accent?: boolean;
 }) {
   return (
-    <div className="rounded-tile border border-line bg-base/60 p-1.5 sm:p-2">
+    <div className="rounded-full border border-line bg-base/60 px-3 py-1.5 sm:px-3.5 sm:py-2">
       <div className="flex items-center justify-between gap-1.5">
         <span className="font-sans text-[0.6rem] font-semibold text-ink sm:text-[0.68rem]">
           {title}
