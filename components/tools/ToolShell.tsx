@@ -2,6 +2,7 @@ import { PageHero } from '@/components/ui/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { CtaBand } from '@/components/sections/CtaBand';
+import { EmbedBadge } from '@/components/tools/EmbedBadge';
 import JsonLd from '@/components/JsonLd';
 import { breadcrumbSchema, faqSchema, toolSchema, type Crumb, type FaqItem } from '@/lib/schema';
 
@@ -50,8 +51,9 @@ export function ToolShell({
       <PageHero eyebrow={eyebrow} title={title} lead={lead} crumbs={crumbs} />
 
       <section className="border-b border-line bg-base py-section">
-        <div className="container-content">
+        <div className="container-content space-y-6">
           <Reveal>{children}</Reveal>
+          <EmbedBadge name={name} slug={slug} />
         </div>
       </section>
 

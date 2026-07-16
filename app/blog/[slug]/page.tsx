@@ -14,6 +14,7 @@ import { BlogCover } from '@/components/diagrams/BlogCover';
 import { ReadingProgress } from '@/components/blog/ReadingProgress';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { FaqBlock } from '@/components/ui/FaqBlock';
+import { CiteBlock } from '@/components/blog/CiteBlock';
 import { mdxComponents } from '@/components/blog/mdxComponents';
 import JsonLd from '@/components/JsonLd';
 import {
@@ -165,6 +166,12 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                   ))}
                 </div>
               )}
+              <CiteBlock
+                title={post.title}
+                slug={post.slug}
+                author={post.author}
+                date={post.date}
+              />
               <Link
                 href="/blog"
                 className="mt-8 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-hover"
