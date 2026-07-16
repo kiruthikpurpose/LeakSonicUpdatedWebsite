@@ -14,7 +14,7 @@ import { SITE } from '@/lib/site';
 export const metadata: Metadata = buildMetadata({
   title: 'About LeakSonic - mission & founder',
   description:
-    'LeakSonic builds Sentrix, a proprietary engineering decision intelligence software and hardware platform covering gas pipeline (including City Gas Distribution), refinery, terminal, and offshore inspection - a government-incubated, MSME-registered deep-tech company expanding from an India base to a global market.',
+    'LeakSonic builds Sentrix, an AI-driven engineering decision intelligence platform - proprietary software paired with drone hardware we design and test ourselves - covering gas pipeline (including City Gas Distribution), refinery, terminal, and offshore inspection. A government-incubated, MSME-registered deep-tech company expanding from an India base to a global market.',
   path: '/about',
   keywords: [
     'LeakSonic',
@@ -36,6 +36,9 @@ export const metadata: Metadata = buildMetadata({
     'sustainable infrastructure technology',
     'decision intelligence software company',
     'drone software and hardware company',
+    'AI drone company India',
+    'AI infrastructure inspection company',
+    'drone hardware and AI software company',
   ],
 });
 
@@ -51,7 +54,7 @@ const WHY = [
   },
   {
     title: 'Why this company',
-    body: 'We’re building the engineering decision layer - proprietary software paired with the hardware that captures evidence - not another flight service. That means going deep on making evidence comparable, findings defensible, and output that fits existing workflows - rather than competing on flight logistics alone. A narrower, harder, more defensible focus.',
+    body: 'AI is the core of what we build - the scalable engine that makes evidence comparable, findings defensible, and output fit existing workflows. We are not purely a software company, though: we design, build, and test our own drone hardware and ground-control tooling in-house, at a deliberately focused scale, because an AI model is only as good as the real flight data it learns from. Software and hardware together, with AI as the primary source of long-term value - a narrower, harder, more defensible focus than competing on flight logistics alone.',
   },
   {
     title: 'Why now',
@@ -59,7 +62,7 @@ const WHY = [
   },
   {
     title: 'Where we’re headed',
-    body: 'Pipeline corridors and refinery static equipment - fired heaters, vessels, tanks, elevated piping - carry the same evidence-to-decision problem in different settings, and we’re building for both as genuine, current application areas of the same platform. Built in India, with the deliberate intent to expand into a global market as the platform and the evidence behind it mature - one validated claim at a time, not a launch announcement.',
+    body: 'Pipeline corridors and refinery static equipment - fired heaters, vessels, tanks, elevated piping - carry the same evidence-to-decision problem in different settings, and we’re building for both as genuine, current application areas of the same platform. The AI itself is being built to reason about inspection evidence generally, not just drone imagery - our own drone hardware is the primary source today, with the architecture designed to take in more of it over time. Built in India, with the deliberate intent to expand into a global market as the platform and the evidence behind it mature - one validated claim at a time, not a launch announcement.',
   },
 ];
 
@@ -166,12 +169,13 @@ export default function AboutPage() {
                 not a separate product launch, and not yet a priority next to getting Sentrix right.
               </p>
               <p className="text-sm text-ink-muted">
-                The underlying decision-intelligence software is deliberately built to generalise
-                beyond oil and gas. We see long-term, dual-use potential in domains like defence and
-                national-security infrastructure inspection, and it’s a direction we may pursue as
-                the platform and our funding position mature - early, exploratory thinking today, not
-                a current engagement or a near-term priority next to getting pipeline and refinery
-                inspection right.
+                The underlying AI and decision-intelligence software is deliberately built to
+                generalise beyond oil and gas. We see long-term potential in adjacent domains -
+                defence and national-security infrastructure inspection, broader industrial
+                infrastructure intelligence, and coordinated multi-drone (swarm) operation among
+                them - and it’s a direction we may pursue as the platform and our funding position
+                mature. That is early, exploratory thinking today, not a current engagement or a
+                near-term priority next to getting pipeline and refinery inspection right.
               </p>
             </div>
           </Reveal>
@@ -208,6 +212,15 @@ export default function AboutPage() {
                 That conviction came from the field - from standing on a live construction site and
                 seeing where the real bottlenecks are - not from a slide deck, and it shapes every
                 technical choice the company makes.
+              </p>
+              <p>
+                The founder’s view is that drone hardware on its own, at today’s state of the art,
+                is only moderately scalable - useful, but not yet the leverage point. AI is where
+                the real long-term potential sits: as sensing, autonomy, and onboard computing keep
+                improving year over year, the ceiling on what an AI-guided drone can actually do
+                keeps rising with it. That’s the bet behind building our own hardware rather than
+                treating it as someone else’s problem - it keeps the AI honest, and keeps us close
+                to a field that is still moving quickly.
               </p>
               <p className="text-sm text-ink-muted">
                 LeakSonic’s founding team has a track record in applied engineering competitions,
@@ -267,12 +280,13 @@ export default function AboutPage() {
             <div className="rounded-card border border-line bg-card p-7">
               <h3 className="text-h3 font-semibold text-ink">Why defensible</h3>
               <p className="mt-3 text-sm leading-relaxed text-ink-secondary">
-                Flight hardware alone is increasingly commoditised; the proprietary decision layer
-                that turns raw inspection evidence into comparable, defensible findings is not - and
-                we build the software and the hardware integration around it as one system, with a
-                patent application filed on our core methodology. That is a data and domain-trust
-                problem, not a flight-logistics one - harder to replicate and harder to dislodge once
-                an operator’s workflow depends on it.
+                Flight hardware alone is increasingly commoditised and, by itself, only moderately
+                scalable; the proprietary AI and decision layer that turns raw inspection evidence
+                into comparable, defensible findings is what actually scales - and it is what we
+                build the hardware around, not the other way round, with a patent application filed
+                on our core methodology. That is a data, algorithms, and domain-trust problem, not a
+                flight-logistics one - harder to replicate and harder to dislodge once an operator’s
+                workflow depends on it.
               </p>
             </div>
             <div className="rounded-card border border-line bg-card p-7">

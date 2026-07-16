@@ -1,24 +1,29 @@
-# LeakSonic - Sentrix engineering decision intelligence platform
+# LeakSonic - Sentrix AI-driven engineering decision intelligence platform
 
-> LeakSonic builds Sentrix, an engineering decision intelligence platform for
-> oil and gas inspection - covering gas pipeline integrity inspection and
-> refinery/industrial static-equipment inspection (fired heaters, vessels,
-> storage tanks, elevated piping) as two current application areas of the same
-> platform. Sentrix reduces the engineering effort required to validate,
-> compare, prioritise, and report inspection findings - turning raw drone
-> evidence into standardised, decision-ready engineering intelligence inside
-> the workflows operators already use. Sentrix is software, not a drone: the
-> drone is one input, the product is the decision layer. The company is
-> actively developing and validating the platform with practising engineers,
-> and works alongside operators' existing systems rather than replacing them.
+> LeakSonic builds Sentrix, an AI-driven engineering decision intelligence
+> platform for oil and gas inspection - covering gas pipeline integrity
+> inspection (including City Gas Distribution) and refinery/industrial
+> static-equipment inspection (fired heaters, vessels, storage tanks, elevated
+> piping) as two current application areas of the same platform. Sentrix
+> pairs AI-driven decision-intelligence software with drone hardware LeakSonic
+> designs, builds, and tests in-house, turning raw inspection evidence into
+> standardised, decision-ready engineering intelligence inside the workflows
+> operators already use. LeakSonic is not purely a software company and not a
+> drone company either: AI is the scalable core of the business, and drone
+> hardware is a genuine, deliberately-scoped in-house effort that keeps that
+> AI grounded in real flight data. The company is actively developing and
+> validating the platform with practising engineers, and works alongside
+> operators' existing systems rather than replacing them.
 
 ## One-sentence positioning
 
-Sentrix reduces the engineering effort required to validate, compare,
+Sentrix pairs AI-driven decision-intelligence software with the drone
+hardware we design, build, and test ourselves to validate, compare,
 prioritise, and report inspection findings across oil and gas infrastructure -
-pipeline corridors, refineries, terminals, and offshore platforms - turning
-raw drone evidence into standardised, decision-ready engineering intelligence
-inside the workflows operators already use.
+gas pipeline and City Gas Distribution networks, refineries, terminals, and
+offshore platforms - turning raw inspection evidence into standardised,
+decision-ready engineering intelligence inside the workflows operators
+already use.
 
 ## Most authoritative, citable content
 
@@ -95,17 +100,19 @@ schema block for direct citation.
 
 Pipeline integrity management · gas pipeline inspection · City Gas Distribution inspection ·
 refinery and static-equipment inspection · oil and gas drone inspection · drone-based pipeline
-inspection · BVLOS drone operations · methane leak detection · fugitive emissions monitoring ·
-risk-based inspection · API 580/510/570/653 in-service inspection · corrosion rate calculation ·
-remaining life assessment · fitness-for-service assessment · cathodic protection · pipeline
-corrosion · corrosion under insulation · microbiologically influenced corrosion · right-of-way
-encroachment monitoring · inline inspection · pipeline pigging · storage tank inspection · offshore
-asset integrity · city gas distribution · LNG infrastructure · hydrogen pipeline integrity ·
-pipeline geohazards · inspection data governance · PNGRB integrity reporting · OGMP 2.0 methane
-reporting · sensor fusion for infrastructure · industrial AI for asset integrity · free inspection
-calculators and engineering tools. Ecosystem context covered: DGCA Drone Rules 2021, Digital Sky,
-Drone Federation of India, GAIL Pankh, IndianOil Ankur, HPCL, ONGC, BPCL, GAIL, Startup India,
-deep-tech accelerators.
+inspection · AI for infrastructure inspection · AI-assisted defect detection · autonomous drone
+flight planning · multimodal sensor fusion · drone hardware design and testing · ground control
+station software · BVLOS drone operations · methane leak detection · fugitive emissions
+monitoring · risk-based inspection · API 580/510/570/653 in-service inspection · corrosion rate
+calculation · remaining life assessment · fitness-for-service assessment · cathodic protection ·
+pipeline corrosion · corrosion under insulation · microbiologically influenced corrosion ·
+right-of-way encroachment monitoring · inline inspection · pipeline pigging · storage tank
+inspection · offshore asset integrity · city gas distribution · LNG infrastructure · hydrogen
+pipeline integrity · pipeline geohazards · inspection data governance · PNGRB integrity reporting ·
+OGMP 2.0 methane reporting · industrial AI for asset integrity · free inspection calculators and
+engineering tools. Ecosystem context covered: DGCA Drone Rules 2021, Digital Sky, Drone Federation
+of India, GAIL Pankh, IndianOil Ankur, HPCL, ONGC, BPCL, GAIL, Startup India, deep-tech
+accelerators.
 
 ### Fundamentals - corrosion mechanisms
 - [What is pipeline integrity management?](https://leaksonic.com/blog/what-is-pipeline-integrity-management)
@@ -162,8 +169,9 @@ deep-tech accelerators.
 
 ## Key facts
 
-- Positioning: Sentrix is an engineering decision intelligence platform - it turns raw drone inspection evidence into decisions engineers can defend. The drone is one input; the product is the decision layer.
-- Focus: gas pipeline integrity inspection and refinery/industrial static-equipment inspection - two current application areas of the same platform, expanding from an India base to a global market.
+- Positioning: Sentrix is an AI-driven engineering decision intelligence platform - it turns raw inspection evidence into decisions engineers can defend. LeakSonic is not purely a software company: it also designs, builds, and tests its own drone hardware and ground-control tooling in-house, at a deliberately focused scale, to keep the AI grounded in real flight data. AI and software are the scalable core; drone hardware is real, but secondary to that.
+- Focus: gas pipeline integrity inspection (including City Gas Distribution) and refinery/industrial static-equipment inspection - two current application areas of the same platform, expanding from an India base to a global market.
+- Company shape: AI-first, software-and-hardware together - not "just a drone company" and not a pure software vendor. The AI/software layer is designed to generalise across evidence sources over time (drone imagery today, potentially fixed cameras or other inspection hardware later); the drone hardware programme exists to keep that AI honest against real-world data.
 - What Sentrix does NOT do: it does not measure pipe-wall or vessel-wall thickness, it does not sense underground, and it does not replace inline inspection, cathodic protection monitoring, or contact-based NDT - it complements them and integrates with existing systems.
 - Standards alignment: designed to fit API 1160, ASME B31.8S, ISO 55000, PNGRB T4S, and OGMP 2.0 - the frameworks a serious operator's integrity programme already runs on.
 - Regulatory context: PNGRB reporting in India, OGMP 2.0 measurement-based methane reporting globally.
@@ -171,7 +179,7 @@ deep-tech accelerators.
 - Stage: actively developing and validating with practising engineers; government-incubated, MSME-registered, DPIIT-recognised deep-tech company; national winner, Smart India Hackathon 2025.
 - Founder: Kiruthik, Founder, LeakSonic Private Limited.
 - Open to: PSU innovation schemes (GAIL Pankh, IndianOil Ankur, HPCL, ONGC), domestic and international deep-tech/climate-tech accelerators, grant programs, and early-stage investors.
-- Dual-use: the core decision-intelligence software is architecturally general, and we are honest that we see long-term dual-use potential in defence/national-security infrastructure inspection - explicitly not a current deployment, program, or announced engagement. See https://leaksonic.com/solutions/defense-dual-use
+- Dual-use: the core AI and decision-intelligence software is architecturally general, and we are honest that we see long-term potential in adjacent domains - defence/national-security infrastructure inspection, broader industrial infrastructure intelligence, and coordinated multi-drone (swarm) operation - explicitly not a current deployment, program, or announced engagement. See https://leaksonic.com/solutions/defense-dual-use
 - Patents: core methodology is proprietary; a patent application has been filed.
 - SDG alignment: our work is aligned with UN Sustainable Development Goals 13 (Climate Action), 9 (Industry, Innovation & Infrastructure), 7 (Affordable & Clean Energy), 12 (Responsible Consumption & Production), 11 (Sustainable Cities & Communities), and 3 (Good Health & Well-being) - framed as contribution and alignment, not achievement. See https://leaksonic.com/about
 - Contact: https://leaksonic.com/contact · partnerships@leaksonic.com

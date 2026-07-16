@@ -27,7 +27,7 @@ export function Hero() {
       <div className="container-content grid min-h-[calc(100svh-4rem)] grid-cols-1 items-center gap-9 py-16 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 lg:py-20">
         <div className="max-w-2xl">
           <Badge variant="accent" className="mb-6">
-            Engineering Decision Intelligence · Oil &amp; Gas Inspection
+            AI + Drone Engineering Intelligence · Oil &amp; Gas Inspection
           </Badge>
 
           <h1 className="text-display-lg font-extrabold text-ink">
@@ -91,8 +91,9 @@ export function Hero() {
           </p>
 
           <p className="mt-4 text-xs text-ink-faint">
-            A decision layer, not a flight service - built across pipeline, refinery, terminal, and
-            offshore inspection, expanding from an India base to a global market.
+            AI-first, not a flight service - we design and test our own drone hardware to ground
+            the intelligence layer in real flight data, built across pipeline, refinery, terminal,
+            and offshore inspection, expanding from an India base to a global market.
           </p>
 
           <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-line pt-5">

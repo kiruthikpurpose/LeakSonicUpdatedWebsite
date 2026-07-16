@@ -85,8 +85,8 @@ export function serviceSchema() {
     '@context': 'https://schema.org',
     '@type': 'Service',
     '@id': `${SITE.url}/#service`,
-    name: 'Oil and gas inspection decision intelligence',
-    serviceType: 'Engineering decision intelligence for pipeline and refinery inspection',
+    name: 'AI-driven oil and gas inspection decision intelligence',
+    serviceType: 'AI-driven engineering decision intelligence for pipeline and refinery inspection',
     description: SITE.shortPositioning,
     provider: { '@id': `${SITE.url}/#organization` },
     areaServed: [
@@ -227,7 +227,7 @@ export function softwareApplicationSchema() {
     name: SITE.product,
     applicationCategory: 'BusinessApplication',
     applicationSubCategory:
-      'Engineering Decision Intelligence Platform for Pipeline and Refinery Inspection',
+      'AI-Driven Engineering Decision Intelligence Platform for Pipeline and Refinery Inspection',
     operatingSystem: 'Web',
     description: SITE.positioning,
     url: `${SITE.url}/platform`,

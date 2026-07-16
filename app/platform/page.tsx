@@ -18,7 +18,7 @@ import { breadcrumbSchema, softwareApplicationSchema, serviceSchema } from '@/li
 export const metadata: Metadata = buildMetadata({
   title: 'The Sentrix platform',
   description:
-    'Sentrix turns raw drone inspection evidence into decision-ready engineering intelligence: comparable evidence across cycles, findings you can defend, and reports ready for the systems your integrity team already runs on.',
+    'Sentrix pairs AI-driven decision-intelligence software with drone hardware we design and test ourselves, turning raw inspection evidence into decision-ready engineering intelligence: comparable evidence across cycles, findings you can defend, and reports ready for the systems your integrity team already runs on.',
   path: '/platform',
   keywords: [
     'pipeline inspection software',
@@ -33,6 +33,10 @@ export const metadata: Metadata = buildMetadata({
     'City Gas Distribution inspection software',
     'proprietary inspection software',
     'drone software and hardware platform',
+    'AI drone inspection platform',
+    'AI defect detection pipeline',
+    'autonomous drone flight planning software',
+    'multimodal sensor fusion inspection',
   ],
 });
 
@@ -99,7 +103,7 @@ export default function PlatformPage() {
       <JsonLd data={[breadcrumbSchema(crumbs), softwareApplicationSchema(), serviceSchema()]} />
       <PageHero
         eyebrow="The platform"
-        title="Sentrix is a proprietary software and hardware decision layer between inspection evidence and an auditable decision."
+        title="Sentrix is an AI-driven decision layer - proprietary software paired with drone hardware we build ourselves - between inspection evidence and an auditable decision."
         lead="Built to help integrity teams validate, compare, prioritise, and report inspection findings with far less manual effort. Written for the people who have to trust it - integrity engineers, chief engineers, and program managers. Here is what the platform does, and what you get out of it."
         crumbs={crumbs}
       />
@@ -169,6 +173,47 @@ export default function PlatformPage() {
                 </Reveal>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* AI + hardware - direct, no-nonsense split of what we build and why */}
+      <section className="border-b border-line bg-base py-section">
+        <div className="container-content">
+          <Reveal>
+            <SectionHeading
+              eyebrow="What we actually build"
+              title="AI first. Hardware because the AI needs it to be real."
+              lead="We are not purely a software company, and we are not a drone company either. AI is the scalable core; drone hardware is a genuine, deliberately focused part of the business that keeps that AI grounded in real flight data."
+            />
+          </Reveal>
+          <div className="mt-9 grid grid-cols-1 gap-5 md:grid-cols-2">
+            <Reveal>
+              <div className="h-full rounded-card border border-accent/30 bg-accent/[0.05] p-6 sm:p-8">
+                <p className="mono-label text-accent">AI &amp; software</p>
+                <h3 className="mt-3 text-h3 font-semibold text-ink">The scalable core</h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-secondary">
+                  Autonomous flight planning, AI-assisted defect detection, risk scoring, and
+                  multimodal sensor fusion turn raw evidence into a comparable, defensible,
+                  prioritised decision. This is where the long-term value compounds - it is not
+                  tied to any one piece of hardware, and it is designed to take in more evidence
+                  sources as the platform matures.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <div className="h-full rounded-card border border-line bg-card p-6 sm:p-8">
+                <p className="mono-label text-ink-muted">Hardware</p>
+                <h3 className="mt-3 text-h3 font-semibold text-ink">The proving ground</h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-secondary">
+                  We design, build, and test our own drones and ground-control tooling in-house, at
+                  a deliberately focused scale. Drone hardware alone is only moderately scalable and
+                  increasingly commoditised - we invest in it anyway, because an AI model is only as
+                  good as the real flight data it learns from, and there is no substitute for
+                  building and flying the thing yourself.
+                </p>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>

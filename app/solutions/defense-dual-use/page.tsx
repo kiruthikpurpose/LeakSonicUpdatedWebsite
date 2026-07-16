@@ -4,9 +4,9 @@ import { AudienceLayout, type AudienceContent } from '@/components/sections/Audi
 import { buildMetadata } from '@/lib/metadata';
 
 export const metadata: Metadata = buildMetadata({
-  title: 'Dual-use potential: defence & national-security infrastructure inspection',
+  title: 'Dual-use potential: defence, swarms & industrial infrastructure intelligence',
   description:
-    'Sentrix is built today for gas pipeline and refinery inspection. The underlying proprietary decision-intelligence software is designed to generalise, and we see genuine long-term dual-use potential in defence and national-security infrastructure inspection - stated honestly as an exploratory direction, not a current engagement.',
+    'Sentrix is built today for gas pipeline and refinery inspection, pairing AI-driven software with drone hardware we design and test ourselves. That AI architecture is designed to generalise, and we see genuine long-term potential in defence, national-security infrastructure inspection, broader industrial infrastructure intelligence, and coordinated multi-drone (swarm) operation - stated honestly as an exploratory direction, not a current engagement.',
   path: '/solutions/defense-dual-use',
   keywords: [
     'dual-use drone software',
@@ -14,13 +14,15 @@ export const metadata: Metadata = buildMetadata({
     'national security asset inspection software',
     'critical infrastructure monitoring technology',
     'defense decision intelligence software',
+    'drone swarm AI software',
+    'industrial infrastructure intelligence AI',
   ],
 });
 
 const content: AudienceContent = {
   eyebrow: 'For defence & dual-use exploration',
-  title: 'Long-term dual-use potential for defence and national-security infrastructure.',
-  lead: 'We build Sentrix, a proprietary software and hardware decision-intelligence platform, for gas pipeline and refinery inspection today - that remains our near-term focus. The underlying architecture is deliberately general: evidence capture, standardised comparison, and defensible prioritisation are not oil-and-gas-specific problems, and we see genuine long-term potential in defence and national-security infrastructure inspection as a direction the company may pursue as it matures.',
+  title: 'Long-term potential in defence, swarms, and industrial infrastructure intelligence.',
+  lead: 'We build Sentrix, an AI-driven decision-intelligence platform paired with drone hardware we design, build, and test ourselves, for gas pipeline and refinery inspection today - that remains our near-term focus. The underlying AI is deliberately general: evidence capture, standardised comparison, and defensible prioritisation are not oil-and-gas-specific problems, and we see genuine long-term potential in defence and national-security infrastructure inspection, broader industrial infrastructure intelligence, and coordinated multi-drone (swarm) operation, as directions the company may pursue as it matures.',
   slug: '/solutions/defense-dual-use',
   name: 'Defence & dual-use',
   stats: [
@@ -31,7 +33,7 @@ const content: AudienceContent = {
   context: {
     heading: 'Where this actually stands today',
     paragraphs: [
-      'To be direct: Sentrix has no current defence or national-security deployment, program, or announced engagement. Our validated, near-term focus is gas pipeline inspection - including City Gas Distribution networks - and refinery and industrial static-equipment inspection. This page exists because the underlying decision layer is general enough that dual-use potential is a genuine, honest part of our long-term thinking, and we would rather say that plainly than stay silent about it.',
+      'To be direct: Sentrix has no current defence, national-security, or swarm deployment, program, or announced engagement. Our validated, near-term focus is gas pipeline inspection - including City Gas Distribution networks - and refinery and industrial static-equipment inspection. This page exists because the underlying AI is general enough that potential in defence, broader industrial infrastructure intelligence, and coordinated multi-drone operation is a genuine, honest part of our long-term thinking, and we would rather say that plainly than stay silent about it.',
       'What would make this real: sustained funding to support dedicated validation work outside oil and gas, a formal partnership or program with a defence or national-security stakeholder, and the technology-readiness work that any serious dual-use claim requires before it is more than architecture. None of that has happened yet.',
       'If you work in defence innovation, dual-use technology evaluation, or national-security infrastructure and this direction is genuinely relevant to your mandate, we would like to talk - with the clear understanding on both sides that this is early-stage exploration, not a fielded capability.',
     ],

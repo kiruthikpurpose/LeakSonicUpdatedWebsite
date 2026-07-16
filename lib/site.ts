@@ -7,19 +7,21 @@ export const SITE = {
   name: 'LeakSonic',
   legalName: 'LeakSonic Private Limited',
   product: 'Sentrix',
-  // Product category - Sentrix is a software and hardware decision-intelligence
-  // platform, not a flight service. The drone is one input among several.
-  category: 'Engineering Decision Intelligence Platform (Software & Hardware)',
+  // Product category - Sentrix is AI-first: the decision-intelligence
+  // software is the scalable core, and drone hardware is a genuine,
+  // deliberately-scoped in-house effort that keeps the AI grounded in real
+  // flight data - not a flight service, and not "just a drone company."
+  category: 'AI-Driven Engineering Decision Intelligence Platform (AI, Software & Drone Hardware)',
   // Positioning spine - reused verbatim across the site and in structured data.
   // Covers the full range of oil and gas inspection applications we work
   // across - pipeline corridors (including City Gas Distribution networks,
   // our core focus today), refineries, terminals, and offshore platforms.
   positioning:
-    'Sentrix reduces the engineering effort required to validate, compare, prioritise, and report inspection findings across oil and gas infrastructure - gas pipeline and City Gas Distribution networks, refineries, terminals, and offshore platforms - combining proprietary decision-intelligence software with the hardware systems that capture evidence, so raw inspection data becomes standardised, decision-ready engineering intelligence inside the workflows operators already use.',
+    'Sentrix pairs AI-driven decision-intelligence software with the drone hardware we design, build, and test ourselves to validate, compare, prioritise, and report inspection findings across oil and gas infrastructure - gas pipeline and City Gas Distribution networks, refineries, terminals, and offshore platforms - turning raw inspection evidence into standardised, decision-ready engineering intelligence inside the workflows operators already use.',
   // Shorter form for meta descriptions and cards (~150 chars).
   shortPositioning:
-    'Sentrix combines proprietary decision-intelligence software with drone hardware to turn raw inspection evidence into standardised, decision-ready engineering intelligence across oil and gas infrastructure.',
-  tagline: 'Engineering decision intelligence for oil and gas inspection.',
+    'Sentrix pairs AI-driven decision-intelligence software with drone hardware we design and test ourselves to turn raw inspection evidence into standardised, decision-ready engineering intelligence across oil and gas infrastructure.',
+  tagline: 'AI-driven decision intelligence for oil and gas inspection, built on drone hardware we design ourselves.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'https://leaksonic.com',
   // Contact routing
   email: 'contact@leaksonic.com',
@@ -97,6 +99,12 @@ export const SITE = {
     'Fitness-for-service assessment',
     'Inspection ROI analysis',
     'Free pipeline inspection tools',
+    'Artificial intelligence for infrastructure inspection',
+    'AI-assisted defect detection',
+    'Autonomous drone flight planning',
+    'Multimodal sensor fusion',
+    'Drone hardware design and testing',
+    'Ground control station software',
   ],
   // Industry standards and frameworks the platform is designed to align with -
   // the language a major operator's integrity department speaks. Standards

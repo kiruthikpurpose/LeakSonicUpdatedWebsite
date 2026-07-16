@@ -10,7 +10,7 @@ export const SITE_FAQ: FaqItem[] = [
   {
     question: 'Does Sentrix work outside oil and gas, for example in defence?',
     answer:
-      'Not today. Sentrix is built and validated specifically for gas pipeline (including City Gas Distribution) and refinery/industrial static-equipment inspection, and that is where our near-term focus stays. The underlying decision-intelligence software is designed to generalise, and we see long-term dual-use potential in domains like defence and national-security infrastructure inspection - but that is an early, exploratory direction we may pursue later, not a current product or engagement.',
+      'Not today. Sentrix is built and validated specifically for gas pipeline (including City Gas Distribution) and refinery/industrial static-equipment inspection, and that is where our near-term focus stays. The underlying AI and decision-intelligence software is designed to generalise across infrastructure types, and we see long-term potential in adjacent domains - defence and national-security infrastructure inspection, broader industrial infrastructure intelligence, and coordinated multi-drone (swarm) operation among them - but all of that is early, exploratory thinking we may pursue later, not a current product or engagement.',
   },
   {
     question: 'What does Sentrix do?',
@@ -21,6 +21,11 @@ export const SITE_FAQ: FaqItem[] = [
     question: 'What industries does Sentrix serve?',
     answer:
       'Sentrix serves two current application areas of the same platform: gas transmission, distribution, and city gas network operators inspecting pipeline right-of-way and integrity; and refinery, terminal, and plant operators inspecting static equipment that has traditionally required scaffolding or rope access. Both are genuine, active application areas, not a primary market and a future one.',
+  },
+  {
+    question: 'Is LeakSonic a drone company?',
+    answer:
+      'No, and we are direct about that. LeakSonic is an AI-first engineering decision intelligence company - the scalable core of what we build is the AI and software that turns inspection evidence into a defensible decision. Drone hardware is an important, genuine part of the company too: we design, build, and test our own drones and ground-control tooling, at a deliberately focused scale, to keep that AI grounded in real flight data. We are hardware and software together, with AI as the primary driver of long-term value - not a flight service that happens to have some software attached.',
   },
   {
     question: 'Does LeakSonic offer any free tools or calculators?',
@@ -70,7 +75,7 @@ export const SITE_FAQ: FaqItem[] = [
   {
     question: 'Does Sentrix use anything beyond the drone’s own evidence?',
     answer:
-      'Yes. Sentrix draws on additional context beyond a single flight to make comparison and prioritisation more reliable, including continuously available context that provides a between-flight baseline. We are deliberately not publishing the specific internal makeup of that stack, but the principle is simple and stated plainly: no single reading is trusted on its own, and context that spans time makes a genuine change far easier to separate from noise.',
+      'Yes. Sentrix draws on additional context beyond a single flight to make comparison and prioritisation more reliable, including continuously available context that provides a between-flight baseline. We are deliberately not publishing the specific internal makeup of that stack, but the principle is simple and stated plainly: no single reading is trusted on its own, and context that spans time makes a genuine change far easier to separate from noise. The AI architecture is also designed with room to take in other evidence sources over time - fixed cameras or additional inspection hardware, for example - rather than being built exclusively around one sensor platform, though our own drone hardware is the primary source we work with today.',
   },
   {
     question: 'Does Sentrix work on oil pipelines, or only gas?',
@@ -80,7 +85,7 @@ export const SITE_FAQ: FaqItem[] = [
   {
     question: 'Who owns the drone hardware, and does Sentrix operate the flights?',
     answer:
-      'Sentrix is the software and decision layer, not a drone manufacturer or a flight operations company. Depending on the engagement, flights can be operated by the customer’s own certified pilots, by a third-party drone service provider, or through a partnership we help arrange - the platform is designed to work with data from compatible inspection hardware rather than requiring proprietary equipment. Coupling the decision layer to one drone manufacturer would limit which operators could use it and would distract from the harder problem, which is turning inspection evidence into a decision.',
+      'AI is the core of what we build, but we are not purely a software company - we design, build, and test our own drone hardware in-house, at a deliberately focused scale, specifically to keep the AI grounded in real flight data rather than a synthetic benchmark. That said, the platform does not require our hardware: it is designed to work with data from compatible third-party inspection hardware too, and depending on the engagement, flights can be operated by the customer’s own certified pilots, a third-party drone service provider, or our own team. Coupling the decision layer to one drone manufacturer would limit which operators could use it, which is why the software stays hardware-flexible even as we keep investing in our own aircraft.',
   },
   {
     question: 'Is Sentrix planning to operate outside India?',
