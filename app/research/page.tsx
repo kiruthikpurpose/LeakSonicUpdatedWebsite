@@ -4,6 +4,7 @@ import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Badge } from '@/components/ui/Badge';
 import { ValidationStepper } from '@/components/diagrams/ValidationStepper';
+import { DroneSimulation } from '@/components/diagrams/DroneSimulation';
 import { CtaBand } from '@/components/sections/CtaBand';
 import JsonLd from '@/components/JsonLd';
 import { buildMetadata } from '@/lib/metadata';
@@ -101,6 +102,24 @@ export default function ResearchPage() {
                 each test concludes, we update its status here - and we report outcomes whether they
                 confirm the claim or break it.
               </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Interactive 3D walkthrough of the evidence-to-decision flow */}
+      <section className="border-b border-line bg-base py-section">
+        <div className="container-content">
+          <Reveal>
+            <SectionHeading
+              eyebrow="See how it works"
+              title="Flight to decision, in one interactive walkthrough"
+              lead="The same flow described throughout this site - drone evidence, standardised by Sentrix, reviewed by an engineer, resolved into a decision - shown here as a small interactive 3D scene. Drag to orbit, or step through it below."
+            />
+          </Reveal>
+          <Reveal delay={0.08}>
+            <div className="mt-9">
+              <DroneSimulation />
             </div>
           </Reveal>
         </div>
