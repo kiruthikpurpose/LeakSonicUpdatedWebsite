@@ -155,6 +155,16 @@ export const NAV_LINKS: NavItem[] = [
         href: '/tools/corrosion-remaining-life-calculator',
         description: 'Compute corrosion rate and a suggested inspection interval',
       },
+      {
+        label: 'Mission Coverage & Flight Time',
+        href: '/tools/mission-coverage-planner',
+        description: 'Plan flight distance, time, and batteries for a survey',
+      },
+      {
+        label: 'Methane Emissions Value',
+        href: '/tools/methane-emissions-value-estimator',
+        description: 'Estimate the cost and climate impact of an undetected leak',
+      },
     ],
   },
   {
@@ -185,6 +195,11 @@ export const NAV_LINKS: NavItem[] = [
         label: 'Defence & Dual-Use',
         href: '/solutions/defense-dual-use',
         description: 'Long-term exploratory direction, not a current engagement',
+      },
+      {
+        label: 'Meridian GCS',
+        href: '/solutions/meridian-gcs',
+        description: 'A ground control station we’re building - in development',
       },
     ],
   },

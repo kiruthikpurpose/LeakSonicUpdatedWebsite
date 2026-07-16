@@ -44,6 +44,8 @@ module.exports = {
       '/tools/reporting-readiness-assessment',
       '/tools/inspection-priority-score',
       '/tools/corrosion-remaining-life-calculator',
+      '/tools/mission-coverage-planner',
+      '/tools/methane-emissions-value-estimator',
     ];
     const isBlogPost = path.startsWith('/blog/') && path !== '/blog';
     let priority = config.priority;

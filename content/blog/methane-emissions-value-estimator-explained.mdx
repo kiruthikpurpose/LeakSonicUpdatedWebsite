@@ -1,0 +1,37 @@
+---
+title: 'What an undetected methane leak actually costs: a free value estimator'
+date: '2026-07-16'
+lastUpdated: '2026-07-16'
+author: 'LeakSonic Research'
+category: 'technical'
+summary: 'A methane leak has two costs that are easy to state separately and rarely put side by side: the commercial value of the gas that never reached a customer, and the climate impact of the methane released. Both scale directly with one variable most operators actually control - how long the leak goes undetected. We built a free Methane Emissions Value Estimator to make that relationship concrete.'
+tags:
+  ['methane economics', 'leak detection', 'emissions cost', 'GWP', 'free tools']
+faqs:
+  - question: 'What does the Methane Emissions Value Estimator calculate?'
+    answer: 'From a leak rate and the number of hours it goes undetected, it calculates total gas lost, the commercial value of that gas at a price you set, and the CO2-equivalent climate impact using a global warming potential (GWP) multiplier you also set - with every step of the arithmetic shown.'
+  - question: 'Why does the tool let me set my own GWP multiplier instead of using one fixed number?'
+    answer: 'Because there is not one universally correct figure. Methane''s global warming potential varies by IPCC assessment report and by time horizon - commonly cited figures range from roughly 28-36 for a 100-year horizon to 80-83 for a 20-year horizon in recent assessments. Rather than assert one as canonical, the tool lets you match whatever figure your own reporting framework uses.'
+  - question: 'What is the single biggest lever this tool illustrates?'
+    answer: 'Detection time. Leak rate and gas price are largely fixed by physical and market reality, but how long a leak goes undetected before repair is the variable an inspection programme actually controls - and every result on the page scales linearly with it. Halving detection time halves the estimated value and climate impact.'
+---
+
+Two numbers about a methane leak get discussed constantly, and rarely side by side: what the lost gas is worth commercially, and what its climate impact is in CO2-equivalent terms. Both numbers depend on the same underlying quantity - how much gas escaped - and that quantity depends overwhelmingly on one variable: how long the leak went undetected before it was found and repaired.
+
+We built a free [Methane Emissions Value Estimator](/tools/methane-emissions-value-estimator) to put those two costs on the same page and make the detection-time relationship concrete.
+
+## The arithmetic is simple; the implications are not
+
+Gas lost is leak rate multiplied by the hours it takes to detect and repair the leak. Commercial value lost is that gas quantity multiplied by its market price - straightforward. Climate impact requires one more step: converting the mass of methane released into a CO2-equivalent figure using a global warming potential (GWP) multiplier, since methane's warming effect is measured relative to CO2 over a chosen time horizon.
+
+## Why we don't assert one GWP number as correct
+
+Methane's GWP is not a single fixed constant - it depends on which IPCC assessment report you reference and which time horizon you're measuring over, with commonly cited ranges of roughly 28-36 for a 100-year horizon and 80-83 for a 20-year horizon in recent assessments. A tool that silently picked one number and presented it as definitive would be quietly making a methodological choice on your behalf. Ours doesn't - you set the multiplier to match whatever reporting framework you already use, and the tool shows you exactly how that choice changes the result.
+
+## The variable that actually matters
+
+Leak rate is a property of the failure itself, and gas price is set by the market - neither is something an inspection programme controls directly. Detection time is different: it is a direct function of how often you inspect and how quickly your workflow turns field evidence into an actionable finding. Every output on this tool's page scales linearly with that one number, which is the entire economic argument for prioritised, cycle-over-cycle inspection over a fixed calendar schedule - catching a leak in days instead of months does not just reduce the emissions figure, it proportionally reduces the commercial loss too.
+
+## What this tool is not
+
+It is an illustrative estimate from assumptions you provide, not a measurement of any real leak and not a claim about Sentrix's measured performance. For the [economics behind why detection speed matters at a portfolio level](/blog/methane-leak-detection-economics), see our deeper piece on the topic - or [talk to us](/contact) about what faster detection could look like on your own network.

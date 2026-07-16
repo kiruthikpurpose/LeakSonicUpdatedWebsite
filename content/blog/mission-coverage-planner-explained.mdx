@@ -1,0 +1,39 @@
+---
+title: 'Planning a drone inspection mission: what actually drives flight time and battery count'
+date: '2026-07-16'
+lastUpdated: '2026-07-16'
+author: 'LeakSonic Research'
+category: 'technical'
+summary: 'How long a drone survey takes and how many batteries it needs comes down to a small set of variables - distance to cover, required image overlap, cruise speed, and endurance - that most planning still does by rough estimate. We built a free Drone Mission Coverage & Flight Time Planner to make that arithmetic explicit for both pipeline corridors and refinery sites.'
+tags:
+  ['drone mission planning', 'flight time calculator', 'photogrammetry', 'free tools', 'drone survey']
+faqs:
+  - question: 'What inputs does the Drone Mission Coverage & Flight Time Planner need?'
+    answer: 'For a linear site (a pipeline corridor), corridor length and number of passes. For an area site (a refinery or plant), site area and effective swath width per pass. Both site types also need image overlap percentage, cruise speed, battery endurance, and battery swap time.'
+  - question: 'Why does image overlap increase flight time?'
+    answer: 'Overlap between passes is what makes downstream photogrammetry and cycle-over-cycle comparison reliable - insufficient overlap produces gaps or misaligned imagery that cannot be compared cleanly later. More overlap means more distance flown to cover the same area or corridor, which is a real trade-off the tool makes visible rather than hiding.'
+  - question: 'Does this tool account for wind, terrain, or airspace restrictions?'
+    answer: 'No. It is a planning aid based on distance, speed, and endurance arithmetic only - it does not model wind, terrain-following flight paths, regulatory ceiling limits, or airspace restrictions, all of which affect a real mission plan and should be accounted for separately.'
+---
+
+Ask most drone teams how long a given survey will take, and the honest answer is usually "roughly." The actual arithmetic behind flight time and battery count is not complicated - distance to cover, adjusted for the overlap a useful survey requires, divided by cruise speed, then split into battery-length legs - but it rarely gets made explicit before a mission, which makes planning day-of a matter of guesswork and extra batteries packed "just in case."
+
+We built a free [Drone Mission Coverage & Flight Time Planner](/tools/mission-coverage-planner) to make that arithmetic visible and adjustable, for both pipeline corridors and area-based sites like refineries.
+
+## Two shapes of site, one underlying calculation
+
+A pipeline corridor is a linear problem: length times number of passes (commonly two, to cover both sides of a right-of-way) gives the raw distance to fly. A refinery or plant site is an area problem: total area divided by the effective width your camera covers per pass, at your chosen altitude, gives the same kind of raw distance figure. Once you have that number, the rest of the calculation - overlap adjustment, flight time, battery count - is identical regardless of which shape the site is.
+
+## Overlap is flown distance, not overhead
+
+It is tempting to treat image overlap as pure overhead to minimise, but that gets the trade-off backwards. Overlap between passes is what makes the imagery from one flight usable for reliable photogrammetry and what makes comparing this cycle to the last one possible without gaps or misalignment. Our tool treats overlap as a percentage increase on raw flight distance rather than hiding it, so the real cost of a coverage requirement is visible before you commit to it.
+
+## From distance to a battery plan
+
+Flight time is simply effective distance divided by cruise speed. Battery count is flight time divided by endurance per battery, rounded up - and the tool adds ground time for battery swaps between legs, since that time is real and often left out of back-of-envelope estimates. The result is a total mission time that reflects what a day in the field actually looks like, not just time in the air.
+
+## What this tool does not do
+
+It does not account for wind, terrain-following flight paths, regulatory altitude ceilings, or airspace restrictions - all of which matter for a real, certified flight plan and are outside what a simple distance-and-speed calculator can responsibly estimate. Treat it as a fast planning aid for sizing a mission, not a substitute for proper pre-flight planning and airspace clearance.
+
+If you are building your own mission-planning workflow and want to see how we are thinking about ground-control tooling more broadly, [Meridian GCS](/solutions/meridian-gcs) is the ground-control station we are developing in-house - still early, but built around exactly this kind of problem.

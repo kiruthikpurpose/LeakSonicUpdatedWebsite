@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Calculator, ClipboardCheck, Gauge, Activity, ArrowRight } from 'lucide-react';
+import { Calculator, ClipboardCheck, Gauge, Activity, Plane, Flame, ArrowRight } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { PageHero } from '@/components/ui/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
@@ -12,7 +12,7 @@ import { breadcrumbSchema, itemListSchema } from '@/lib/schema';
 export const metadata: Metadata = buildMetadata({
   title: 'Free tools for gas pipeline & refinery inspection teams',
   description:
-    'Free, self-serve engineering engines for gas pipeline, City Gas Distribution, and refinery inspection teams: estimate inspection ROI, check reporting readiness, score inspection priority on a live risk matrix, and compute corrosion rate and remaining life - no signup required.',
+    'Free, self-serve engineering engines for gas pipeline, City Gas Distribution, and refinery inspection teams: estimate inspection ROI, check reporting readiness, score inspection priority on a live risk matrix, compute corrosion rate and remaining life, plan a drone mission, and estimate methane leak value - no signup required.',
   path: '/tools',
   keywords: [
     'pipeline inspection tools',
@@ -21,6 +21,8 @@ export const metadata: Metadata = buildMetadata({
     'CGD inspection tools',
     'inspection ROI calculator',
     'corrosion rate calculator',
+    'drone mission planning calculator',
+    'methane leak cost calculator',
   ],
 });
 
@@ -66,6 +68,20 @@ const TOOLS: Tool[] = [
     href: '/tools/corrosion-remaining-life-calculator',
     cta: 'Calculate remaining life',
   },
+  {
+    icon: Plane,
+    title: 'Drone Mission Coverage & Flight Time Planner',
+    body: 'Set your corridor or site, coverage requirements, and aircraft specs, and get flight distance, flight time, battery count, and total mission time.',
+    href: '/tools/mission-coverage-planner',
+    cta: 'Plan a mission',
+  },
+  {
+    icon: Flame,
+    title: 'Methane Emissions Value Estimator',
+    body: 'See the commercial value and CO2-equivalent climate impact of an undetected leak, and why detection speed is the biggest lever you actually control.',
+    href: '/tools/methane-emissions-value-estimator',
+    cta: 'Estimate the impact',
+  },
 ];
 
 export default function ToolsPage() {
@@ -89,7 +105,7 @@ export default function ToolsPage() {
 
       <section className="border-b border-line bg-base py-section">
         <div className="container-content">
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {TOOLS.map((tool, i) => {
               const Icon = tool.icon;
               return (

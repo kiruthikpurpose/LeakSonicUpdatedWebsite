@@ -1,0 +1,41 @@
+---
+title: 'Introducing Meridian GCS: the ground control station we are building for ourselves first'
+date: '2026-07-16'
+lastUpdated: '2026-07-16'
+author: 'LeakSonic Research'
+category: 'technical'
+summary: 'Building and flying our own drones for Sentrix surfaced a gap: existing ground-control tools are built around flying one aircraft well, not around planning, repeating, and collaborating on inspection missions at scale. Meridian GCS is our answer - a ground-control station in active development, described honestly here as a work in progress, not a shipped product.'
+tags:
+  ['Meridian GCS', 'ground control station', 'drone software', 'mission planning', 'product update']
+faqs:
+  - question: 'What is Meridian GCS?'
+    answer: 'Meridian GCS is a ground-control station software product LeakSonic is developing in-house, aimed at repeat-cycle inspection missions rather than one-off flights - covering CAD-to-waypoint conversion, direct companion-computer control, collaborative mission editing, cloud version control for mission plans, mission scheduling and docking integration, and a scriptable mission simulator.'
+  - question: 'Is Meridian GCS available today?'
+    answer: 'No. It is under active in-house development, not released or generally available. We are describing it now because it is a genuine, ongoing part of what we build, and we would rather be upfront about that than stay silent about real work in progress.'
+  - question: 'Why is LeakSonic, a pipeline and refinery inspection company, building ground-control software?'
+    answer: 'Because we design, build, and test our own drone hardware for Sentrix, and needed a ground-control tool built around how a real inspection programme actually operates - recurring missions, teams collaborating on mission plans, and a direct line to the companion computer running our own AI - rather than a tool designed primarily around flying a single aircraft on a single flight.'
+---
+
+Building our own drones for Sentrix meant spending a lot of time inside existing ground-control software, and it surfaced a consistent gap: most of those tools are built around flying one aircraft well on one flight. That is a real and useful thing to be good at. It is not, however, what a repeat-cycle, evidence-driven inspection programme actually needs day to day - planning missions from existing site data, collaborating across a team, scheduling recurring flights, and keeping track of what changed between mission versions.
+
+Meridian GCS is our answer to that gap. It is in active development today, not a shipped product, and this post describes what we are building toward - honestly, without rounding up the current state.
+
+## Starting from the data you already have
+
+Most mission planning still starts with someone manually placing waypoints on a map. We're building Meridian GCS to start instead from data a site or network already has - a P&ID, a CSV of asset coordinates, a DXF site drawing - and generate a waypoint mission directly from it. The goal is removing a manual, error-prone step, not adding a new one.
+
+## One interface for the aircraft and the compute running on it
+
+A drone increasingly carries a companion computer doing real work - running the models that make sense of what the aircraft is seeing. Today, checking on that companion computer often means a second laptop and a separate connection. We're building Meridian GCS to control and monitor the companion computer directly from inside the ground station itself, so there is one interface for the whole system, not two.
+
+## Built for a team, not a single pilot
+
+Mission plans currently tend to live as files passed between people, which does not hold up well once more than one person needs to work on a plan together, or once a plan needs to be revisited months later and someone needs to know what changed and why. We're building collaborative editing, cloud version control for mission plans - the same kind of history and rollback source code gets - and mission scheduling with docking-station integration, aimed squarely at recurring, team-run inspection programmes rather than one-off solo flights.
+
+## Testing logic before it flies
+
+Automation scripts and mission logic are safer to get wrong in simulation than in the air. We're building a Python-scriptable simulation environment into Meridian GCS specifically so mission automation can be tested against realistic scenarios before it ever runs against a real aircraft.
+
+## Where this stands, and where it's going
+
+None of this is a claim that Meridian GCS today is faster or better than the ground-control tools most teams already use - that is a design goal we are actively building toward, not a benchmarked result. It exists because we needed it for our own drone programme, and building it well seemed more useful than quietly using something that didn't quite fit and never saying anything about the gap. If you fly drones for infrastructure inspection and this is a problem you think about too, we would genuinely like to hear from you - [get in touch](/contact), or see [where Meridian GCS sits today](/solutions/meridian-gcs).
