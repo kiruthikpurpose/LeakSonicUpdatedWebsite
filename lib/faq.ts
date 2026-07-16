@@ -30,7 +30,37 @@ export const SITE_FAQ: FaqItem[] = [
   {
     question: 'Does LeakSonic offer any free tools or calculators?',
     answer:
-      'Yes. We publish four free, no-signup engineering tools at leaksonic.com/tools: an Inspection Cost & ROI Calculator, an Integrity & Methane Reporting Readiness Assessment, an Inspection Priority Score Estimator built on an API 580-style risk matrix, and a Corrosion Rate & Remaining Life Calculator. Each shows its full working in an insight log rather than just returning a number, and each is explicitly labelled as an illustrative planning aid, not a validated Sentrix performance claim.',
+      'Yes. We publish six free, no-signup engineering tools at leaksonic.com/tools: an Inspection Cost & ROI Calculator, an Integrity & Methane Reporting Readiness Assessment, an Inspection Priority Score Estimator built on an API 580-style risk matrix, a Corrosion Rate & Remaining Life Calculator, a Drone Mission Coverage & Flight Time Planner, and a Methane Emissions Value Estimator. Each shows its full working in an insight log rather than just returning a number, and each is explicitly labelled as an illustrative planning aid, not a validated Sentrix performance claim.',
+  },
+  {
+    question: 'What is Meridian GCS?',
+    answer:
+      'Meridian GCS is a ground-control station software product LeakSonic is developing in-house - designed for CAD-to-waypoint conversion (from P&ID, CSV, or DXF files), direct companion-computer control, collaborative mission editing, cloud version control for mission plans, mission scheduling and docking integration, and a scriptable mission simulator. It is under active development, not released or generally available today.',
+  },
+  {
+    question: 'Why is AI, not the drone, the most important part of LeakSonic’s technology?',
+    answer:
+      'Because drone hardware alone is only moderately scalable and increasingly commoditised, while the AI and decision-intelligence software that turns raw evidence into a comparable, defensible, prioritised finding is what actually compounds in value across customers and asset types. We still design, build, and test our own drone hardware - it exists specifically to keep the AI grounded in real flight data - but the AI is the part built to scale.',
+  },
+  {
+    question: 'What is multimodal sensor fusion, and does Sentrix use it?',
+    answer:
+      'Multimodal sensor fusion means combining evidence from more than one sensing source - visual, thermal, or other signal types - into a single, more reliable finding rather than trusting any one reading alone. It is a design principle behind how Sentrix builds confidence into a finding, and the architecture is built to extend to additional evidence sources over time as the platform matures.',
+  },
+  {
+    question: 'Does AI replace the engineer in an inspection decision?',
+    answer:
+      'No. Sentrix is built to surface evidence and a confidence level for an engineer to review and decide on, not to make an unreviewable autonomous call. The value of AI here is reducing manual review effort and making cycle-over-cycle comparison reliable - engineering judgement stays in the loop by design, not as an afterthought.',
+  },
+  {
+    question: 'What is a digital twin, and does Sentrix build one for pipelines?',
+    answer:
+      'A digital twin is a continuously updated digital representation of a physical asset, built from inspection and operational data, that lets an engineer reason about the asset’s condition without being on site. Standardised, comparable inspection evidence - which is what Sentrix produces - is a foundational input to building a reliable digital twin, and it is a natural extension of the platform as it matures.',
+  },
+  {
+    question: 'Is LeakSonic’s drone technology used for defense or security applications today?',
+    answer:
+      'No. LeakSonic’s validated, funded work today is entirely in gas pipeline and refinery inspection. We are honest that the underlying AI architecture is general enough to have long-term potential in defence, national-security infrastructure inspection, and coordinated multi-drone (swarm) operation, and that we find that direction genuinely interesting - but there is no current defence deployment, program, or announced engagement, and we say that plainly rather than let it be assumed.',
   },
   {
     question: 'What is a corrosion rate calculator, and does LeakSonic have one?',
@@ -41,6 +71,16 @@ export const SITE_FAQ: FaqItem[] = [
     question: 'How is pipeline or refinery inspection priority scored?',
     answer:
       'Inspection priority is typically scored by combining likelihood factors (asset age, construction/material risk, history of anomalies, time since last inspection) with consequence factors (population density, environmental sensitivity, or operational criticality nearby) on a likelihood-by-consequence risk matrix, in the style used by API 580-based risk-based inspection programmes. LeakSonic\'s free Inspection Priority Score Estimator demonstrates this scoring live.',
+  },
+  {
+    question: 'How do you calculate flight time and battery count for a drone survey?',
+    answer:
+      'Total distance to fly (corridor length times passes, or site area divided by effective swath width) is increased for the image overlap the survey needs, then divided by cruise speed to get flight time. Flight time divided by battery endurance, rounded up, gives the battery count, with swap time added between legs for total mission time. LeakSonic\'s free Drone Mission Coverage & Flight Time Planner runs this calculation live from your own inputs.',
+  },
+  {
+    question: 'How much does an undetected methane leak actually cost?',
+    answer:
+      'It depends on the leak rate, the gas price, and critically, how long the leak goes undetected before repair - the last variable is usually the one an inspection programme actually controls, and every cost figure scales linearly with it. LeakSonic\'s free Methane Emissions Value Estimator calculates both the commercial value lost and the CO2-equivalent climate impact from those inputs.',
   },
   {
     question: 'Can drones detect leaks in buried pipelines?',

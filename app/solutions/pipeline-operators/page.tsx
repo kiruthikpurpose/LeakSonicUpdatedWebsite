@@ -17,6 +17,9 @@ export const metadata: Metadata = buildMetadata({
     'CGD pipeline integrity monitoring',
     'gas pipeline drone inspection',
     'pipeline inspection decision software',
+    'AI pipeline inspection software',
+    'AI-driven pipeline integrity software',
+    'gas transmission inspection AI',
   ],
 });
 

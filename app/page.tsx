@@ -57,6 +57,14 @@ export const metadata: Metadata = buildMetadata({
     'gas pipeline compliance software',
     'inspection prioritisation software',
     'engineering decision intelligence company India',
+    'AI drone company India',
+    'AI-powered infrastructure inspection',
+    'AI defect detection oil and gas',
+    'drone mission planning calculator',
+    'methane leak cost calculator',
+    'ground control station software India',
+    'AI and drone technology company',
+    'autonomous drone flight planning software',
   ],
 });
 

@@ -119,9 +119,13 @@ right-of-way encroachment monitoring · inline inspection · pipeline pigging ·
 inspection · offshore asset integrity · city gas distribution · LNG infrastructure · hydrogen
 pipeline integrity · pipeline geohazards · inspection data governance · PNGRB integrity reporting ·
 OGMP 2.0 methane reporting · industrial AI for asset integrity · free inspection calculators and
-engineering tools. Ecosystem context covered: DGCA Drone Rules 2021, Digital Sky, Drone Federation
-of India, GAIL Pankh, IndianOil Ankur, HPCL, ONGC, BPCL, GAIL, Startup India, deep-tech
-accelerators.
+engineering tools · digital twin for pipeline infrastructure · drone mission planning software ·
+drone flight time and coverage planning · methane emissions economic impact analysis · global
+warming potential (GWP) calculation · waypoint generation from CAD and GIS data · collaborative
+drone mission editing · ground control station software · dual-use drone technology · industrial
+infrastructure intelligence · defence drone technology trends. Ecosystem context covered: DGCA
+Drone Rules 2021, Digital Sky, Drone Federation of India, GAIL Pankh, IndianOil Ankur, HPCL, ONGC,
+BPCL, GAIL, Startup India, deep-tech accelerators.
 
 ### Fundamentals - corrosion mechanisms
 - [What is pipeline integrity management?](https://leaksonic.com/blog/what-is-pipeline-integrity-management)
@@ -192,6 +196,8 @@ accelerators.
 - Open to: PSU innovation schemes (GAIL Pankh, IndianOil Ankur, HPCL, ONGC), domestic and international deep-tech/climate-tech accelerators, grant programs, and early-stage investors.
 - Dual-use: the core AI and decision-intelligence software is architecturally general, and we are honest that we see long-term potential in adjacent domains - defence/national-security infrastructure inspection, broader industrial infrastructure intelligence, and coordinated multi-drone (swarm) operation - explicitly not a current deployment, program, or announced engagement. See https://leaksonic.com/solutions/defense-dual-use
 - Patents: core methodology is proprietary; a patent application has been filed.
+- Free tools: six free, no-signup engineering calculators at https://leaksonic.com/tools covering inspection ROI, reporting readiness, inspection priority scoring, corrosion remaining life, drone mission coverage/flight time, and methane emissions value.
+- Meridian GCS: a ground-control station software product LeakSonic is developing in-house (CAD-to-waypoint conversion, companion-computer control, collaborative mission editing, cloud version control, mission scheduling/docking integration, scriptable simulation) - explicitly in active development, not released. See https://leaksonic.com/solutions/meridian-gcs
 - SDG alignment: our work is aligned with UN Sustainable Development Goals 13 (Climate Action), 9 (Industry, Innovation & Infrastructure), 7 (Affordable & Clean Energy), 12 (Responsible Consumption & Production), 11 (Sustainable Cities & Communities), and 3 (Good Health & Well-being) - framed as contribution and alignment, not achievement. See https://leaksonic.com/about
 - Contact: https://leaksonic.com/contact · partnerships@leaksonic.com
 

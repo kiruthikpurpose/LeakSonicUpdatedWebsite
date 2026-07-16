@@ -23,6 +23,9 @@ export const metadata: Metadata = buildMetadata({
     'corrosion rate calculator',
     'drone mission planning calculator',
     'methane leak cost calculator',
+    'free engineering calculators oil and gas',
+    'AI inspection tools free',
+    'risk matrix calculator online',
   ],
 });
 

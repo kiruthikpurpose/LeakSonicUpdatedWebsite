@@ -105,6 +105,15 @@ export const SITE = {
     'Multimodal sensor fusion',
     'Drone hardware design and testing',
     'Ground control station software',
+    'Digital twin for pipeline infrastructure',
+    'Drone mission planning software',
+    'Drone flight time and coverage planning',
+    'Methane emissions economic impact analysis',
+    'Global warming potential calculation',
+    'Waypoint generation from CAD and GIS data',
+    'Collaborative drone mission editing',
+    'Dual-use drone technology',
+    'Industrial infrastructure intelligence',
   ],
   // Industry standards and frameworks the platform is designed to align with -
   // the language a major operator's integrity department speaks. Standards

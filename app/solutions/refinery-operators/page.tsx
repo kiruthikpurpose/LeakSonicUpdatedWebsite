@@ -19,6 +19,8 @@ export const metadata: Metadata = buildMetadata({
     'refinery turnaround inspection software',
     'RBI inspection technology',
     'storage tank drone inspection',
+    'AI refinery inspection software',
+    'AI defect detection static equipment',
   ],
 });
 
