@@ -22,6 +22,7 @@ export function ToolShell({
   methodologyNote,
   faqs,
   children,
+  heroImage,
 }: {
   eyebrow: string;
   title: string;
@@ -32,6 +33,7 @@ export function ToolShell({
   methodologyNote: string;
   faqs: ToolFaq[];
   children: React.ReactNode;
+  heroImage?: { src: string; alt: string };
 }) {
   const crumbs: Crumb[] = [
     { name: 'Home', path: '/' },
@@ -48,7 +50,7 @@ export function ToolShell({
           faqSchema(faqs),
         ]}
       />
-      <PageHero eyebrow={eyebrow} title={title} lead={lead} crumbs={crumbs} />
+      <PageHero eyebrow={eyebrow} title={title} lead={lead} crumbs={crumbs} image={heroImage} />
 
       <section className="border-b border-line bg-base py-section">
         <div className="container-content space-y-6">

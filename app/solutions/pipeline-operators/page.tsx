@@ -29,6 +29,10 @@ const content: AudienceContent = {
   lead: 'For gas transmission, distribution, and city gas network operators anywhere. Sentrix is an engineering decision layer that fits inside your existing integrity programme - it turns raw drone evidence into a prioritised, defensible answer to where to inspect next, and hands you an audit trail and a report-ready record on the way out.',
   slug: '/solutions/pipeline-operators',
   name: 'Pipeline operators',
+  heroImage: {
+    src: '/images/generated/pipeline-operators-hero.jpg',
+    alt: 'An aerial view of a gas pipeline right-of-way corridor crossing open terrain',
+  },
   stats: [
     { value: 'Risk-ranked', label: 'segment prioritisation', icon: Gauge },
     { value: 'Cycle-over-cycle', label: 'change detection', icon: GitCompareArrows },

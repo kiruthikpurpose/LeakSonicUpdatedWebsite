@@ -47,6 +47,10 @@ export default function Page() {
       schemaDescription="A free planning engine that estimates flight distance, flight time, battery count, and total mission time for a pipeline corridor or refinery site drone survey."
       methodologyNote="For a linear site, distance is corridor length times number of passes. For an area site, distance is site area divided by effective swath width per pass. That raw distance is increased by your stated overlap percentage, converted to flight time at your cruise speed, then divided into battery-length legs (rounded up) with swap time added between them. This tool does not model wind, terrain, regulatory flight ceilings, or airspace restrictions, and is a planning aid, not a certified flight plan."
       faqs={faqs}
+      heroImage={{
+        src: '/images/generated/tools-drone-mission-planning.jpg',
+        alt: 'A drone operator planning a flight route on a tablet in the field',
+      }}
     >
       <MissionCoveragePlanner />
     </ToolShell>

@@ -104,6 +104,10 @@ export default function ToolsPage() {
         title="Free tools, built from the same thinking behind Sentrix."
         lead="No signup, no data collection beyond what you type in. Each tool is a simplified, honest look at a real question we help operators answer every day - use them, then talk to us if you want the real, evidence-backed version for your network or site."
         crumbs={crumbs}
+        image={{
+          src: '/images/generated/tools-hub-hero.jpg',
+          alt: 'A close-up of an engineer sketching calculations on paper beside a laptop',
+        }}
       />
 
       <section className="border-b border-line bg-base py-section">

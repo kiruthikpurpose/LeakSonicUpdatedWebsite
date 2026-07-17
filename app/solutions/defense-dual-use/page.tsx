@@ -25,6 +25,10 @@ const content: AudienceContent = {
   lead: 'We build Sentrix, an AI-driven decision-intelligence platform paired with drone hardware we design, build, and test ourselves, for gas pipeline and refinery inspection today - that remains our near-term focus. The underlying AI is deliberately general: evidence capture, standardised comparison, and defensible prioritisation are not oil-and-gas-specific problems, and we see genuine long-term potential in defence and national-security infrastructure inspection, broader industrial infrastructure intelligence, and coordinated multi-drone (swarm) operation, as directions the company may pursue as it matures.',
   slug: '/solutions/defense-dual-use',
   name: 'Defence & dual-use',
+  heroImage: {
+    src: '/images/generated/dual-use-abstract-systems.jpg',
+    alt: 'An abstract close-up of sensor and circuit hardware, softly lit',
+  },
   stats: [
     { value: 'Exploratory', label: 'long-term R&D direction, not a current product', icon: Radar },
     { value: 'Dual-use', label: 'by architecture, not by current deployment', icon: Shield },

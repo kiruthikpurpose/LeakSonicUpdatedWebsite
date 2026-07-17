@@ -22,6 +22,7 @@ export type AudienceContent = {
   name: string;
   /** A short strip of distinguishing signals unique to this audience. */
   stats: AudienceStat[];
+  heroImage?: { src: string; alt: string };
   /** Deeper context paragraphs, rendered directly under the hero - gives each
    * page more substantive, citable body content beyond the Q&A cards. */
   context?: { heading: string; paragraphs: string[] };
@@ -62,7 +63,13 @@ export function AudienceLayout({ content }: { content: AudienceContent }) {
           faqSchema(content.concerns.map((c) => ({ question: c.title, answer: c.body }))),
         ]}
       />
-      <PageHero eyebrow={content.eyebrow} title={content.title} lead={content.lead} crumbs={crumbs}>
+      <PageHero
+        eyebrow={content.eyebrow}
+        title={content.title}
+        lead={content.lead}
+        crumbs={crumbs}
+        image={content.heroImage}
+      >
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
           {content.stats.map((s) => {
             const Icon = s.icon;

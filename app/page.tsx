@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, ArrowUpRight, Check } from 'lucide-react';
 import type { Metadata } from 'next';
 import { Hero } from '@/components/sections/Hero';
@@ -122,32 +123,54 @@ export default function HomePage() {
           </Reveal>
           <div className="mt-9 grid grid-cols-1 gap-5 lg:grid-cols-2">
             <Reveal>
-              <div className="h-full rounded-card border border-line bg-card p-6 sm:p-8">
-                <p className="mono-label">Today, by hand</p>
-                <ul className="mt-5 space-y-3">
-                  {BEFORE.map((item) => (
-                    <li key={item} className="flex gap-3 text-sm leading-relaxed text-ink-muted">
-                      <span
-                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-ink-faint"
-                        aria-hidden
-                      />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+              <div className="h-full overflow-hidden rounded-card border border-line bg-card">
+                <div className="relative aspect-[4/3] w-full grayscale">
+                  <Image
+                    src="/images/generated/manual-inspector-fieldwork.jpg"
+                    alt="A technician on foot, walking a pipeline right-of-way with a handheld gas detector"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6 sm:p-8">
+                  <p className="mono-label">Today, by hand</p>
+                  <ul className="mt-5 space-y-3">
+                    {BEFORE.map((item) => (
+                      <li key={item} className="flex gap-3 text-sm leading-relaxed text-ink-muted">
+                        <span
+                          className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-ink-faint"
+                          aria-hidden
+                        />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </Reveal>
             <Reveal delay={0.1}>
-              <div className="h-full rounded-card border border-accent/30 bg-accent/[0.05] p-6 sm:p-8">
-                <p className="mono-label text-accent">With Sentrix</p>
-                <ul className="mt-5 space-y-3">
-                  {AFTER.map((item) => (
-                    <li key={item} className="flex gap-3 text-sm leading-relaxed text-ink-secondary">
-                      <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+              <div className="h-full overflow-hidden rounded-card border border-accent/30 bg-accent/[0.05]">
+                <div className="relative aspect-[4/3] w-full">
+                  <Image
+                    src="/images/generated/drone-inspection-in-flight.jpg"
+                    alt="A Sentrix drone in active flight, low over the same pipeline right-of-way, at golden hour"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6 sm:p-8">
+                  <p className="mono-label text-accent">With Sentrix</p>
+                  <ul className="mt-5 space-y-3">
+                    {AFTER.map((item) => (
+                      <li key={item} className="flex gap-3 text-sm leading-relaxed text-ink-secondary">
+                        <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" aria-hidden />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </Reveal>
           </div>
@@ -163,6 +186,17 @@ export default function HomePage() {
               title="Three outcomes, not fifty features"
               lead="Sentrix is a proprietary software and hardware decision layer between raw evidence and an auditable decision. It does three things, and it does them well."
             />
+          </Reveal>
+          <Reveal delay={0.05}>
+            <div className="relative mt-9 aspect-[16/6] w-full overflow-hidden rounded-card border border-line sm:aspect-[19/6]">
+              <Image
+                src="/images/generated/capabilities-banner.jpg"
+                alt="An engineer's hands working at a desk, reviewing inspection evidence across two monitors"
+                fill
+                sizes="100vw"
+                className="object-cover"
+              />
+            </div>
           </Reveal>
           <div className="mt-9 grid grid-cols-1 gap-5 md:grid-cols-3">
             {CAPABILITIES.map((cap, i) => {
@@ -269,6 +303,15 @@ export default function HomePage() {
               Gas pipeline and City Gas Distribution networks are our core focus - and the same gap
               shows up on refinery equipment
             </h2>
+            <div className="relative mt-8 aspect-[4/3] w-full overflow-hidden rounded-card border border-line">
+              <Image
+                src="/images/generated/why-now-cgd-corridor.jpg"
+                alt="An elevated view of a gas distribution corridor running past a city's outskirts at dusk"
+                fill
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                className="object-cover"
+              />
+            </div>
           </Reveal>
           <Reveal delay={0.1}>
             {/* SPACE: update these specific figures as more current sector data becomes
@@ -369,8 +412,20 @@ export default function HomePage() {
       <section className="bg-base py-section">
         <div className="container-content">
           <Reveal>
-            <div className="rounded-card border border-line bg-card p-8 sm:p-12">
-              <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-end">
+            <div className="relative overflow-hidden rounded-card border border-line bg-card">
+              <Image
+                src="/images/generated/footer-cta-industrial-dusk.jpg"
+                alt=""
+                aria-hidden
+                fill
+                sizes="100vw"
+                className="object-cover opacity-25"
+              />
+              <div
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-card via-card/85 to-card/50"
+                aria-hidden
+              />
+              <div className="relative grid grid-cols-1 gap-8 p-8 sm:p-12 lg:grid-cols-[1.2fr_1fr] lg:items-end">
                 <div>
                   <h2 className="text-h2 font-bold text-ink">
                     Talk to us in the language you work in.

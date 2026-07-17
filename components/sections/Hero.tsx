@@ -1,15 +1,16 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Award, Landmark, BadgeCheck } from 'lucide-react';
 import { Badge } from '@/components/ui/Badge';
-import { DroneScan } from '@/components/diagrams/DroneScan';
 import { SITE } from '@/lib/site';
 
 /**
  * Full-viewport dark hero. Leads with the decision-intelligence positioning -
  * Sentrix is the engineering decision layer, the drone is one input. Two
  * audience CTAs get top billing: operators and government/research partners.
- * The right column carries an abstract, on-brand animated visual - no
- * generated imagery, no gradient-mesh tells. On mobile it stacks beneath copy.
+ * The right column carries a real photograph of a drone over a pipeline
+ * corridor at dusk, framed inside the same "product panel" chrome the rest
+ * of the site uses for diagrams, so it reads as evidence, not stock art.
  */
 export function Hero() {
   return (
@@ -118,7 +119,7 @@ export function Hero() {
           </div>
         </div>
 
-        {/* Animated drone-scan visual */}
+        {/* Hero photograph */}
         <div className="relative">
           <div className="overflow-hidden rounded-squircle border border-line bg-surface/60 shadow-[0_0_60px_rgba(0,0,0,0.4)] backdrop-blur-[1px]">
             <div className="flex items-center justify-between border-b border-line px-4 py-2.5">
@@ -129,7 +130,16 @@ export function Hero() {
                 <span className="h-1.5 w-1.5 rounded-full bg-accent" /> reviewing
               </span>
             </div>
-            <DroneScan className="aspect-[16/9] w-full" />
+            <div className="relative aspect-[8/9] w-full">
+              <Image
+                src="/images/generated/hero-drone-pipeline-corridor.jpg"
+                alt="A Sentrix inspection drone flying low over a gas pipeline right-of-way corridor at dusk"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                className="object-cover"
+              />
+            </div>
           </div>
           <p className="mt-3 text-center font-sans text-[0.65rem] text-ink-faint">
             Illustrative - Sentrix turns field evidence into a ranked, auditable decision.

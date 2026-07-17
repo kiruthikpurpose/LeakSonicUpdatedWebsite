@@ -86,6 +86,10 @@ export default function ResearchPage() {
         title="How we earn a skeptical engineer’s trust."
         lead="Sentrix is built on tested claims, not assumed capability. This page is how we work - with practising engineers, with evidence attached to every finding, and with honesty about what we do and don’t do. It is a genuine differentiator, and we publish it with confidence."
         crumbs={crumbs}
+        image={{
+          src: '/images/generated/approach-validation-session.jpg',
+          alt: 'Engineers reviewing a validation session at a desk with printed findings',
+        }}
       />
 
       {/* Philosophy */}

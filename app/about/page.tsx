@@ -117,6 +117,10 @@ export default function AboutPage() {
         title="No engineer should decide from evidence that’s months out of date."
         lead="That’s the mission, stated plainly. Turning raw inspection evidence into decisions an engineer can defend applies equally to gas pipelines and to refinery static equipment - fired heaters, vessels, tanks, elevated piping - not to one first and the other later."
         crumbs={crumbs}
+        image={{
+          src: '/images/generated/about-incubation-facility.jpg',
+          alt: 'A small engineering team working around a workbench in an incubation facility',
+        }}
       />
 
       {/* Mission */}
@@ -151,6 +155,15 @@ export default function AboutPage() {
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
+            <div className="relative mb-6 aspect-[4/3] w-full overflow-hidden rounded-card border border-line">
+              <Image
+                src="/images/generated/about-field-testing.jpg"
+                alt="An engineer field-testing a drone beside a pipeline right-of-way"
+                fill
+                sizes="(max-width: 1024px) 100vw, 55vw"
+                className="object-cover"
+              />
+            </div>
             <div className="space-y-4 text-base leading-relaxed text-ink-secondary">
               <p>
                 Sentrix is under active development. We are refining the platform, testing the

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { ShieldCheck, Lock, BadgeCheck } from 'lucide-react';
 import { PageHero } from '@/components/ui/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
@@ -112,6 +113,10 @@ export default function PlatformPage() {
         title="Sentrix is an AI-driven decision layer - proprietary software paired with drone hardware we build ourselves - between inspection evidence and an auditable decision."
         lead="Built to help integrity teams validate, compare, prioritise, and report inspection findings with far less manual effort. Written for the people who have to trust it - integrity engineers, chief engineers, and program managers. Here is what the platform does, and what you get out of it."
         crumbs={crumbs}
+        image={{
+          src: '/images/generated/platform-hero-control-room.jpg',
+          alt: 'An engineer at a multi-monitor desk reviewing inspection evidence at night',
+        }}
       />
 
       {/* Problem - practitioner language */}
@@ -188,7 +193,7 @@ export default function PlatformPage() {
           major operator already runs. Named standards, not vague framework
           talk, because that is the language a chief engineer actually uses. */}
       <section className="border-b border-line bg-surface py-section">
-        <div className="container-content max-w-3xl">
+        <div className="container-content grid grid-cols-1 gap-9 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <Reveal>
             <SectionLabel>From evidence to your RBI programme</SectionLabel>
             <h2 className="mt-4 text-h2 font-bold text-ink">
@@ -209,6 +214,17 @@ export default function PlatformPage() {
               close the gap immediately before it.
             </p>
           </Reveal>
+          <Reveal delay={0.1}>
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-card border border-line">
+              <Image
+                src="/images/generated/rbi-evidence-review.jpg"
+                alt="Two engineers reviewing a risk-ranked finding on a large wall-mounted screen"
+                fill
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                className="object-cover"
+              />
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -224,29 +240,51 @@ export default function PlatformPage() {
           </Reveal>
           <div className="mt-9 grid grid-cols-1 gap-5 md:grid-cols-2">
             <Reveal>
-              <div className="h-full rounded-card border border-accent/30 bg-accent/[0.05] p-6 sm:p-8">
-                <p className="mono-label text-accent">AI &amp; software</p>
-                <h3 className="mt-3 text-h3 font-semibold text-ink">The scalable core</h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-secondary">
-                  Autonomous flight planning, AI-assisted defect detection, risk scoring, and
-                  multimodal sensor fusion turn raw evidence into a comparable, defensible,
-                  prioritised decision. This is where the long-term value compounds - it is not
-                  tied to any one piece of hardware, and it is designed to take in more evidence
-                  sources as the platform matures.
-                </p>
+              <div className="h-full overflow-hidden rounded-card border border-accent/30 bg-accent/[0.05]">
+                <div className="relative aspect-[4/3] w-full">
+                  <Image
+                    src="/images/generated/ai-software-core.jpg"
+                    alt="Close-up of a laptop keyboard lit by screen glow at night"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6 sm:p-8">
+                  <p className="mono-label text-accent">AI &amp; software</p>
+                  <h3 className="mt-3 text-h3 font-semibold text-ink">The scalable core</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-secondary">
+                    Autonomous flight planning, AI-assisted defect detection, risk scoring, and
+                    multimodal sensor fusion turn raw evidence into a comparable, defensible,
+                    prioritised decision. This is where the long-term value compounds - it is not
+                    tied to any one piece of hardware, and it is designed to take in more evidence
+                    sources as the platform matures.
+                  </p>
+                </div>
               </div>
             </Reveal>
             <Reveal delay={0.08}>
-              <div className="h-full rounded-card border border-line bg-card p-6 sm:p-8">
-                <p className="mono-label text-ink-muted">Hardware</p>
-                <h3 className="mt-3 text-h3 font-semibold text-ink">The proving ground</h3>
-                <p className="mt-3 text-sm leading-relaxed text-ink-secondary">
-                  We design, build, and test our own drones and ground-control tooling in-house, at
-                  a deliberately focused scale. Drone hardware alone is only moderately scalable and
-                  increasingly commoditised - we invest in it anyway, because an AI model is only as
-                  good as the real flight data it learns from, and there is no substitute for
-                  building and flying the thing yourself.
-                </p>
+              <div className="h-full overflow-hidden rounded-card border border-line bg-card">
+                <div className="relative aspect-[4/3] w-full">
+                  <Image
+                    src="/images/generated/drone-hardware-workshop.jpg"
+                    alt="A partially disassembled drone frame on a workshop bench, lit by a single work lamp"
+                    fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-6 sm:p-8">
+                  <p className="mono-label text-ink-muted">Hardware</p>
+                  <h3 className="mt-3 text-h3 font-semibold text-ink">The proving ground</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-secondary">
+                    We design, build, and test our own drones and ground-control tooling in-house, at
+                    a deliberately focused scale. Drone hardware alone is only moderately scalable and
+                    increasingly commoditised - we invest in it anyway, because an AI model is only as
+                    good as the real flight data it learns from, and there is no substitute for
+                    building and flying the thing yourself.
+                  </p>
+                </div>
               </div>
             </Reveal>
           </div>
@@ -266,6 +304,15 @@ export default function PlatformPage() {
               valuable part of the platform, so it gets room to breathe.
             </p>
           </Reveal>
+          <div className="relative mt-9 aspect-[16/6] w-full overflow-hidden rounded-card border border-line sm:aspect-[19/6]">
+            <Image
+              src="/images/generated/deliverables-report-desk.jpg"
+              alt="A finished inspection report on a desk beside a laptop showing charts"
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
           <div className="mt-9 grid grid-cols-1 gap-px overflow-hidden rounded-card border border-line bg-line md:grid-cols-2">
             {DELIVERABLES.map((d) => (
               <div key={d.n} className="bg-card p-7">
@@ -302,6 +349,15 @@ export default function PlatformPage() {
               lead="Sentrix is designed to fit the frameworks a serious operator already runs its integrity and reporting programme against - so its output slots into your governance rather than sitting beside it."
             />
           </Reveal>
+          <div className="relative mt-9 aspect-[16/6] w-full overflow-hidden rounded-card border border-line sm:aspect-[19/6]">
+            <Image
+              src="/images/generated/standards-governance-blueprint.jpg"
+              alt="An engineering blueprint and compliance documents laid out on a desk"
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
           <div className="mt-9 grid grid-cols-1 gap-px overflow-hidden rounded-card border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
             {SITE.standards.map((s) => (
               <div key={s.code} className="bg-card p-6">

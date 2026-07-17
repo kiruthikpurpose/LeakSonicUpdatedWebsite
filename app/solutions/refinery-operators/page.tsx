@@ -30,6 +30,10 @@ const content: AudienceContent = {
   lead: 'For refinery, terminal, and process-plant inspection teams. Sentrix is an engineering decision layer that fits inside your existing risk-based inspection programme - it turns drone evidence from fired heaters, vessels, storage tanks, and elevated piping into a prioritised, defensible answer to what needs attention next, without the scaffolding or rope-access mobilisation that evidence used to require.',
   slug: '/solutions/refinery-operators',
   name: 'Refinery & industrial operators',
+  heroImage: {
+    src: '/images/generated/refinery-operators-hero.jpg',
+    alt: 'An industrial refinery skyline with process towers and piping at dusk',
+  },
   stats: [
     { value: 'Risk-ranked', label: 'static equipment prioritisation', icon: ShieldCheck },
     { value: 'Rope-access', label: 'alternative for evidence gathering', icon: Flame },
