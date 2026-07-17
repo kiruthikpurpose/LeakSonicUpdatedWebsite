@@ -75,10 +75,17 @@ const config: Config = {
         h3: ['1.25rem', { lineHeight: '1.3', letterSpacing: '-0.01em' }],
       },
       maxWidth: {
-        // Fluid width: at most ~3% margin per side on any viewport, capped
-        // for readability on ultra-wide monitors. Fixes large dead margins
-        // that a flat pixel cap leaves on wide screens.
-        content: 'min(94vw, 1440px)',
+        // Fluid width: at most ~4% margin per side on any viewport, capped
+        // for readability on ultra-wide monitors. Widened from 1440 - on a
+        // 2560px monitor the old cap left ~560px of dead margin per side
+        // with nothing filling it; 1680 keeps text measure sane while
+        // giving hero/media sections real room to breathe before they need
+        // to go full-bleed.
+        content: 'min(92vw, 1680px)',
+        // Edge-to-edge media container - full-bleed hero/gallery imagery,
+        // the Apple-style counterpoint to .container-content: most sections
+        // stay comfortably margined, a few deliberately don't.
+        bleed: '100vw',
         prose: '68ch',
       },
       spacing: {

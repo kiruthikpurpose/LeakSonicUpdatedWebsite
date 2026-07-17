@@ -136,6 +136,14 @@
     @apply relative mx-auto w-full max-w-content px-5 sm:px-6 lg:px-10 xl:px-14;
   }
 
+  /* Edge-to-edge media container for hero/gallery imagery - full viewport
+     width with just enough inset that an image never touches the exact
+     screen edge on mobile. Pair with an inner .container-content for any
+     text that sits on top of a full-bleed image. */
+  .container-bleed {
+    @apply relative mx-auto w-full max-w-bleed px-0;
+  }
+
   /* Small uppercase label - used for eyebrow labels, spec keys, coordinates */
   .mono-label {
     @apply font-sans text-[0.7rem] font-semibold uppercase tracking-[0.1em] text-ink-muted;
