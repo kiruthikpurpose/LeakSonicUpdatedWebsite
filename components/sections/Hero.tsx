@@ -42,6 +42,12 @@ export function Hero() {
             Comparing today’s inspection to last year’s shouldn’t depend on someone remembering
             which photo was which.
           </p>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-ink-muted">
+            Compared to walking a right-of-way with a handheld detector, or scaffolding and rope
+            access on refinery static equipment, a drone covers the same ground faster and feeds
+            evidence straight into the Integrity Management Systems your team already reports
+            through - it replaces the walk, not the engineer.
+          </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Link

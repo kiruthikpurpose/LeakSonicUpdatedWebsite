@@ -201,4 +201,45 @@ export const GLOSSARY: GlossaryEntry[] = [
     definition:
       'Geospatial risk mapping is the practice of representing a pipeline network’s integrity risk as a geographic layer - typically within a GIS - so that risk scores, inspection history, class location, soil data, and other threat indicators can all be viewed and cross-referenced against the same physical route. It turns a table of per-segment numbers into something an integrity team can actually navigate and act on: a geographic view makes it immediately visible where multiple risk factors overlap on the same stretch of pipe, which a spreadsheet of the same data would not surface nearly as clearly.',
   },
+  {
+    term: 'Risk-Based Inspection',
+    abbr: 'RBI',
+    definition:
+      'Risk-based inspection is an inspection-planning methodology, formalised for pressure equipment and pipelines in standards such as API 580 and API 581, that ranks assets or segments by risk - generally likelihood of failure multiplied by consequence of failure - so inspection frequency and effort are weighted toward the highest-risk locations rather than applied uniformly on a fixed calendar. An RBI programme is only as accurate as the evidence feeding its risk calculations; stale or inconsistent inspection data quietly degrades the ranking even when the underlying methodology is sound.',
+  },
+  {
+    term: 'External Corrosion Direct Assessment',
+    abbr: 'ECDA',
+    definition:
+      'External Corrosion Direct Assessment is a structured, four-step methodology - pre-assessment, indirect inspection, direct examination, and post-assessment - used to evaluate and manage external corrosion on buried pipeline segments where in-line inspection tools cannot be run. The indirect inspection step uses above-ground survey techniques to identify locations where coating damage or corrosion activity is likely, prioritising them for direct examination; it is a specific, named methodology, not a generic term for "inspecting from the surface."',
+  },
+  {
+    term: 'API 581 Damage Factor',
+    abbr: 'Damage Factor',
+    definition:
+      'In the API 581 risk-based inspection methodology, a damage factor is a numerical multiplier applied to an asset\'s generic failure probability, adjusted for the specific degradation mechanisms it is actually exposed to - corrosion rate, prior inspection findings, and how effectively those mechanisms have historically been inspected for. Better, more current, more consistently comparable inspection evidence generally supports a more accurate and often more favourable damage factor calculation, which is one of the direct, quantifiable links between inspection quality and an RBI programme\'s output.',
+  },
+  {
+    term: 'ASME B31.8S',
+    definition:
+      'ASME B31.8S is the standard governing the management of integrity for gas transmission pipeline systems, widely used in the United States and referenced internationally, including in India, as a framework for structuring an integrity management programme - covering threat identification and categorisation, risk assessment, and inspection interval planning. It organises pipeline threats into named categories (such as time-dependent, stable, and time-independent threats), which is the categorisation scheme most gas-pipeline integrity engineers already think in.',
+  },
+  {
+    term: 'Integrity Management System',
+    abbr: 'IMS',
+    definition:
+      'An Integrity Management System is the documented, auditable programme an operator runs to identify pipeline threats, assess and prioritise risk, plan and execute inspection and mitigation, and record the outcomes - the organisational structure that standards like ASME B31.8S and frameworks like API 580/581 sit inside. Indian regulatory guidance, including PNGRB\'s pipeline safety requirements, uses "Integrity Management System" as the formal term for this programme, alongside related requirements such as HAZOP studies, Quantitative Risk Assessment (QRA), and Emergency Response Plans.',
+  },
+  {
+    term: 'Geographical Area',
+    abbr: 'GA',
+    definition:
+      'A Geographical Area, in Indian City Gas Distribution regulation, is a defined administrative and geographic zone that PNGRB authorises a specific CGD entity to develop and operate gas distribution infrastructure within, typically covering one or more districts. GA authorisation is the regulatory unit City Gas Distribution licensing, build-out obligations, and integrity reporting are all organised around, which is why it appears constantly in PNGRB filings and CGD operator documentation even though it rarely gets explained outside that regulatory context.',
+  },
+  {
+    term: 'PESO',
+    abbr: 'Petroleum and Explosives Safety Organisation',
+    definition:
+      'PESO is India\'s regulatory authority for the safe handling, storage, and transport of explosives, petroleum, and compressed gases, including licensing requirements relevant to hazardous-area operations at oil and gas facilities. Any technology - drone or otherwise - operating in or near a PESO-licensed hazardous area is subject to that facility\'s safety requirements; a vendor should always be asked directly what PESO-relevant approvals or exemptions apply to their specific operating context, since general drone regulation and hazardous-area explosives regulation are separate regimes.',
+  },
 ];

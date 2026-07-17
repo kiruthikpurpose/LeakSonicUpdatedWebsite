@@ -37,6 +37,12 @@ export const metadata: Metadata = buildMetadata({
     'AI defect detection pipeline',
     'autonomous drone flight planning software',
     'multimodal sensor fusion inspection',
+    'drone data for risk-based inspection',
+    'RBI evidence input software',
+    'API 581 evidence mapping',
+    'ECDA indirect inspection technology',
+    'pipeline inspection evidence standardization',
+    'inspection data to RBI integration',
   ],
 });
 
@@ -174,6 +180,35 @@ export default function PlatformPage() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* Bridge to RBI / IDMS - the specific gap between raw drone evidence
+          and the risk-based inspection and integrity-management systems a
+          major operator already runs. Named standards, not vague framework
+          talk, because that is the language a chief engineer actually uses. */}
+      <section className="border-b border-line bg-surface py-section">
+        <div className="container-content max-w-3xl">
+          <Reveal>
+            <SectionLabel>From evidence to your RBI programme</SectionLabel>
+            <h2 className="mt-4 text-h2 font-bold text-ink">
+              Sentrix is the layer between raw drone evidence and risk-based inspection - not a
+              replacement for either end of it.
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-ink-secondary">
+              A risk-based inspection (RBI) programme built on frameworks like API 580 and API 581
+              needs current, comparable evidence to keep its damage-factor calculations honest -
+              and today, a lot of that evidence arrives as raw drone imagery someone still has to
+              manually interpret before it can feed the programme at all. Sentrix standardises that
+              evidence, compares it against the last cycle, and hands your integrity team a
+              prioritised, defensible input - aligned to the same threat categories ASME B31.8S
+              already organises your gas-pipeline integrity management programme around, and
+              structured the way NACE-style ECDA (External Corrosion Direct Assessment) indirect
+              inspection data is normally consumed. We do not calculate your damage factors or run
+              your RBI model for you - that stays with your engineers and your existing IDMS. We
+              close the gap immediately before it.
+            </p>
+          </Reveal>
         </div>
       </section>
 

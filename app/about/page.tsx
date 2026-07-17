@@ -39,6 +39,12 @@ export const metadata: Metadata = buildMetadata({
     'AI drone company India',
     'AI infrastructure inspection company',
     'drone hardware and AI software company',
+    'deep tech startup oil and gas India',
+    'GAIL Pankh startup',
+    'NIDHI PRAYAS pipeline technology',
+    'iDEX dual-use drone technology',
+    'Startup India DPIIT pipeline technology',
+    'deep tech incubator oil gas',
   ],
 });
 
@@ -296,6 +302,22 @@ export default function AboutPage() {
                 MSME-registered, with a national Smart India Hackathon 2025 win - and a founding
                 conviction grounded in field time on an active pipeline construction site, not a
                 slide deck.
+              </p>
+            </div>
+            <div className="rounded-card border border-line bg-card p-7 md:col-span-2">
+              <h3 className="text-h3 font-semibold text-ink">
+                For grant programs, incubators, and government reviewers
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-ink-secondary">
+                If you evaluate applications for programs like NIDHI-PRAYAS, iDEX, GAIL Pankh,
+                IndianOil Ankur, MSME innovative schemes, or a deep-tech accelerator, the honest
+                version of our stage and traction is exactly what you’ll get here and on our{' '}
+                <Link href="/research" className="text-accent hover:text-accent-hover">
+                  approach page
+                </Link>{' '}
+                - a government-incubated, DPIIT-recognised, MSME-registered team building a
+                specific, named engineering capability, not a generic AI pitch. We would rather a
+                reviewer find our stage clearly stated than have to ask.
               </p>
             </div>
             <div className="rounded-card border border-line bg-card p-7">

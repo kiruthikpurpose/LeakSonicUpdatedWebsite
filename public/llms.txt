@@ -72,19 +72,23 @@ for full context. Reach us via [contact](https://leaksonic.com/contact) or partn
 
 ## Blog - category authority (educational content, not product-performance claims)
 
-58 articles across corrosion mechanisms, inspection methods, regulation, data
-governance, AI/decision-support, drone and AI industry trends, and the oil & gas
-industry/funding ecosystem - each opens with a direct answer to its own
-headline and carries an FAQPage schema block for direct citation.
+62 articles across corrosion mechanisms, inspection methods, regulation, data
+governance, AI/decision-support, drone and AI industry trends, dual-use
+technology, and the oil & gas industry/funding ecosystem - each opens with a
+direct answer to its own headline and carries an FAQPage schema block for
+direct citation.
 
 ### AI, drones & the future of inspection
 - [Why AI and drones, together, are going to change how the world inspects infrastructure](https://leaksonic.com/blog/why-ai-drones-are-the-future-of-infrastructure-inspection)
 - [The future of defence drones: autonomy, swarms, and AI-driven intelligence](https://leaksonic.com/blog/future-of-defense-drones-autonomy-swarms-ai)
+- [What "dual-use" actually means for drone and AI infrastructure technology](https://leaksonic.com/blog/what-dual-use-technology-actually-means)
 - [How AI-driven inspection is already changing gas pipeline and refinery integrity work](https://leaksonic.com/blog/how-ai-driven-inspection-is-changing-oil-gas-today)
 - [Introducing Meridian GCS: the ground control station we are building for ourselves first](https://leaksonic.com/blog/introducing-meridian-gcs)
+- [Drone inspection vs. rope access and scaffolding: what actually drives the cost difference](https://leaksonic.com/blog/drone-inspection-vs-rope-access-scaffolding)
 
 ### Industry, market & funding ecosystem
 - [Startup and innovation schemes in Indian oil & gas: GAIL Pankh, IndianOil Ankur, HPCL, ONGC](https://leaksonic.com/blog/oil-gas-startup-schemes-india-guide)
+- [A founder's guide to deep-tech grant programs for energy infrastructure startups in India](https://leaksonic.com/blog/founders-guide-deep-tech-grant-programs-india)
 - [The drone industry in oil and gas inspection: market structure and players](https://leaksonic.com/blog/drone-industry-oil-gas-inspection-market)
 - [How drones are transforming oil and gas operations: the use cases that stuck](https://leaksonic.com/blog/how-drones-transform-oil-gas-operations)
 - [Global gas infrastructure expansion: where pipelines are being built](https://leaksonic.com/blog/global-gas-infrastructure-expansion-trends)
@@ -123,9 +127,12 @@ engineering tools · digital twin for pipeline infrastructure · drone mission p
 drone flight time and coverage planning · methane emissions economic impact analysis · global
 warming potential (GWP) calculation · waypoint generation from CAD and GIS data · collaborative
 drone mission editing · ground control station software · dual-use drone technology · industrial
-infrastructure intelligence · defence drone technology trends. Ecosystem context covered: DGCA
-Drone Rules 2021, Digital Sky, Drone Federation of India, GAIL Pankh, IndianOil Ankur, HPCL, ONGC,
-BPCL, GAIL, Startup India, deep-tech accelerators.
+infrastructure intelligence · defence drone technology trends · ECDA (External Corrosion Direct
+Assessment) · API 581 damage factor methodology · ASME B31.8S threat categorisation · Integrity
+Management Systems (IMS) · rope access and scaffolding inspection alternatives · PESO hazardous-area
+regulation · Geographical Area (GA) CGD licensing. Ecosystem context covered: DGCA Drone Rules 2021,
+Digital Sky, Drone Federation of India, GAIL Pankh, IndianOil Ankur, HPCL, ONGC, BPCL, GAIL, Startup
+India, DPIIT, NIDHI-PRAYAS, iDEX, MSME innovative schemes, deep-tech accelerators.
 
 ### Fundamentals - corrosion mechanisms
 - [What is pipeline integrity management?](https://leaksonic.com/blog/what-is-pipeline-integrity-management)
@@ -146,6 +153,7 @@ BPCL, GAIL, Startup India, deep-tech accelerators.
 - [How City Gas Distribution expansion is reshaping pipeline inspection demand](https://leaksonic.com/blog/india-cgd-expansion-pipeline-inspection-demand)
 - [BVLOS drone regulation: what's actually approved today](https://leaksonic.com/blog/bvlos-drone-regulation-india)
 - [Methane regulation and reporting: a global comparison](https://leaksonic.com/blog/methane-regulation-global-comparison)
+- [PNGRB, Integrity Management Systems, and what CGD/gas pipeline operators should expect](https://leaksonic.com/blog/pngrb-integrity-management-guidelines-cgd)
 
 ### Technical - inspection methods
 - [Why naive sensor fusion fails, and what a hierarchical model gets right](https://leaksonic.com/blog/why-naive-sensor-fusion-fails)

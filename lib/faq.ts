@@ -198,4 +198,54 @@ export const SITE_FAQ: FaqItem[] = [
     answer:
       'Yes. We are a government-incubated (AIC RAISE), DPIIT-recognised, MSME-registered deep-tech company actively validating Sentrix with practising engineers, and we are open to engagement from domestic and international deep-tech or climate-tech accelerators, grant programs, and early-stage investors working on infrastructure, industrial AI, or climate-adjacent technology. See our piece on the [deep-tech funding landscape](/blog/deep-tech-startup-funding-landscape-india-energy) for more context, or reach us directly through our [contact page](/contact).',
   },
+  {
+    question: 'How does drone pipeline inspection actually work?',
+    answer:
+      'A drone flies the pipeline right-of-way capturing visual, thermal, and other sensor evidence along the route, typically at a set altitude and overlap so the imagery can be stitched and compared cycle over cycle. That evidence then has to be reviewed - traditionally by an engineer manually scanning through it - to flag anything that looks like a defect, encroachment, or anomaly worth a closer look. Sentrix sits at that review step: it standardises the evidence, compares it against the last flight, and surfaces a prioritised, evidence-backed list of what actually changed, rather than leaving that comparison to memory.',
+  },
+  {
+    question: 'What is risk-based inspection (RBI)?',
+    answer:
+      'Risk-based inspection is an inspection-planning methodology, formalised in standards like API 580 and API 581, that ranks assets or segments by risk - typically likelihood of failure multiplied by consequence of failure - so inspection effort and budget go to the highest-risk locations first instead of being spread uniformly across a network on a fixed calendar. RBI depends on current, comparable evidence to keep its risk rankings accurate, which is exactly the input Sentrix is built to supply from drone inspection data.',
+  },
+  {
+    question: 'What is ECDA (External Corrosion Direct Assessment)?',
+    answer:
+      'External Corrosion Direct Assessment is a structured, four-step methodology (pre-assessment, indirect inspection, direct examination, and post-assessment) used to evaluate and manage external corrosion on buried pipelines where in-line inspection tools cannot run. The indirect inspection step uses above-ground survey techniques to identify locations where coating or corrosion issues are likely, which then get prioritised for direct examination - a structure that surface-level drone evidence can feed into as an additional indirect-inspection input.',
+  },
+  {
+    question: 'Can drones measure pipe wall thickness?',
+    answer:
+      'No, not directly - and no credible drone-based system claims to. Wall thickness is measured by contact methods such as ultrasonic testing or by in-line inspection tools running inside the pipe. What a drone can capture are surface signatures - thermal anomalies, vegetation stress, visible coating damage, or corrosion staining - that help an integrity team prioritise where those contact measurements should happen next. Sentrix is explicit about this boundary: it does not replace wall-thickness measurement, it helps decide where to point it.',
+  },
+  {
+    question: 'What is OGMP 2.0 and why does it matter for gas pipelines?',
+    answer:
+      'OGMP 2.0 (the Oil & Gas Methane Partnership 2.0) is an international measurement-based methane reporting framework that pushes companies from estimated emission factors toward source-level, and eventually site-level reconciled, measured methane data. For gas pipeline and CGD operators, it matters because reporting expectations are shifting toward evidence that can be measured and verified, not just calculated - which is the same direction inspection evidence itself needs to move for reporting to stay credible.',
+  },
+  {
+    question: 'How much does pipeline inspection cost in India?',
+    answer:
+      'It varies widely by network size, terrain, inspection method, and cycle frequency, so there is no single honest number to quote here. What tends to be more useful is understanding where the cost actually goes - manual evidence review and reporting is usually a bigger driver than the flight or walk itself. Our free [Inspection Cost & ROI Calculator](/tools/inspection-cost-calculator) lets you work through that arithmetic with your own numbers rather than relying on a generic industry figure.',
+  },
+  {
+    question: 'What is an API 581 damage factor?',
+    answer:
+      'A damage factor, in the API 581 risk-based inspection methodology, is a numerical multiplier that adjusts an asset\'s generic failure probability based on the specific degradation mechanisms it is actually exposed to - such as corrosion rate, past inspection findings, and equipment-specific factors - and how effectively those mechanisms have been inspected for. Better, more current inspection evidence generally supports a more favourable (lower-risk) damage factor calculation, which is part of why keeping inspection evidence standardised and comparable across cycles has a direct downstream effect on an RBI programme\'s outputs.',
+  },
+  {
+    question: 'How do you compare pipeline inspections over time?',
+    answer:
+      'Reliably comparing one inspection cycle to the last requires evidence that lines up - the same segment, roughly the same conditions, captured and referenced consistently - which is difficult to do from memory or loosely organised photo folders. Sentrix standardises evidence capture and geolocation so that what changed between cycles is computed directly rather than relied on someone recalling what a segment looked like a year ago, isolating genuine change from static, already-known features.',
+  },
+  {
+    question: 'What is ASME B31.8S and how does it apply here?',
+    answer:
+      'ASME B31.8S is the standard that governs managing the integrity of gas transmission pipeline systems in the United States and is widely referenced internationally, including in India, as a framework for structuring an integrity management programme - covering threat identification, risk assessment, and inspection interval planning. Sentrix is designed to produce evidence and findings organised around the same threat categories that framework already uses, so output slots into an existing integrity management programme rather than requiring a parallel one.',
+  },
+  {
+    question: 'How does drone inspection compare to rope access or scaffolding on cost?',
+    answer:
+      'Rope access and scaffolding both require specialised crews, mobilisation time, and - for scaffolding especially - meaningful setup and teardown cost before any inspection actually happens, which is why they are typically reserved for locations that genuinely need close-contact work. A drone survey covers the same static equipment far faster and without that mobilisation overhead, which is why the realistic case for most operators is not "replace rope access entirely" but "screen everything with a drone first, and reserve rope access and scaffolding for what the screening actually flags." See [our refinery operators page](/solutions/refinery-operators) for how that split works in practice.',
+  },
 ];
