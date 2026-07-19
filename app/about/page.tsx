@@ -14,7 +14,7 @@ import { SITE } from '@/lib/site';
 export const metadata: Metadata = buildMetadata({
   title: 'About LeakSonic - mission & founder',
   description:
-    'LeakSonic builds Sentrix, an AI-driven engineering decision intelligence platform - proprietary software paired with drone hardware we design and test ourselves - covering gas pipeline (including City Gas Distribution), refinery, terminal, and offshore inspection. A government-incubated, MSME-registered deep-tech company expanding from an India base to a global market.',
+    'LeakSonic builds Sentrix, an AI-driven engineering decision intelligence platform - proprietary software paired with drone hardware we design and test ourselves - covering gas pipeline (including City Gas Distribution), refinery, terminal, and offshore inspection. A government-incubated deep-tech company, LeakSonic Private Limited, expanding from an India base to a global market.',
   path: '/about',
   keywords: [
     'LeakSonic',
@@ -27,8 +27,7 @@ export const metadata: Metadata = buildMetadata({
     'City Gas Distribution inspection technology',
     'Smart India Hackathon startup',
     'AIC RAISE incubated startup',
-    'DPIIT recognised startup',
-    'Startup India MSME',
+    'Startup India recognition',
     'Coimbatore deep-tech startup',
     'energy climate tech startup India',
     'SDG aligned startup',
@@ -43,7 +42,7 @@ export const metadata: Metadata = buildMetadata({
     'GAIL Pankh startup',
     'NIDHI PRAYAS pipeline technology',
     'iDEX dual-use drone technology',
-    'Startup India DPIIT pipeline technology',
+    'Startup India pipeline technology',
     'deep tech incubator oil gas',
   ],
 });
@@ -244,9 +243,9 @@ export default function AboutPage() {
               <p className="text-sm text-ink-muted">
                 LeakSonic’s founding team has a track record in applied engineering competitions,
                 including a national win at India’s Smart India Hackathon 2025 - one early signal
-                among several, not the headline. LeakSonic Private Limited is a government-incubated,
-                MSME-registered deep-tech company, and our core methodology is proprietary, with a
-                patent application filed.
+                among several, not the headline. LeakSonic Private Limited is a government-incubated
+                deep-tech company, currently applying for DPIIT recognition under Startup India,
+                and our core methodology is proprietary, with a patent application filed.
               </p>
             </div>
           </Reveal>
@@ -311,10 +310,10 @@ export default function AboutPage() {
             <div className="rounded-card border border-line bg-card p-7">
               <h3 className="text-h3 font-semibold text-ink">Team</h3>
               <p className="mt-3 text-sm leading-relaxed text-ink-secondary">
-                Government-incubated at AIC RAISE, DPIIT-recognised under Startup India,
-                MSME-registered, with a national Smart India Hackathon 2025 win - and a founding
-                conviction grounded in field time on an active pipeline construction site, not a
-                slide deck.
+                Government-incubated at AIC RAISE, LeakSonic Private Limited, currently applying
+                for DPIIT recognition under Startup India, with a national Smart India Hackathon
+                2025 win - and a founding conviction grounded in field time on an active pipeline
+                construction site, not a slide deck.
               </p>
             </div>
             <div className="rounded-card border border-line bg-card p-7 md:col-span-2">
@@ -328,9 +327,10 @@ export default function AboutPage() {
                 <Link href="/research" className="text-accent hover:text-accent-hover">
                   approach page
                 </Link>{' '}
-                - a government-incubated, DPIIT-recognised, MSME-registered team building a
-                specific, named engineering capability, not a generic AI pitch. We would rather a
-                reviewer find our stage clearly stated than have to ask.
+                - a government-incubated team, LeakSonic Private Limited, currently applying for
+                DPIIT recognition, building a specific, named engineering capability, not a
+                generic AI pitch. We would rather a reviewer find our stage clearly stated than
+                have to ask.
               </p>
             </div>
             <div className="rounded-card border border-line bg-card p-7">

@@ -186,7 +186,7 @@ export const SITE_FAQ: FaqItem[] = [
   {
     question: 'Is LeakSonic working with GAIL, IndianOil, HPCL, ONGC, or another national oil company?',
     answer:
-      'Not as a named, announced partnership today - we won’t claim one until it’s real. We are a government-incubated, DPIIT-recognised, MSME-registered deep-tech company built specifically around the problem these operators run dedicated startup and innovation programs to solve (see our guide to [oil and gas startup schemes in India](/blog/oil-gas-startup-schemes-india-guide)), and we track and are open to engagement through GAIL Pankh, IndianOil Ankur, and similar PSU innovation mechanisms. If you work in innovation or integrity at one of these companies, we’d welcome a conversation.',
+      'Not as a named, announced partnership today - we won’t claim one until it’s real. We are LeakSonic Private Limited, a government-incubated deep-tech company (currently applying for DPIIT recognition under Startup India) built specifically around the problem these operators run dedicated startup and innovation programs to solve (see our guide to [oil and gas startup schemes in India](/blog/oil-gas-startup-schemes-india-guide)), and we track and are open to engagement through GAIL Pankh, IndianOil Ankur, and similar PSU innovation mechanisms. If you work in innovation or integrity at one of these companies, we’d welcome a conversation.',
   },
   {
     question: 'Does LeakSonic work with international or foreign oil and gas operators?',
@@ -196,7 +196,7 @@ export const SITE_FAQ: FaqItem[] = [
   {
     question: 'Is LeakSonic open to accelerator programs, grant funding, or investment?',
     answer:
-      'Yes. We are a government-incubated (AIC RAISE), DPIIT-recognised, MSME-registered deep-tech company actively validating Sentrix with practising engineers, and we are open to engagement from domestic and international deep-tech or climate-tech accelerators, grant programs, and early-stage investors working on infrastructure, industrial AI, or climate-adjacent technology. See our piece on the [deep-tech funding landscape](/blog/deep-tech-startup-funding-landscape-india-energy) for more context, or reach us directly through our [contact page](/contact).',
+      'Yes. We are LeakSonic Private Limited, a government-incubated (AIC RAISE) deep-tech company currently applying for DPIIT recognition under Startup India, actively validating Sentrix with practising engineers, and we are open to engagement from domestic and international deep-tech or climate-tech accelerators, grant programs, and early-stage investors working on infrastructure, industrial AI, or climate-adjacent technology. See our piece on the [deep-tech funding landscape](/blog/deep-tech-startup-funding-landscape-india-energy) for more context, or reach us directly through our [contact page](/contact).',
   },
   {
     question: 'How does drone pipeline inspection actually work?',

@@ -33,7 +33,7 @@ const content: AudienceContent = {
     heading: 'What we actually build, for a technical reviewer',
     paragraphs: [
       'LeakSonic builds Sentrix, a proprietary software and hardware engineering decision intelligence platform. Our core focus today is gas pipeline integrity inspection, including City Gas Distribution networks, with refinery and industrial static-equipment inspection as a second genuine, current application area of the same platform - not a future roadmap item.',
-      'For a program or agency evaluating us, the relevant facts are: government-incubated at AIC RAISE, DPIIT-recognised under Startup India, MSME-registered, a national win at Smart India Hackathon 2025, and a patent application filed on our core methodology. We are actively validating the platform with practising engineers rather than presenting unproven claims as fact, and we publish exactly what we are testing on our approach page.',
+      'For a program or agency evaluating us, the relevant facts are: government-incubated at AIC RAISE, applying for DPIIT recognition under Startup India, LeakSonic Private Limited, a national win at Smart India Hackathon 2025, and a patent application filed on our core methodology. We are actively validating the platform with practising engineers rather than presenting unproven claims as fact, and we publish exactly what we are testing on our approach page.',
       'The structural case for funding is straightforward: gas network and refinery inspection capacity is not scaling with the growth and ageing of the underlying asset base, and methane reporting is shifting from estimated to measured under frameworks like OGMP 2.0 - a policy-relevant, multi-decade problem, not a one-time pitch.',
     ],
   },

@@ -114,7 +114,7 @@ export function Hero() {
             </span>
             <span className="inline-flex items-center gap-1.5 text-xs text-ink-muted">
               <BadgeCheck className="h-3.5 w-3.5 text-accent" aria-hidden />
-              MSME-registered
+              LeakSonic Private Limited
             </span>
           </div>
         </div>

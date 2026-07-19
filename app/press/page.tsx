@@ -29,7 +29,7 @@ const FACTS: [string, string][] = [
   ['Headquarters', `${SITE.address.city}, ${SITE.address.region}, ${SITE.address.country}`],
   [
     'Status',
-    'MSME-registered · DPIIT-recognised under Startup India · incubated at AIC RAISE (Atal Incubation Centre)',
+    'MSME-registered · applying for DPIIT recognition under Startup India · incubated at AIC RAISE (Atal Incubation Centre)',
   ],
   [
     'Government support',

@@ -68,8 +68,7 @@ export function organizationSchema() {
     ],
     award: [
       'National winner, Smart India Hackathon 2025',
-      'DPIIT-recognised startup under Startup India',
-      'MSME-registered deep-tech company',
+      'Government-incubated deep-tech company',
     ],
     sameAs: Object.values(SITE.socials),
   };
