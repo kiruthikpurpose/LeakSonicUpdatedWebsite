@@ -7,6 +7,7 @@ import JsonLd from '@/components/JsonLd';
 import { GLOSSARY, glossarySlug } from '@/lib/glossary';
 import { buildMetadata } from '@/lib/metadata';
 import { breadcrumbSchema } from '@/lib/schema';
+import { SITE } from '@/lib/site';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Glossary - pipeline integrity & inspection terms',
@@ -36,6 +37,7 @@ function glossarySchema() {
       '@type': 'DefinedTerm',
       name: g.abbr ? `${g.term} (${g.abbr})` : g.term,
       description: g.definition,
+      url: `${SITE.url}/resources/glossary/${glossarySlug(g.term)}`,
     })),
   };
 }
