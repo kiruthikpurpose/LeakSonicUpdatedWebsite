@@ -1,16 +1,16 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { BookOpenText } from 'lucide-react';
 import { PageHero } from '@/components/ui/PageHero';
 import { Reveal } from '@/components/ui/Reveal';
 import JsonLd from '@/components/JsonLd';
-import { GLOSSARY } from '@/lib/glossary';
+import { GLOSSARY, glossarySlug } from '@/lib/glossary';
 import { buildMetadata } from '@/lib/metadata';
 import { breadcrumbSchema } from '@/lib/schema';
 
 export const metadata: Metadata = buildMetadata({
   title: 'Glossary - pipeline integrity & inspection terms',
-  description:
-    'Clear, standalone definitions of 30+ terms behind gas pipeline integrity and inspection: cathodic protection, in-line inspection, DCVG, CIPS, MAOP, HCA, MIC, risk-based inspection, false positive rate, and more.',
+  description: `Clear, standalone definitions of ${GLOSSARY.length} terms behind gas pipeline integrity and inspection: cathodic protection, in-line inspection, DCVG, CIPS, MAOP, HCA, MIC, risk-based inspection, false positive rate, and more - each with its own citable page.`,
   path: '/resources/glossary',
   keywords: [
     'pipeline integrity glossary',
@@ -40,13 +40,6 @@ function glossarySchema() {
   };
 }
 
-function slug(term: string) {
-  return term
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '');
-}
-
 export default function GlossaryPage() {
   return (
     <>
@@ -70,7 +63,7 @@ export default function GlossaryPage() {
             {GLOSSARY.map((g) => (
               <a
                 key={g.term}
-                href={`#${slug(g.term)}`}
+                href={`#${glossarySlug(g.term)}`}
                 className="rounded-xl border border-line bg-card px-3 py-1.5 font-sans text-xs text-ink-secondary transition-colors hover:border-line-strong hover:text-ink"
               >
                 {g.abbr ?? g.term}
@@ -81,10 +74,15 @@ export default function GlossaryPage() {
           <dl className="divide-y divide-line">
             {GLOSSARY.map((g, i) => (
               <Reveal key={g.term} delay={Math.min(i * 0.03, 0.2)}>
-                <div id={slug(g.term)} className="scroll-mt-24 py-8 first:pt-0">
+                <div id={glossarySlug(g.term)} className="scroll-mt-24 py-8 first:pt-0">
                   <dt>
                     <h2 className="text-h3 font-semibold text-ink">
-                      {g.term}
+                      <Link
+                        href={`/resources/glossary/${glossarySlug(g.term)}`}
+                        className="hover:text-accent"
+                      >
+                        {g.term}
+                      </Link>
                       {g.abbr && (
                         <span className="ml-2 font-sans text-sm font-normal text-ink-muted">
                           {g.abbr}
@@ -93,6 +91,12 @@ export default function GlossaryPage() {
                     </h2>
                   </dt>
                   <dd className="mt-3 leading-relaxed text-ink-secondary">{g.definition}</dd>
+                  <Link
+                    href={`/resources/glossary/${glossarySlug(g.term)}`}
+                    className="mt-3 inline-block font-sans text-xs text-accent hover:text-accent-hover"
+                  >
+                    Permalink for this term →
+                  </Link>
                 </div>
               </Reveal>
             ))}

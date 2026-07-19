@@ -48,6 +48,8 @@ module.exports = {
       '/tools/methane-emissions-value-estimator',
     ];
     const isBlogPost = path.startsWith('/blog/') && path !== '/blog';
+    const isGlossaryTerm =
+      path.startsWith('/resources/glossary/') && path !== '/resources/glossary';
     let priority = config.priority;
     let changefreq = config.changefreq;
     if (highest.includes(path)) {
@@ -56,6 +58,9 @@ module.exports = {
     } else if (high.includes(path) || isBlogPost) {
       priority = 0.85;
       changefreq = 'weekly';
+    } else if (isGlossaryTerm) {
+      priority = 0.75;
+      changefreq = 'monthly';
     }
     return {
       loc: path,

@@ -4,6 +4,13 @@ export type GlossaryEntry = {
   definition: string;
 };
 
+export function glossarySlug(term: string): string {
+  return term
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/(^-|-$)/g, '');
+}
+
 /**
  * Standalone, citable definitions. Each entry is written to stand on its own as
  * a quotable passage rather than a one-line dictionary gloss.
