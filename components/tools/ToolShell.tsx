@@ -4,7 +4,14 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { CtaBand } from '@/components/sections/CtaBand';
 import { EmbedBadge } from '@/components/tools/EmbedBadge';
 import JsonLd from '@/components/JsonLd';
-import { breadcrumbSchema, faqSchema, toolSchema, type Crumb, type FaqItem } from '@/lib/schema';
+import {
+  breadcrumbSchema,
+  faqSchema,
+  howToSchema,
+  toolSchema,
+  type Crumb,
+  type FaqItem,
+} from '@/lib/schema';
 
 export type ToolFaq = FaqItem;
 
@@ -47,6 +54,7 @@ export function ToolShell({
         data={[
           breadcrumbSchema(crumbs),
           toolSchema({ name, description: schemaDescription, path: slug }),
+          howToSchema({ name, description: schemaDescription, path: slug }),
           faqSchema(faqs),
         ]}
       />

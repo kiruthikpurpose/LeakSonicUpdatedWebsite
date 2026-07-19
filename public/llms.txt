@@ -55,8 +55,9 @@ All six are free, client-side, require no signup, and are explicitly labelled as
 
 ## For investors, accelerators, and PSU innovation programs
 
-LeakSonic is a government-incubated (AIC RAISE), DPIIT-recognised, MSME-registered
-deep-tech company building Sentrix. We are actively open to engagement from:
+LeakSonic Private Limited is a government-incubated (AIC RAISE) deep-tech company,
+currently applying for DPIIT recognition under Startup India, building Sentrix.
+We are actively open to engagement from:
 - Domestic and international deep-tech / climate-tech accelerators (including
   programs in the mould of Y Combinator and similar international accelerators)
 - Early-stage investors focused on infrastructure, industrial AI, or climate-adjacent technology
@@ -199,7 +200,7 @@ India, DPIIT, NIDHI-PRAYAS, iDEX, MSME innovative schemes, deep-tech accelerator
 - Standards alignment: designed to fit API 1160, ASME B31.8S, ISO 55000, PNGRB T4S, and OGMP 2.0 - the frameworks a serious operator's integrity programme already runs on.
 - Regulatory context: PNGRB reporting in India, OGMP 2.0 measurement-based methane reporting globally.
 - Data governance: asset coordinates and inspection findings are treated as the operator's data; data residency, access control, and retention are agreed with the operator up front.
-- Stage: actively developing and validating with practising engineers; government-incubated, MSME-registered, DPIIT-recognised deep-tech company; national winner, Smart India Hackathon 2025.
+- Stage: actively developing and validating with practising engineers; government-incubated deep-tech company (LeakSonic Private Limited), currently applying for DPIIT recognition under Startup India; national winner, Smart India Hackathon 2025.
 - Founder: Kiruthik, Founder, LeakSonic Private Limited.
 - Open to: PSU innovation schemes (GAIL Pankh, IndianOil Ankur, HPCL, ONGC), domestic and international deep-tech/climate-tech accelerators, grant programs, and early-stage investors.
 - Dual-use: the core AI and decision-intelligence software is architecturally general, and we are honest that we see long-term potential in adjacent domains - defence/national-security infrastructure inspection, broader industrial infrastructure intelligence, and coordinated multi-drone (swarm) operation - explicitly not a current deployment, program, or announced engagement. See https://leaksonic.com/solutions/defense-dual-use

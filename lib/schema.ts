@@ -175,11 +175,21 @@ export function articleSchema({
     dateModified,
     inLanguage: 'en',
     isAccessibleForFree: true,
+    // Marks headings and lead paragraphs as suitable for voice/AI-assistant
+    // extraction, matching the same treatment already used on FAQ pages.
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', 'h2'],
+    },
     author: {
       '@type': 'Organization',
       name: author,
       url: SITE.url,
     },
+    // Named-founder review signal (E-E-A-T) - real oversight, not a fabricated
+    // byline, since editorial content is reviewed against the founder's field
+    // and engineering background before publishing.
+    reviewedBy: { '@id': `${SITE.url}/#founder` },
     publisher: { '@id': `${SITE.url}/#organization` },
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -264,6 +274,49 @@ export function toolSchema({
     isAccessibleForFree: true,
     offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
     provider: { '@id': `${SITE.url}/#organization` },
+  };
+}
+
+/**
+ * Describes the actual step-by-step flow of using a free calculator tool -
+ * the schema type answer engines look for when resolving "how do I
+ * calculate X" queries (AEO). Every /tools/* page shares the same three-step
+ * flow (enter inputs, get the result, read the full breakdown), so this is
+ * generic on purpose rather than inventing tool-specific steps.
+ */
+export function howToSchema({
+  name,
+  description,
+  path,
+}: {
+  name: string;
+  description: string;
+  path: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: `How to use the ${name}`,
+    description,
+    totalTime: 'PT2M',
+    step: [
+      {
+        '@type': 'HowToStep',
+        name: 'Enter your inputs',
+        text: 'Fill in the fields with your own site, network, or asset details - no signup or account required.',
+      },
+      {
+        '@type': 'HowToStep',
+        name: 'Get an instant result',
+        text: 'The calculation updates live in your browser as you type, using only the assumptions you set.',
+      },
+      {
+        '@type': 'HowToStep',
+        name: 'Read the full breakdown',
+        text: 'Review the underlying arithmetic and methodology notes on the page so the result is auditable, not a black box.',
+      },
+    ],
+    url: new URL(path, SITE.url).toString(),
   };
 }
 
